@@ -2,8 +2,6 @@
 
 # xl/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [beam_gigadual.stl](./beam_gigadual.stl) | — |
+## Other Files
+1. [beam_gigadual.stl](./beam_gigadual.stl)

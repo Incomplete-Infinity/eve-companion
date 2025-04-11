@@ -2,74 +2,72 @@
 
 # classes/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [Alliance.js](./Alliance.js) | — |
-| [Assets.js](./Assets.js) | — |
-| [Attendee.js](./Attendee.js) | — |
-| [Attribute.js](./Attribute.js) | — |
-| [AuthTokenManager.js](./AuthTokenManager.js) | — |
-| [Blueprint.js](./Blueprint.js) | — |
-| [Calendar.js](./Calendar.js) | — |
-| [Character.js](./Character.js) | — |
-| [Clones.js](./Clones.js) | — |
-| [Contact.js](./Contact.js) | — |
-| [ContactNotification.js](./ContactNotification.js) | — |
-| [Contacts.js](./Contacts.js) | — |
-| [Contract.js](./Contract.js) | — |
-| [Contracts.js](./Contracts.js) | — |
-| [Corporation.js](./Corporation.js) | — |
-| [CorporationMember.js](./CorporationMember.js) | — |
-| [Division.js](./Division.js) | — |
-| [Dogma.js](./Dogma.js) | — |
-| [Effect.js](./Effect.js) | — |
-| [Event.js](./Event.js) | — |
-| [Facility.js](./Facility.js) | — |
-| [Faction.js](./Faction.js) | — |
-| [FactionWarfare.js](./FactionWarfare.js) | — |
-| [Fitting.js](./Fitting.js) | — |
-| [Fittings.js](./Fittings.js) | — |
-| [Fleet.js](./Fleet.js) | — |
-| [FleetMember.js](./FleetMember.js) | — |
-| [Fleets.js](./Fleets.js) | — |
-| [Galaxy.js](./Galaxy.js) | — |
-| [Incursions.js](./Incursions.js) | — |
-| [Industry.js](./Industry.js) | — |
-| [IndustryJob.js](./IndustryJob.js) | — |
-| [Insurance.js](./Insurance.js) | — |
-| [InventoryCategory.js](./InventoryCategory.js) | — |
-| [InventoryGroup.js](./InventoryGroup.js) | — |
-| [InventoryType.js](./InventoryType.js) | — |
-| [Item.js](./Item.js) | — |
-| [Killmail.js](./Killmail.js) | — |
-| [Killmails.js](./Killmails.js) | — |
-| [Label.js](./Label.js) | — |
-| [Location.js](./Location.js) | — |
-| [Loyalty.js](./Loyalty.js) | — |
-| [Mail.js](./Mail.js) | — |
-| [Mailbox.js](./Mailbox.js) | — |
-| [Market.js](./Market.js) | — |
-| [MarketGroup.js](./MarketGroup.js) | — |
-| [Medal.js](./Medal.js) | — |
-| [Notification.js](./Notification.js) | — |
-| [Ordere.js](./Ordere.js) | — |
-| [Planet.js](./Planet.js) | — |
-| [PlanetaryInteraction.js](./PlanetaryInteraction.js) | — |
-| [Region.js](./Region.js) | — |
-| [Routes.js](./Routes.js) | — |
-| [Search.js](./Search.js) | — |
-| [Shareholder.js](./Shareholder.js) | — |
-| [SkillQueue.js](./SkillQueue.js) | — |
-| [Skills.js](./Skills.js) | — |
-| [Sovereignty.js](./Sovereignty.js) | — |
-| [Squad.js](./Squad.js) | — |
-| [Starbase.js](./Starbase.js) | — |
-| [Status.js](./Status.js) | — |
-| [System.js](./System.js) | — |
-| [Universe.js](./Universe.js) | — |
-| [UserInterface.js](./UserInterface.js) | — |
-| [Wallet.js](./Wallet.js) | — |
-| [Wars.js](./Wars.js) | — |
-| [Wing.js](./Wing.js) | — |
+## Other Files
+1. [Alliance.js](./Alliance.js)
+2. [Assets.js](./Assets.js)
+3. [Attendee.js](./Attendee.js)
+4. [Attribute.js](./Attribute.js)
+5. [AuthTokenManager.js](./AuthTokenManager.js)
+6. [Blueprint.js](./Blueprint.js)
+7. [Calendar.js](./Calendar.js)
+8. [Character.js](./Character.js)
+9. [Clones.js](./Clones.js)
+10. [Contact.js](./Contact.js)
+11. [ContactNotification.js](./ContactNotification.js)
+12. [Contacts.js](./Contacts.js)
+13. [Contract.js](./Contract.js)
+14. [Contracts.js](./Contracts.js)
+15. [Corporation.js](./Corporation.js)
+16. [CorporationMember.js](./CorporationMember.js)
+17. [Division.js](./Division.js)
+18. [Dogma.js](./Dogma.js)
+19. [Effect.js](./Effect.js)
+20. [Event.js](./Event.js)
+21. [Facility.js](./Facility.js)
+22. [Faction.js](./Faction.js)
+23. [FactionWarfare.js](./FactionWarfare.js)
+24. [Fitting.js](./Fitting.js)
+25. [Fittings.js](./Fittings.js)
+26. [Fleet.js](./Fleet.js)
+27. [FleetMember.js](./FleetMember.js)
+28. [Fleets.js](./Fleets.js)
+29. [Galaxy.js](./Galaxy.js)
+30. [Incursions.js](./Incursions.js)
+31. [Industry.js](./Industry.js)
+32. [IndustryJob.js](./IndustryJob.js)
+33. [Insurance.js](./Insurance.js)
+34. [InventoryCategory.js](./InventoryCategory.js)
+35. [InventoryGroup.js](./InventoryGroup.js)
+36. [InventoryType.js](./InventoryType.js)
+37. [Item.js](./Item.js)
+38. [Killmail.js](./Killmail.js)
+39. [Killmails.js](./Killmails.js)
+40. [Label.js](./Label.js)
+41. [Location.js](./Location.js)
+42. [Loyalty.js](./Loyalty.js)
+43. [Mail.js](./Mail.js)
+44. [Mailbox.js](./Mailbox.js)
+45. [Market.js](./Market.js)
+46. [MarketGroup.js](./MarketGroup.js)
+47. [Medal.js](./Medal.js)
+48. [Notification.js](./Notification.js)
+49. [Ordere.js](./Ordere.js)
+50. [Planet.js](./Planet.js)
+51. [PlanetaryInteraction.js](./PlanetaryInteraction.js)
+52. [Region.js](./Region.js)
+53. [Routes.js](./Routes.js)
+54. [Search.js](./Search.js)
+55. [Shareholder.js](./Shareholder.js)
+56. [SkillQueue.js](./SkillQueue.js)
+57. [Skills.js](./Skills.js)
+58. [Sovereignty.js](./Sovereignty.js)
+59. [Squad.js](./Squad.js)
+60. [Starbase.js](./Starbase.js)
+61. [Status.js](./Status.js)
+62. [System.js](./System.js)
+63. [Universe.js](./Universe.js)
+64. [UserInterface.js](./UserInterface.js)
+65. [Wallet.js](./Wallet.js)
+66. [Wars.js](./Wars.js)
+67. [Wing.js](./Wing.js)

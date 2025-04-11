@@ -2,10 +2,8 @@
 
 # orbital/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [customs_office.stl](./customs_office.stl) | — |
-| [orbitalbeacon.stl](./orbitalbeacon.stl) | — |
-| [orbitalcontainer.stl](./orbitalcontainer.stl) | — |
+## Other Files
+1. [customs_office.stl](./customs_office.stl)
+2. [orbitalbeacon.stl](./orbitalbeacon.stl)
+3. [orbitalcontainer.stl](./orbitalcontainer.stl)

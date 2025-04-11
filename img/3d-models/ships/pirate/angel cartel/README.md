@@ -2,11 +2,9 @@
 
 # angel cartel/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [cynabal.stl](./cynabal.stl) | — |
-| [daredevil.stl](./daredevil.stl) | — |
-| [dramiel.stl](./dramiel.stl) | — |
-| [machariel_final.stl](./machariel_final.stl) | — |
+## Other Files
+1. [cynabal.stl](./cynabal.stl)
+2. [daredevil.stl](./daredevil.stl)
+3. [dramiel.stl](./dramiel.stl)
+4. [machariel_final.stl](./machariel_final.stl)

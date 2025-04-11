@@ -2,11 +2,9 @@
 
 # caldari/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [shuttle_caldari.stl](./shuttle_caldari.stl) | — |
+## Other Files
+1. [shuttle_caldari.stl](./shuttle_caldari.stl)
 
 ## Subfolders
 - [battlecruiser/](./battlecruiser/README.md)

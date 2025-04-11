@@ -2,20 +2,18 @@
 
 # StatusEffects/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bioluminescence.png](./bioluminescence.png) | ![](./bioluminescence.png) |
-| [boundary.png](./boundary.png) | ![](./boundary.png) |
-| [causticCloud.png](./causticCloud.png) | ![](./causticCloud.png) |
-| [filamentCloud.png](./filamentCloud.png) | ![](./filamentCloud.png) |
-| [pointDefenseBattery.png](./pointDefenseBattery.png) | ![](./pointDefenseBattery.png) |
-| [pulseBattery.png](./pulseBattery.png) | ![](./pulseBattery.png) |
-| [tether.png](./tether.png) | ![](./tether.png) |
-| [tetherDisabled.png](./tetherDisabled.png) | ![](./tetherDisabled.png) |
-| [weatherCaustic.png](./weatherCaustic.png) | ![](./weatherCaustic.png) |
-| [weatherDarkness.png](./weatherDarkness.png) | ![](./weatherDarkness.png) |
-| [weatherInfernal.png](./weatherInfernal.png) | ![](./weatherInfernal.png) |
-| [weatherLightning.png](./weatherLightning.png) | ![](./weatherLightning.png) |
-| [weatherXenonGas.png](./weatherXenonGas.png) | ![](./weatherXenonGas.png) |
+## Other Files
+1. [bioluminescence.png](./bioluminescence.png)
+2. [boundary.png](./boundary.png)
+3. [causticCloud.png](./causticCloud.png)
+4. [filamentCloud.png](./filamentCloud.png)
+5. [pointDefenseBattery.png](./pointDefenseBattery.png)
+6. [pulseBattery.png](./pulseBattery.png)
+7. [tether.png](./tether.png)
+8. [tetherDisabled.png](./tetherDisabled.png)
+9. [weatherCaustic.png](./weatherCaustic.png)
+10. [weatherDarkness.png](./weatherDarkness.png)
+11. [weatherInfernal.png](./weatherInfernal.png)
+12. [weatherLightning.png](./weatherLightning.png)
+13. [weatherXenonGas.png](./weatherXenonGas.png)

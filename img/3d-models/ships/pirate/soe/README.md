@@ -2,10 +2,8 @@
 
 # soe/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [astero.stl](./astero.stl) | — |
-| [Nestor.stl](./Nestor.stl) | — |
-| [Stratios.stl](./Stratios.stl) | — |
+## Other Files
+1. [astero.stl](./astero.stl)
+2. [Nestor.stl](./Nestor.stl)
+3. [Stratios.stl](./Stratios.stl)

@@ -2,18 +2,15 @@
 
 # 3d-models/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [sizes.txt](./sizes.txt) | — |
-| [Weapon Colors.txt](./Weapon Colors.txt) | — |
+## Other Files
+1. [sizes.txt](./sizes.txt)
+2. [weapon-colors.txt](./weapon-colors.txt)
 
 ## Subfolders
 - [asteroid/](./asteroid/README.md)
 - [deployable/](./deployable/README.md)
 - [drone/](./drone/README.md)
-- [eve x3g/](./eve x3g/README.md)
 - [eve-x3g/](./eve-x3g/README.md)
 - [requests/](./requests/README.md)
 - [scenes/](./scenes/README.md)

@@ -2,9 +2,7 @@
 
 # l/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [pulse_heavydual.stl](./pulse_heavydual.stl) | — |
-| [pulse_mega.stl](./pulse_mega.stl) | — |
+## Other Files
+1. [pulse_heavydual.stl](./pulse_heavydual.stl)
+2. [pulse_mega.stl](./pulse_mega.stl)

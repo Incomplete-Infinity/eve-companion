@@ -2,9 +2,7 @@
 
 # fighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [Pirate_Fighter.stl](./Pirate_Fighter.stl) | — |
-| [Pirate_Fighter_Bomber.stl](./Pirate_Fighter_Bomber.stl) | — |
+## Other Files
+1. [Pirate_Fighter.stl](./Pirate_Fighter.stl)
+2. [Pirate_Fighter_Bomber.stl](./Pirate_Fighter_Bomber.stl)

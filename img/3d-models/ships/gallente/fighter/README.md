@@ -2,9 +2,7 @@
 
 # fighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [cyclops.stl](./cyclops.stl) | — |
-| [firbolg.stl](./firbolg.stl) | — |
+## Other Files
+1. [cyclops.stl](./cyclops.stl)
+2. [firbolg.stl](./firbolg.stl)

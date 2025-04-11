@@ -2,9 +2,7 @@
 
 # Fudster/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [jita (obj).mtl](./jita (obj).mtl) | — |
-| [jita (obj).obj](./jita (obj).obj) | — |
+## Other Files
+1. [jita (obj).mtl](./jita (obj).mtl)
+2. [jita (obj).obj](./jita (obj).obj)

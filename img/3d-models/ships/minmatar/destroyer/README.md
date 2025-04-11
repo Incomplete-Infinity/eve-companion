@@ -2,12 +2,10 @@
 
 # destroyer/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bifrost.stl](./bifrost.stl) | — |
-| [sabre.stl](./sabre.stl) | — |
-| [svipul.stl](./svipul.stl) | — |
-| [talwar.stl](./talwar.stl) | — |
-| [thrasher.stl](./thrasher.stl) | — |
+## Other Files
+1. [bifrost.stl](./bifrost.stl)
+2. [sabre.stl](./sabre.stl)
+3. [svipul.stl](./svipul.stl)
+4. [talwar.stl](./talwar.stl)
+5. [thrasher.stl](./thrasher.stl)

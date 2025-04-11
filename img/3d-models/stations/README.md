@@ -2,11 +2,9 @@
 
 # stations/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [jita.3ds](./jita.3ds) | — |
+## Other Files
+1. [jita.3ds](./jita.3ds)
 
 ## Subfolders
 - [amarr/](./amarr/README.md)

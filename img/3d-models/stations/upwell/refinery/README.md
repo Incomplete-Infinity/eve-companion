@@ -2,9 +2,7 @@
 
 # refinery/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [athanor.stl](./athanor.stl) | — |
-| [tatara.stl](./tatara.stl) | — |
+## Other Files
+1. [athanor.stl](./athanor.stl)
+2. [tatara.stl](./tatara.stl)

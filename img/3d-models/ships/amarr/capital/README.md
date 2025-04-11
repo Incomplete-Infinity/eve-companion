@@ -2,13 +2,11 @@
 
 # capital/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [aeon.stl](./aeon.stl) | — |
-| [apostle.stl](./apostle.stl) | — |
-| [archon.stl](./archon.stl) | — |
-| [avatar.stl](./avatar.stl) | — |
-| [avatar_old.stl](./avatar_old.stl) | — |
-| [revelation.stl](./revelation.stl) | — |
+## Other Files
+1. [aeon.stl](./aeon.stl)
+2. [apostle.stl](./apostle.stl)
+3. [archon.stl](./archon.stl)
+4. [avatar.stl](./avatar.stl)
+5. [avatar_old.stl](./avatar_old.stl)
+6. [revelation.stl](./revelation.stl)

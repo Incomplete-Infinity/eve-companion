@@ -2,9 +2,7 @@
 
 # fighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [einherji.stl](./einherji.stl) | — |
-| [tyrfing.stl](./tyrfing.stl) | — |
+## Other Files
+1. [einherji.stl](./einherji.stl)
+2. [tyrfing.stl](./tyrfing.stl)

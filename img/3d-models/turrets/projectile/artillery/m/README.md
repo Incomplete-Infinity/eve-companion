@@ -2,9 +2,7 @@
 
 # m/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [artil_650mm.stl](./artil_650mm.stl) | — |
-| [artil_720mm.stl](./artil_720mm.stl) | — |
+## Other Files
+1. [artil_650mm.stl](./artil_650mm.stl)
+2. [artil_720mm.stl](./artil_720mm.stl)

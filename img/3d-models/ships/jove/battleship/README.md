@@ -2,8 +2,6 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [jove battleship.stl](./jove battleship.stl) | — |
+## Other Files
+1. [jove battleship.stl](./jove battleship.stl)

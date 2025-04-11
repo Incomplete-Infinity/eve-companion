@@ -2,8 +2,6 @@
 
 # freighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [charon.stl](./charon.stl) | — |
+## Other Files
+1. [charon.stl](./charon.stl)

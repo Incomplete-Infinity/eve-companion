@@ -2,9 +2,7 @@
 
 # m/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [beam_heavy.stl](./beam_heavy.stl) | — |
-| [beam_quad.stl](./beam_quad.stl) | — |
+## Other Files
+1. [beam_heavy.stl](./beam_heavy.stl)
+2. [beam_quad.stl](./beam_quad.stl)

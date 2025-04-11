@@ -2,24 +2,22 @@
 
 # frigate/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bantam.stl](./bantam.stl) | — |
-| [buzzard.stl](./buzzard.stl) | — |
-| [condor.stl](./condor.stl) | — |
-| [condor_old.stl](./condor_old.stl) | — |
-| [crow.stl](./crow.stl) | — |
-| [griffin.stl](./griffin.stl) | — |
-| [harpy.stl](./harpy.stl) | — |
-| [hawk.stl](./hawk.stl) | — |
-| [heron.stl](./heron.stl) | — |
-| [hookbill.stl](./hookbill.stl) | — |
-| [ibis.stl](./ibis.stl) | — |
-| [kestrel.stl](./kestrel.stl) | — |
-| [kirin.stl](./kirin.stl) | — |
-| [kitsune.stl](./kitsune.stl) | — |
-| [manticore.stl](./manticore.stl) | — |
-| [merlin.stl](./merlin.stl) | — |
-| [raptor.stl](./raptor.stl) | — |
+## Other Files
+1. [bantam.stl](./bantam.stl)
+2. [buzzard.stl](./buzzard.stl)
+3. [condor.stl](./condor.stl)
+4. [condor_old.stl](./condor_old.stl)
+5. [crow.stl](./crow.stl)
+6. [griffin.stl](./griffin.stl)
+7. [harpy.stl](./harpy.stl)
+8. [hawk.stl](./hawk.stl)
+9. [heron.stl](./heron.stl)
+10. [hookbill.stl](./hookbill.stl)
+11. [ibis.stl](./ibis.stl)
+12. [kestrel.stl](./kestrel.stl)
+13. [kirin.stl](./kirin.stl)
+14. [kitsune.stl](./kitsune.stl)
+15. [manticore.stl](./manticore.stl)
+16. [merlin.stl](./merlin.stl)
+17. [raptor.stl](./raptor.stl)

@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/Incomplete-Infinity/assets#readme",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "augmented-ui": "^2.0.0",
+    "bootstrap": "^5.3.5",
     "halfmoon": "^2.0.2",
+    "topcoat": "^0.7.5",
     "xml2js": "^0.6.2"
   }
 }

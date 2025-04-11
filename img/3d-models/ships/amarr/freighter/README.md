@@ -2,8 +2,6 @@
 
 # freighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [providence.stl](./providence.stl) | — |
+## Other Files
+1. [providence.stl](./providence.stl)

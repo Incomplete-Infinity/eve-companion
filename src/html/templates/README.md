@@ -2,15 +2,13 @@
 
 # templates/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [build.js](./build.js) | — |
-| [index.html](./index.html) | — |
-| [package-lock.json](./package-lock.json) | — |
-| [package.json](./package.json) | — |
-| [script.js](./script.js) | — |
+## Other Files
+1. [build.js](./build.js)
+2. [index.html](./index.html)
+3. [package-lock.json](./package-lock.json)
+4. [package.json](./package.json)
+5. [script.js](./script.js)
 
 ## Subfolders
 - [dist/](./dist/README.md)

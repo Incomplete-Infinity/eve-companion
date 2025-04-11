@@ -2,10 +2,8 @@
 
 # sov/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [ihub.stl](./ihub.stl) | — |
-| [sbu.stl](./sbu.stl) | — |
-| [tcu.stl](./tcu.stl) | — |
+## Other Files
+1. [ihub.stl](./ihub.stl)
+2. [sbu.stl](./sbu.stl)
+3. [tcu.stl](./tcu.stl)

@@ -2,11 +2,9 @@
 
 # amarr/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [amarr border.stl](./amarr border.stl) | — |
-| [amarr constellation.stl](./amarr constellation.stl) | — |
-| [amarr regional.stl](./amarr regional.stl) | — |
-| [amarr standard.stl](./amarr standard.stl) | — |
+## Other Files
+1. [amarr border.stl](./amarr border.stl)
+2. [amarr constellation.stl](./amarr constellation.stl)
+3. [amarr regional.stl](./amarr regional.stl)
+4. [amarr standard.stl](./amarr standard.stl)

@@ -2,11 +2,9 @@
 
 # battlecruiser/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [drake.stl](./drake.stl) | — |
-| [ferox.stl](./ferox.stl) | — |
-| [naga.stl](./naga.stl) | — |
-| [nighthawk.stl](./nighthawk.stl) | — |
+## Other Files
+1. [drake.stl](./drake.stl)
+2. [ferox.stl](./ferox.stl)
+3. [naga.stl](./naga.stl)
+4. [nighthawk.stl](./nighthawk.stl)

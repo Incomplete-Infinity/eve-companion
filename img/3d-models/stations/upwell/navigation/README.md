@@ -2,10 +2,8 @@
 
 # navigation/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [cynobeacon.stl](./cynobeacon.stl) | — |
-| [cynojammer.stl](./cynojammer.stl) | — |
-| [jumpbridge.stl](./jumpbridge.stl) | — |
+## Other Files
+1. [cynobeacon.stl](./cynobeacon.stl)
+2. [cynojammer.stl](./cynojammer.stl)
+3. [jumpbridge.stl](./jumpbridge.stl)

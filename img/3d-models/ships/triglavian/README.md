@@ -2,18 +2,16 @@
 
 # triglavian/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [damavik.stl](./damavik.stl) | — |
-| [draugur.stl](./draugur.stl) | — |
-| [drekavac.stl](./drekavac.stl) | — |
-| [ikitursa.stl](./ikitursa.stl) | — |
-| [kikimora.stl](./kikimora.stl) | — |
-| [leshak.stl](./leshak.stl) | — |
-| [nergal.stl](./nergal.stl) | — |
-| [rodiva.stl](./rodiva.stl) | — |
-| [vedmak.stl](./vedmak.stl) | — |
-| [zarmazd.stl](./zarmazd.stl) | — |
-| [zirnitra.stl](./zirnitra.stl) | — |
+## Other Files
+1. [damavik.stl](./damavik.stl)
+2. [draugur.stl](./draugur.stl)
+3. [drekavac.stl](./drekavac.stl)
+4. [ikitursa.stl](./ikitursa.stl)
+5. [kikimora.stl](./kikimora.stl)
+6. [leshak.stl](./leshak.stl)
+7. [nergal.stl](./nergal.stl)
+8. [rodiva.stl](./rodiva.stl)
+9. [vedmak.stl](./vedmak.stl)
+10. [zarmazd.stl](./zarmazd.stl)
+11. [zirnitra.stl](./zirnitra.stl)

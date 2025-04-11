@@ -2,236 +2,234 @@
 
 # Brackets/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [agentInSpace.png](./agentInSpace.png) | ![](./agentInSpace.png) |
-| [assemblyArray.png](./assemblyArray.png) | ![](./assemblyArray.png) |
-| [asteroidBelt.png](./asteroidBelt.png) | ![](./asteroidBelt.png) |
-| [asteroidLarge.png](./asteroidLarge.png) | ![](./asteroidLarge.png) |
-| [asteroidMedium.png](./asteroidMedium.png) | ![](./asteroidMedium.png) |
-| [asteroidSmall.png](./asteroidSmall.png) | ![](./asteroidSmall.png) |
-| [auditLogSecureContainer.png](./auditLogSecureContainer.png) | ![](./auditLogSecureContainer.png) |
-| [battery.png](./battery.png) | ![](./battery.png) |
-| [batteryElectronicWarfare.png](./batteryElectronicWarfare.png) | ![](./batteryElectronicWarfare.png) |
-| [batteryEnergyNeutralizing.png](./batteryEnergyNeutralizing.png) | ![](./batteryEnergyNeutralizing.png) |
-| [batterySensorDampening.png](./batterySensorDampening.png) | ![](./batterySensorDampening.png) |
-| [batteryStasisWebification.png](./batteryStasisWebification.png) | ![](./batteryStasisWebification.png) |
-| [batteryWarpScrambling.png](./batteryWarpScrambling.png) | ![](./batteryWarpScrambling.png) |
-| [battleCruiser_16.png](./battleCruiser_16.png) | ![](./battleCruiser_16.png) |
-| [battleCruiser_32.png](./battleCruiser_32.png) | ![](./battleCruiser_32.png) |
-| [battleship_16.png](./battleship_16.png) | ![](./battleship_16.png) |
-| [battleship_32.png](./battleship_32.png) | ![](./battleship_32.png) |
-| [beacon.png](./beacon.png) | ![](./beacon.png) |
-| [billboard.png](./billboard.png) | ![](./billboard.png) |
-| [bomb.png](./bomb.png) | ![](./bomb.png) |
-| [capsule_16.png](./capsule_16.png) | ![](./capsule_16.png) |
-| [capsule_32.png](./capsule_32.png) | ![](./capsule_32.png) |
-| [capturePointTower.png](./capturePointTower.png) | ![](./capturePointTower.png) |
-| [carrier_16.png](./carrier_16.png) | ![](./carrier_16.png) |
-| [carrier_32.png](./carrier_32.png) | ![](./carrier_32.png) |
-| [citadelExtraLarge.png](./citadelExtraLarge.png) | ![](./citadelExtraLarge.png) |
-| [citadelLarge.png](./citadelLarge.png) | ![](./citadelLarge.png) |
-| [citadelMedium.png](./citadelMedium.png) | ![](./citadelMedium.png) |
-| [combatSite_16.png](./combatSite_16.png) | ![](./combatSite_16.png) |
-| [commandNode.png](./commandNode.png) | ![](./commandNode.png) |
-| [compressionArray.png](./compressionArray.png) | ![](./compressionArray.png) |
-| [constellation.png](./constellation.png) | ![](./constellation.png) |
-| [constructionPlatform.png](./constructionPlatform.png) | ![](./constructionPlatform.png) |
-| [containerCargo.png](./containerCargo.png) | ![](./containerCargo.png) |
-| [containerCargoNPC.png](./containerCargoNPC.png) | ![](./containerCargoNPC.png) |
-| [containerCargo_20x20.png](./containerCargo_20x20.png) | ![](./containerCargo_20x20.png) |
-| [containerFreight.png](./containerFreight.png) | ![](./containerFreight.png) |
-| [containerMission.png](./containerMission.png) | ![](./containerMission.png) |
-| [containerSpew.png](./containerSpew.png) | ![](./containerSpew.png) |
-| [controlBunker.png](./controlBunker.png) | ![](./controlBunker.png) |
-| [controlTower.png](./controlTower.png) | ![](./controlTower.png) |
-| [corpHangarArray.png](./corpHangarArray.png) | ![](./corpHangarArray.png) |
-| [couplingArray.png](./couplingArray.png) | ![](./couplingArray.png) |
-| [cruiser_16.png](./cruiser_16.png) | ![](./cruiser_16.png) |
-| [cruiser_32.png](./cruiser_32.png) | ![](./cruiser_32.png) |
-| [customsOffice.png](./customsOffice.png) | ![](./customsOffice.png) |
-| [customsOfficeNPC.png](./customsOfficeNPC.png) | ![](./customsOfficeNPC.png) |
-| [cynosuralBeacon.png](./cynosuralBeacon.png) | ![](./cynosuralBeacon.png) |
-| [cynosuralField.png](./cynosuralField.png) | ![](./cynosuralField.png) |
-| [cynosuralGeneratorArray.png](./cynosuralGeneratorArray.png) | ![](./cynosuralGeneratorArray.png) |
-| [cynosuralJammer.png](./cynosuralJammer.png) | ![](./cynosuralJammer.png) |
-| [cynosuralSystemJammer.png](./cynosuralSystemJammer.png) | ![](./cynosuralSystemJammer.png) |
-| [data_Site_16.png](./data_Site_16.png) | ![](./data_Site_16.png) |
-| [deadspaceOverseersBelongings.png](./deadspaceOverseersBelongings.png) | ![](./deadspaceOverseersBelongings.png) |
-| [deadspaceOverseersSentry.png](./deadspaceOverseersSentry.png) | ![](./deadspaceOverseersSentry.png) |
-| [destroyer_16.png](./destroyer_16.png) | ![](./destroyer_16.png) |
-| [destroyer_32.png](./destroyer_32.png) | ![](./destroyer_32.png) |
-| [destructibleSentry.png](./destructibleSentry.png) | ![](./destructibleSentry.png) |
-| [destructibleStationServices.png](./destructibleStationServices.png) | ![](./destructibleStationServices.png) |
-| [dreadnought_16.png](./dreadnought_16.png) | ![](./dreadnought_16.png) |
-| [dreadnought_32.png](./dreadnought_32.png) | ![](./dreadnought_32.png) |
-| [droneAttack_16.png](./droneAttack_16.png) | ![](./droneAttack_16.png) |
-| [droneEW_16.png](./droneEW_16.png) | ![](./droneEW_16.png) |
-| [droneEW_L_16.png](./droneEW_L_16.png) | ![](./droneEW_L_16.png) |
-| [droneEW_M_16.png](./droneEW_M_16.png) | ![](./droneEW_M_16.png) |
-| [droneEW_S_16.png](./droneEW_S_16.png) | ![](./droneEW_S_16.png) |
-| [droneFighterBomber_16.png](./droneFighterBomber_16.png) | ![](./droneFighterBomber_16.png) |
-| [droneFighter_16.png](./droneFighter_16.png) | ![](./droneFighter_16.png) |
-| [droneHeavyAttack_16.png](./droneHeavyAttack_16.png) | ![](./droneHeavyAttack_16.png) |
-| [droneLightScout_16.png](./droneLightScout_16.png) | ![](./droneLightScout_16.png) |
-| [droneLogistics_16.png](./droneLogistics_16.png) | ![](./droneLogistics_16.png) |
-| [droneLogistics_L_16.png](./droneLogistics_L_16.png) | ![](./droneLogistics_L_16.png) |
-| [droneLogistics_M_16.png](./droneLogistics_M_16.png) | ![](./droneLogistics_M_16.png) |
-| [droneLogistics_S_16.png](./droneLogistics_S_16.png) | ![](./droneLogistics_S_16.png) |
-| [droneMediumScout_16.png](./droneMediumScout_16.png) | ![](./droneMediumScout_16.png) |
-| [droneMining_16.png](./droneMining_16.png) | ![](./droneMining_16.png) |
-| [droneMining_M_16.png](./droneMining_M_16.png) | ![](./droneMining_M_16.png) |
-| [droneMining_S_16.png](./droneMining_S_16.png) | ![](./droneMining_S_16.png) |
-| [droneSalvaging_16.png](./droneSalvaging_16.png) | ![](./droneSalvaging_16.png) |
-| [droneSalvaging_S_16.png](./droneSalvaging_S_16.png) | ![](./droneSalvaging_S_16.png) |
-| [droneSentry_16.png](./droneSentry_16.png) | ![](./droneSentry_16.png) |
-| [encounterSurveillanceSystem.png](./encounterSurveillanceSystem.png) | ![](./encounterSurveillanceSystem.png) |
-| [engineeringComplexExtraLarge.png](./engineeringComplexExtraLarge.png) | ![](./engineeringComplexExtraLarge.png) |
-| [engineeringComplexExtraLargeNPC.png](./engineeringComplexExtraLargeNPC.png) | ![](./engineeringComplexExtraLargeNPC.png) |
-| [engineeringComplexLarge.png](./engineeringComplexLarge.png) | ![](./engineeringComplexLarge.png) |
-| [engineeringComplexMedium.png](./engineeringComplexMedium.png) | ![](./engineeringComplexMedium.png) |
-| [entity.png](./entity.png) | ![](./entity.png) |
-| [fighterSquadH_16.png](./fighterSquadH_16.png) | ![](./fighterSquadH_16.png) |
-| [fighterSquadM_16.png](./fighterSquadM_16.png) | ![](./fighterSquadM_16.png) |
-| [fighterSquad_16.png](./fighterSquad_16.png) | ![](./fighterSquad_16.png) |
-| [forceAuxiliary_16.png](./forceAuxiliary_16.png) | ![](./forceAuxiliary_16.png) |
-| [forceAuxiliary_32.png](./forceAuxiliary_32.png) | ![](./forceAuxiliary_32.png) |
-| [forceFieldArray.png](./forceFieldArray.png) | ![](./forceFieldArray.png) |
-| [freighter_16.png](./freighter_16.png) | ![](./freighter_16.png) |
-| [freighter_32.png](./freighter_32.png) | ![](./freighter_32.png) |
-| [frigate_16.png](./frigate_16.png) | ![](./frigate_16.png) |
-| [frigate_32.png](./frigate_32.png) | ![](./frigate_32.png) |
-| [frozenCorpse.png](./frozenCorpse.png) | ![](./frozenCorpse.png) |
-| [harvestableCloud.png](./harvestableCloud.png) | ![](./harvestableCloud.png) |
-| [iceAsteroidLarge.png](./iceAsteroidLarge.png) | ![](./iceAsteroidLarge.png) |
-| [iceAsteroidMedium.png](./iceAsteroidMedium.png) | ![](./iceAsteroidMedium.png) |
-| [iceAsteroidSmall.png](./iceAsteroidSmall.png) | ![](./iceAsteroidSmall.png) |
-| [iceField.png](./iceField.png) | ![](./iceField.png) |
-| [industrialCommand_16.png](./industrialCommand_16.png) | ![](./industrialCommand_16.png) |
-| [industrialCommand_32.png](./industrialCommand_32.png) | ![](./industrialCommand_32.png) |
-| [industrial_16.png](./industrial_16.png) | ![](./industrial_16.png) |
-| [industrial_32.png](./industrial_32.png) | ![](./industrial_32.png) |
-| [infrastructureHub.png](./infrastructureHub.png) | ![](./infrastructureHub.png) |
-| [jumpPortalArray.png](./jumpPortalArray.png) | ![](./jumpPortalArray.png) |
-| [largeCollidableStructure.png](./largeCollidableStructure.png) | ![](./largeCollidableStructure.png) |
-| [miningBarge_16.png](./miningBarge_16.png) | ![](./miningBarge_16.png) |
-| [miningBarge_32.png](./miningBarge_32.png) | ![](./miningBarge_32.png) |
-| [miningFrigate_16.png](./miningFrigate_16.png) | ![](./miningFrigate_16.png) |
-| [miningFrigate_32.png](./miningFrigate_32.png) | ![](./miningFrigate_32.png) |
-| [mobileCynosuralInhibitor.png](./mobileCynosuralInhibitor.png) | ![](./mobileCynosuralInhibitor.png) |
-| [mobileJumpDisruptor.png](./mobileJumpDisruptor.png) | ![](./mobileJumpDisruptor.png) |
-| [mobileLab.png](./mobileLab.png) | ![](./mobileLab.png) |
-| [mobileMicroJumpUnit.png](./mobileMicroJumpUnit.png) | ![](./mobileMicroJumpUnit.png) |
-| [mobileReactor.png](./mobileReactor.png) | ![](./mobileReactor.png) |
-| [mobileReprocessingArray.png](./mobileReprocessingArray.png) | ![](./mobileReprocessingArray.png) |
-| [mobileScanInhibitor.png](./mobileScanInhibitor.png) | ![](./mobileScanInhibitor.png) |
-| [mobileSentry.png](./mobileSentry.png) | ![](./mobileSentry.png) |
-| [mobileSentryHybrid.png](./mobileSentryHybrid.png) | ![](./mobileSentryHybrid.png) |
-| [mobileSentryLaser.png](./mobileSentryLaser.png) | ![](./mobileSentryLaser.png) |
-| [mobileSentryMissile.png](./mobileSentryMissile.png) | ![](./mobileSentryMissile.png) |
-| [mobileSentryProjectile.png](./mobileSentryProjectile.png) | ![](./mobileSentryProjectile.png) |
-| [mobileSiphonUnit.png](./mobileSiphonUnit.png) | ![](./mobileSiphonUnit.png) |
-| [mobileStorage.png](./mobileStorage.png) | ![](./mobileStorage.png) |
-| [mobileTractorUnit.png](./mobileTractorUnit.png) | ![](./mobileTractorUnit.png) |
-| [mobileWarpDisruptor.png](./mobileWarpDisruptor.png) | ![](./mobileWarpDisruptor.png) |
-| [moon.png](./moon.png) | ![](./moon.png) |
-| [moonAsteroidJackpot.png](./moonAsteroidJackpot.png) | ![](./moonAsteroidJackpot.png) |
-| [moonAsteroidRegular.png](./moonAsteroidRegular.png) | ![](./moonAsteroidRegular.png) |
-| [moonMining.png](./moonMining.png) | ![](./moonMining.png) |
-| [npcbattleCruiser_16.png](./npcbattleCruiser_16.png) | ![](./npcbattleCruiser_16.png) |
-| [npcbattleCruiser_32.png](./npcbattleCruiser_32.png) | ![](./npcbattleCruiser_32.png) |
-| [npcbattleship_16.png](./npcbattleship_16.png) | ![](./npcbattleship_16.png) |
-| [npcbattleship_32.png](./npcbattleship_32.png) | ![](./npcbattleship_32.png) |
-| [npccapsule_16.png](./npccapsule_16.png) | ![](./npccapsule_16.png) |
-| [npccapsule_32.png](./npccapsule_32.png) | ![](./npccapsule_32.png) |
-| [npccarrier_16.png](./npccarrier_16.png) | ![](./npccarrier_16.png) |
-| [npccarrier_32.png](./npccarrier_32.png) | ![](./npccarrier_32.png) |
-| [npccruiser_16.png](./npccruiser_16.png) | ![](./npccruiser_16.png) |
-| [npccruiser_32.png](./npccruiser_32.png) | ![](./npccruiser_32.png) |
-| [npcdestroyer_16.png](./npcdestroyer_16.png) | ![](./npcdestroyer_16.png) |
-| [npcdestroyer_32.png](./npcdestroyer_32.png) | ![](./npcdestroyer_32.png) |
-| [npcdreadnought_16.png](./npcdreadnought_16.png) | ![](./npcdreadnought_16.png) |
-| [npcdreadnought_32.png](./npcdreadnought_32.png) | ![](./npcdreadnought_32.png) |
-| [npcdroneAttack_16.png](./npcdroneAttack_16.png) | ![](./npcdroneAttack_16.png) |
-| [npcdroneEW_16.png](./npcdroneEW_16.png) | ![](./npcdroneEW_16.png) |
-| [npcdroneFighterBomber_16.png](./npcdroneFighterBomber_16.png) | ![](./npcdroneFighterBomber_16.png) |
-| [npcdroneFighter_16.png](./npcdroneFighter_16.png) | ![](./npcdroneFighter_16.png) |
-| [npcdroneLogistics_16.png](./npcdroneLogistics_16.png) | ![](./npcdroneLogistics_16.png) |
-| [npcdroneMining_16.png](./npcdroneMining_16.png) | ![](./npcdroneMining_16.png) |
-| [npcdroneSalvaging_16.png](./npcdroneSalvaging_16.png) | ![](./npcdroneSalvaging_16.png) |
-| [npcdroneSentry_16.png](./npcdroneSentry_16.png) | ![](./npcdroneSentry_16.png) |
-| [npcfighterSquad_16.png](./npcfighterSquad_16.png) | ![](./npcfighterSquad_16.png) |
-| [npcforceAuxiliary_16.png](./npcforceAuxiliary_16.png) | ![](./npcforceAuxiliary_16.png) |
-| [npcforceAuxiliary_32.png](./npcforceAuxiliary_32.png) | ![](./npcforceAuxiliary_32.png) |
-| [npcfreighter_16.png](./npcfreighter_16.png) | ![](./npcfreighter_16.png) |
-| [npcfreighter_32.png](./npcfreighter_32.png) | ![](./npcfreighter_32.png) |
-| [npcfrigate_16.png](./npcfrigate_16.png) | ![](./npcfrigate_16.png) |
-| [npcindustrialCommand_16.png](./npcindustrialCommand_16.png) | ![](./npcindustrialCommand_16.png) |
-| [npcindustrialCommand_32.png](./npcindustrialCommand_32.png) | ![](./npcindustrialCommand_32.png) |
-| [npcindustrial_16.png](./npcindustrial_16.png) | ![](./npcindustrial_16.png) |
-| [npcindustrial_32.png](./npcindustrial_32.png) | ![](./npcindustrial_32.png) |
-| [npcminingBarge_16.png](./npcminingBarge_16.png) | ![](./npcminingBarge_16.png) |
-| [npcminingBarge_32.png](./npcminingBarge_32.png) | ![](./npcminingBarge_32.png) |
-| [npcminingFrigate_16.png](./npcminingFrigate_16.png) | ![](./npcminingFrigate_16.png) |
-| [npcminingFrigate_32.png](./npcminingFrigate_32.png) | ![](./npcminingFrigate_32.png) |
-| [npcrookie_16.png](./npcrookie_16.png) | ![](./npcrookie_16.png) |
-| [npcrookie_32.png](./npcrookie_32.png) | ![](./npcrookie_32.png) |
-| [npcshuttle_16.png](./npcshuttle_16.png) | ![](./npcshuttle_16.png) |
-| [npcshuttle_32.png](./npcshuttle_32.png) | ![](./npcshuttle_32.png) |
-| [npcsuperCarrier_16.png](./npcsuperCarrier_16.png) | ![](./npcsuperCarrier_16.png) |
-| [npcsuperCarrier_32.png](./npcsuperCarrier_32.png) | ![](./npcsuperCarrier_32.png) |
-| [npctitan_16.png](./npctitan_16.png) | ![](./npctitan_16.png) |
-| [npctitan_32.png](./npctitan_32.png) | ![](./npctitan_32.png) |
-| [npfrigate_32.png](./npfrigate_32.png) | ![](./npfrigate_32.png) |
-| [ore_Site_16.png](./ore_Site_16.png) | ![](./ore_Site_16.png) |
-| [ownShip.png](./ownShip.png) | ![](./ownShip.png) |
-| [personalHangarArray.png](./personalHangarArray.png) | ![](./personalHangarArray.png) |
-| [planet.png](./planet.png) | ![](./planet.png) |
-| [playerStargateSmall.png](./playerStargateSmall.png) | ![](./playerStargateSmall.png) |
-| [protectiveSentry.png](./protectiveSentry.png) | ![](./protectiveSentry.png) |
-| [refineryLarge.png](./refineryLarge.png) | ![](./refineryLarge.png) |
-| [refineryMedium.png](./refineryMedium.png) | ![](./refineryMedium.png) |
-| [region.png](./region.png) | ![](./region.png) |
-| [relic_Site_16.png](./relic_Site_16.png) | ![](./relic_Site_16.png) |
-| [rookie_16.png](./rookie_16.png) | ![](./rookie_16.png) |
-| [rookie_32.png](./rookie_32.png) | ![](./rookie_32.png) |
-| [scannerProbe.png](./scannerProbe.png) | ![](./scannerProbe.png) |
-| [scatterContainerBeingHacked.png](./scatterContainerBeingHacked.png) | ![](./scatterContainerBeingHacked.png) |
-| [scatterContainerEmpty.png](./scatterContainerEmpty.png) | ![](./scatterContainerEmpty.png) |
-| [scatterContainerOpened.png](./scatterContainerOpened.png) | ![](./scatterContainerOpened.png) |
-| [scatterContainerUnopened.png](./scatterContainerUnopened.png) | ![](./scatterContainerUnopened.png) |
-| [secureCargoContainer.png](./secureCargoContainer.png) | ![](./secureCargoContainer.png) |
-| [self_16.png](./self_16.png) | ![](./self_16.png) |
-| [sentry.png](./sentry.png) | ![](./sentry.png) |
-| [shieldHardeningArray.png](./shieldHardeningArray.png) | ![](./shieldHardeningArray.png) |
-| [ship.png](./ship.png) | ![](./ship.png) |
-| [shipMaintenanceArray.png](./shipMaintenanceArray.png) | ![](./shipMaintenanceArray.png) |
-| [shipMaintenanceArrayXL.png](./shipMaintenanceArrayXL.png) | ![](./shipMaintenanceArrayXL.png) |
-| [shuttle_16.png](./shuttle_16.png) | ![](./shuttle_16.png) |
-| [shuttle_32.png](./shuttle_32.png) | ![](./shuttle_32.png) |
-| [silo.png](./silo.png) | ![](./silo.png) |
-| [solarSystem.png](./solarSystem.png) | ![](./solarSystem.png) |
-| [sovereigntyBlockadeUnit.png](./sovereigntyBlockadeUnit.png) | ![](./sovereigntyBlockadeUnit.png) |
-| [spawnContainer.png](./spawnContainer.png) | ![](./spawnContainer.png) |
-| [stargate.png](./stargate.png) | ![](./stargate.png) |
-| [stargate_32.png](./stargate_32.png) | ![](./stargate_32.png) |
-| [station.png](./station.png) | ![](./station.png) |
-| [stationUpgradePlatform.png](./stationUpgradePlatform.png) | ![](./stationUpgradePlatform.png) |
-| [station_32.png](./station_32.png) | ![](./station_32.png) |
-| [structure.png](./structure.png) | ![](./structure.png) |
-| [sun.png](./sun.png) | ![](./sun.png) |
-| [supercarrier_16.png](./supercarrier_16.png) | ![](./supercarrier_16.png) |
-| [superCarrier_32.png](./superCarrier_32.png) | ![](./superCarrier_32.png) |
-| [territorialClaimUnit.png](./territorialClaimUnit.png) | ![](./territorialClaimUnit.png) |
-| [titan_16.png](./titan_16.png) | ![](./titan_16.png) |
-| [titan_32.png](./titan_32.png) | ![](./titan_32.png) |
-| [Triglavian_16.png](./Triglavian_16.png) | ![](./Triglavian_16.png) |
-| [warpGate.png](./warpGate.png) | ![](./warpGate.png) |
-| [warpGate_32.png](./warpGate_32.png) | ![](./warpGate_32.png) |
-| [wormhole.png](./wormhole.png) | ![](./wormhole.png) |
-| [wreck.png](./wreck.png) | ![](./wreck.png) |
-| [wreckLooted.png](./wreckLooted.png) | ![](./wreckLooted.png) |
-| [wreckLootedNPC.png](./wreckLootedNPC.png) | ![](./wreckLootedNPC.png) |
-| [wreckNPC.png](./wreckNPC.png) | ![](./wreckNPC.png) |
+## Other Files
+1. [agentInSpace.png](./agentInSpace.png)
+2. [assemblyArray.png](./assemblyArray.png)
+3. [asteroidBelt.png](./asteroidBelt.png)
+4. [asteroidLarge.png](./asteroidLarge.png)
+5. [asteroidMedium.png](./asteroidMedium.png)
+6. [asteroidSmall.png](./asteroidSmall.png)
+7. [auditLogSecureContainer.png](./auditLogSecureContainer.png)
+8. [battery.png](./battery.png)
+9. [batteryElectronicWarfare.png](./batteryElectronicWarfare.png)
+10. [batteryEnergyNeutralizing.png](./batteryEnergyNeutralizing.png)
+11. [batterySensorDampening.png](./batterySensorDampening.png)
+12. [batteryStasisWebification.png](./batteryStasisWebification.png)
+13. [batteryWarpScrambling.png](./batteryWarpScrambling.png)
+14. [battleCruiser_16.png](./battleCruiser_16.png)
+15. [battleCruiser_32.png](./battleCruiser_32.png)
+16. [battleship_16.png](./battleship_16.png)
+17. [battleship_32.png](./battleship_32.png)
+18. [beacon.png](./beacon.png)
+19. [billboard.png](./billboard.png)
+20. [bomb.png](./bomb.png)
+21. [capsule_16.png](./capsule_16.png)
+22. [capsule_32.png](./capsule_32.png)
+23. [capturePointTower.png](./capturePointTower.png)
+24. [carrier_16.png](./carrier_16.png)
+25. [carrier_32.png](./carrier_32.png)
+26. [citadelExtraLarge.png](./citadelExtraLarge.png)
+27. [citadelLarge.png](./citadelLarge.png)
+28. [citadelMedium.png](./citadelMedium.png)
+29. [combatSite_16.png](./combatSite_16.png)
+30. [commandNode.png](./commandNode.png)
+31. [compressionArray.png](./compressionArray.png)
+32. [constellation.png](./constellation.png)
+33. [constructionPlatform.png](./constructionPlatform.png)
+34. [containerCargo.png](./containerCargo.png)
+35. [containerCargoNPC.png](./containerCargoNPC.png)
+36. [containerCargo_20x20.png](./containerCargo_20x20.png)
+37. [containerFreight.png](./containerFreight.png)
+38. [containerMission.png](./containerMission.png)
+39. [containerSpew.png](./containerSpew.png)
+40. [controlBunker.png](./controlBunker.png)
+41. [controlTower.png](./controlTower.png)
+42. [corpHangarArray.png](./corpHangarArray.png)
+43. [couplingArray.png](./couplingArray.png)
+44. [cruiser_16.png](./cruiser_16.png)
+45. [cruiser_32.png](./cruiser_32.png)
+46. [customsOffice.png](./customsOffice.png)
+47. [customsOfficeNPC.png](./customsOfficeNPC.png)
+48. [cynosuralBeacon.png](./cynosuralBeacon.png)
+49. [cynosuralField.png](./cynosuralField.png)
+50. [cynosuralGeneratorArray.png](./cynosuralGeneratorArray.png)
+51. [cynosuralJammer.png](./cynosuralJammer.png)
+52. [cynosuralSystemJammer.png](./cynosuralSystemJammer.png)
+53. [data_Site_16.png](./data_Site_16.png)
+54. [deadspaceOverseersBelongings.png](./deadspaceOverseersBelongings.png)
+55. [deadspaceOverseersSentry.png](./deadspaceOverseersSentry.png)
+56. [destroyer_16.png](./destroyer_16.png)
+57. [destroyer_32.png](./destroyer_32.png)
+58. [destructibleSentry.png](./destructibleSentry.png)
+59. [destructibleStationServices.png](./destructibleStationServices.png)
+60. [dreadnought_16.png](./dreadnought_16.png)
+61. [dreadnought_32.png](./dreadnought_32.png)
+62. [droneAttack_16.png](./droneAttack_16.png)
+63. [droneEW_16.png](./droneEW_16.png)
+64. [droneEW_L_16.png](./droneEW_L_16.png)
+65. [droneEW_M_16.png](./droneEW_M_16.png)
+66. [droneEW_S_16.png](./droneEW_S_16.png)
+67. [droneFighterBomber_16.png](./droneFighterBomber_16.png)
+68. [droneFighter_16.png](./droneFighter_16.png)
+69. [droneHeavyAttack_16.png](./droneHeavyAttack_16.png)
+70. [droneLightScout_16.png](./droneLightScout_16.png)
+71. [droneLogistics_16.png](./droneLogistics_16.png)
+72. [droneLogistics_L_16.png](./droneLogistics_L_16.png)
+73. [droneLogistics_M_16.png](./droneLogistics_M_16.png)
+74. [droneLogistics_S_16.png](./droneLogistics_S_16.png)
+75. [droneMediumScout_16.png](./droneMediumScout_16.png)
+76. [droneMining_16.png](./droneMining_16.png)
+77. [droneMining_M_16.png](./droneMining_M_16.png)
+78. [droneMining_S_16.png](./droneMining_S_16.png)
+79. [droneSalvaging_16.png](./droneSalvaging_16.png)
+80. [droneSalvaging_S_16.png](./droneSalvaging_S_16.png)
+81. [droneSentry_16.png](./droneSentry_16.png)
+82. [encounterSurveillanceSystem.png](./encounterSurveillanceSystem.png)
+83. [engineeringComplexExtraLarge.png](./engineeringComplexExtraLarge.png)
+84. [engineeringComplexExtraLargeNPC.png](./engineeringComplexExtraLargeNPC.png)
+85. [engineeringComplexLarge.png](./engineeringComplexLarge.png)
+86. [engineeringComplexMedium.png](./engineeringComplexMedium.png)
+87. [entity.png](./entity.png)
+88. [fighterSquadH_16.png](./fighterSquadH_16.png)
+89. [fighterSquadM_16.png](./fighterSquadM_16.png)
+90. [fighterSquad_16.png](./fighterSquad_16.png)
+91. [forceAuxiliary_16.png](./forceAuxiliary_16.png)
+92. [forceAuxiliary_32.png](./forceAuxiliary_32.png)
+93. [forceFieldArray.png](./forceFieldArray.png)
+94. [freighter_16.png](./freighter_16.png)
+95. [freighter_32.png](./freighter_32.png)
+96. [frigate_16.png](./frigate_16.png)
+97. [frigate_32.png](./frigate_32.png)
+98. [frozenCorpse.png](./frozenCorpse.png)
+99. [harvestableCloud.png](./harvestableCloud.png)
+100. [iceAsteroidLarge.png](./iceAsteroidLarge.png)
+101. [iceAsteroidMedium.png](./iceAsteroidMedium.png)
+102. [iceAsteroidSmall.png](./iceAsteroidSmall.png)
+103. [iceField.png](./iceField.png)
+104. [industrialCommand_16.png](./industrialCommand_16.png)
+105. [industrialCommand_32.png](./industrialCommand_32.png)
+106. [industrial_16.png](./industrial_16.png)
+107. [industrial_32.png](./industrial_32.png)
+108. [infrastructureHub.png](./infrastructureHub.png)
+109. [jumpPortalArray.png](./jumpPortalArray.png)
+110. [largeCollidableStructure.png](./largeCollidableStructure.png)
+111. [miningBarge_16.png](./miningBarge_16.png)
+112. [miningBarge_32.png](./miningBarge_32.png)
+113. [miningFrigate_16.png](./miningFrigate_16.png)
+114. [miningFrigate_32.png](./miningFrigate_32.png)
+115. [mobileCynosuralInhibitor.png](./mobileCynosuralInhibitor.png)
+116. [mobileJumpDisruptor.png](./mobileJumpDisruptor.png)
+117. [mobileLab.png](./mobileLab.png)
+118. [mobileMicroJumpUnit.png](./mobileMicroJumpUnit.png)
+119. [mobileReactor.png](./mobileReactor.png)
+120. [mobileReprocessingArray.png](./mobileReprocessingArray.png)
+121. [mobileScanInhibitor.png](./mobileScanInhibitor.png)
+122. [mobileSentry.png](./mobileSentry.png)
+123. [mobileSentryHybrid.png](./mobileSentryHybrid.png)
+124. [mobileSentryLaser.png](./mobileSentryLaser.png)
+125. [mobileSentryMissile.png](./mobileSentryMissile.png)
+126. [mobileSentryProjectile.png](./mobileSentryProjectile.png)
+127. [mobileSiphonUnit.png](./mobileSiphonUnit.png)
+128. [mobileStorage.png](./mobileStorage.png)
+129. [mobileTractorUnit.png](./mobileTractorUnit.png)
+130. [mobileWarpDisruptor.png](./mobileWarpDisruptor.png)
+131. [moon.png](./moon.png)
+132. [moonAsteroidJackpot.png](./moonAsteroidJackpot.png)
+133. [moonAsteroidRegular.png](./moonAsteroidRegular.png)
+134. [moonMining.png](./moonMining.png)
+135. [npcbattleCruiser_16.png](./npcbattleCruiser_16.png)
+136. [npcbattleCruiser_32.png](./npcbattleCruiser_32.png)
+137. [npcbattleship_16.png](./npcbattleship_16.png)
+138. [npcbattleship_32.png](./npcbattleship_32.png)
+139. [npccapsule_16.png](./npccapsule_16.png)
+140. [npccapsule_32.png](./npccapsule_32.png)
+141. [npccarrier_16.png](./npccarrier_16.png)
+142. [npccarrier_32.png](./npccarrier_32.png)
+143. [npccruiser_16.png](./npccruiser_16.png)
+144. [npccruiser_32.png](./npccruiser_32.png)
+145. [npcdestroyer_16.png](./npcdestroyer_16.png)
+146. [npcdestroyer_32.png](./npcdestroyer_32.png)
+147. [npcdreadnought_16.png](./npcdreadnought_16.png)
+148. [npcdreadnought_32.png](./npcdreadnought_32.png)
+149. [npcdroneAttack_16.png](./npcdroneAttack_16.png)
+150. [npcdroneEW_16.png](./npcdroneEW_16.png)
+151. [npcdroneFighterBomber_16.png](./npcdroneFighterBomber_16.png)
+152. [npcdroneFighter_16.png](./npcdroneFighter_16.png)
+153. [npcdroneLogistics_16.png](./npcdroneLogistics_16.png)
+154. [npcdroneMining_16.png](./npcdroneMining_16.png)
+155. [npcdroneSalvaging_16.png](./npcdroneSalvaging_16.png)
+156. [npcdroneSentry_16.png](./npcdroneSentry_16.png)
+157. [npcfighterSquad_16.png](./npcfighterSquad_16.png)
+158. [npcforceAuxiliary_16.png](./npcforceAuxiliary_16.png)
+159. [npcforceAuxiliary_32.png](./npcforceAuxiliary_32.png)
+160. [npcfreighter_16.png](./npcfreighter_16.png)
+161. [npcfreighter_32.png](./npcfreighter_32.png)
+162. [npcfrigate_16.png](./npcfrigate_16.png)
+163. [npcindustrialCommand_16.png](./npcindustrialCommand_16.png)
+164. [npcindustrialCommand_32.png](./npcindustrialCommand_32.png)
+165. [npcindustrial_16.png](./npcindustrial_16.png)
+166. [npcindustrial_32.png](./npcindustrial_32.png)
+167. [npcminingBarge_16.png](./npcminingBarge_16.png)
+168. [npcminingBarge_32.png](./npcminingBarge_32.png)
+169. [npcminingFrigate_16.png](./npcminingFrigate_16.png)
+170. [npcminingFrigate_32.png](./npcminingFrigate_32.png)
+171. [npcrookie_16.png](./npcrookie_16.png)
+172. [npcrookie_32.png](./npcrookie_32.png)
+173. [npcshuttle_16.png](./npcshuttle_16.png)
+174. [npcshuttle_32.png](./npcshuttle_32.png)
+175. [npcsuperCarrier_16.png](./npcsuperCarrier_16.png)
+176. [npcsuperCarrier_32.png](./npcsuperCarrier_32.png)
+177. [npctitan_16.png](./npctitan_16.png)
+178. [npctitan_32.png](./npctitan_32.png)
+179. [npfrigate_32.png](./npfrigate_32.png)
+180. [ore_Site_16.png](./ore_Site_16.png)
+181. [ownShip.png](./ownShip.png)
+182. [personalHangarArray.png](./personalHangarArray.png)
+183. [planet.png](./planet.png)
+184. [playerStargateSmall.png](./playerStargateSmall.png)
+185. [protectiveSentry.png](./protectiveSentry.png)
+186. [refineryLarge.png](./refineryLarge.png)
+187. [refineryMedium.png](./refineryMedium.png)
+188. [region.png](./region.png)
+189. [relic_Site_16.png](./relic_Site_16.png)
+190. [rookie_16.png](./rookie_16.png)
+191. [rookie_32.png](./rookie_32.png)
+192. [scannerProbe.png](./scannerProbe.png)
+193. [scatterContainerBeingHacked.png](./scatterContainerBeingHacked.png)
+194. [scatterContainerEmpty.png](./scatterContainerEmpty.png)
+195. [scatterContainerOpened.png](./scatterContainerOpened.png)
+196. [scatterContainerUnopened.png](./scatterContainerUnopened.png)
+197. [secureCargoContainer.png](./secureCargoContainer.png)
+198. [self_16.png](./self_16.png)
+199. [sentry.png](./sentry.png)
+200. [shieldHardeningArray.png](./shieldHardeningArray.png)
+201. [ship.png](./ship.png)
+202. [shipMaintenanceArray.png](./shipMaintenanceArray.png)
+203. [shipMaintenanceArrayXL.png](./shipMaintenanceArrayXL.png)
+204. [shuttle_16.png](./shuttle_16.png)
+205. [shuttle_32.png](./shuttle_32.png)
+206. [silo.png](./silo.png)
+207. [solarSystem.png](./solarSystem.png)
+208. [sovereigntyBlockadeUnit.png](./sovereigntyBlockadeUnit.png)
+209. [spawnContainer.png](./spawnContainer.png)
+210. [stargate.png](./stargate.png)
+211. [stargate_32.png](./stargate_32.png)
+212. [station.png](./station.png)
+213. [stationUpgradePlatform.png](./stationUpgradePlatform.png)
+214. [station_32.png](./station_32.png)
+215. [structure.png](./structure.png)
+216. [sun.png](./sun.png)
+217. [supercarrier_16.png](./supercarrier_16.png)
+218. [superCarrier_32.png](./superCarrier_32.png)
+219. [territorialClaimUnit.png](./territorialClaimUnit.png)
+220. [titan_16.png](./titan_16.png)
+221. [titan_32.png](./titan_32.png)
+222. [Triglavian_16.png](./Triglavian_16.png)
+223. [warpGate.png](./warpGate.png)
+224. [warpGate_32.png](./warpGate_32.png)
+225. [wormhole.png](./wormhole.png)
+226. [wreck.png](./wreck.png)
+227. [wreckLooted.png](./wreckLooted.png)
+228. [wreckLootedNPC.png](./wreckLootedNPC.png)
+229. [wreckNPC.png](./wreckNPC.png)

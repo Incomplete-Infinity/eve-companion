@@ -2,9 +2,7 @@
 
 # s/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [beam_dual.stl](./beam_dual.stl) | — |
-| [beam_medium.stl](./beam_medium.stl) | — |
+## Other Files
+1. [beam_dual.stl](./beam_dual.stl)
+2. [beam_medium.stl](./beam_medium.stl)

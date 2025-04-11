@@ -2,10 +2,8 @@
 
 # l/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [blast_electron.stl](./blast_electron.stl) | — |
-| [blast_ion.stl](./blast_ion.stl) | — |
-| [blast_neutron.stl](./blast_neutron.stl) | — |
+## Other Files
+1. [blast_electron.stl](./blast_electron.stl)
+2. [blast_ion.stl](./blast_ion.stl)
+3. [blast_neutron.stl](./blast_neutron.stl)

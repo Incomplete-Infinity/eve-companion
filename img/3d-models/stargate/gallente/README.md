@@ -2,11 +2,9 @@
 
 # gallente/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [gallente border.stl](./gallente border.stl) | — |
-| [gallente constellation.stl](./gallente constellation.stl) | — |
-| [gallente regional.stl](./gallente regional.stl) | — |
-| [gallente standard.stl](./gallente standard.stl) | — |
+## Other Files
+1. [gallente border.stl](./gallente border.stl)
+2. [gallente constellation.stl](./gallente constellation.stl)
+3. [gallente regional.stl](./gallente regional.stl)
+4. [gallente standard.stl](./gallente standard.stl)

@@ -2,10 +2,8 @@
 
 # upwell/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [skybreaker.stl](./skybreaker.stl) | — |
-| [stormbringer.stl](./stormbringer.stl) | — |
-| [thunderchild.stl](./thunderchild.stl) | — |
+## Other Files
+1. [skybreaker.stl](./skybreaker.stl)
+2. [stormbringer.stl](./stormbringer.stl)
+3. [thunderchild.stl](./thunderchild.stl)

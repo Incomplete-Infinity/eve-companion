@@ -2,9 +2,7 @@
 
 # command/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [orca.stl](./orca.stl) | — |
-| [porpoise.stl](./porpoise.stl) | — |
+## Other Files
+1. [orca.stl](./orca.stl)
+2. [porpoise.stl](./porpoise.stl)

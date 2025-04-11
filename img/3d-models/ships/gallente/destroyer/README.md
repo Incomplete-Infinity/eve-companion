@@ -2,12 +2,10 @@
 
 # destroyer/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [algos.stl](./algos.stl) | — |
-| [catalyst.stl](./catalyst.stl) | — |
-| [eris.stl](./eris.stl) | — |
-| [hecate.stl](./hecate.stl) | — |
-| [magus.stl](./magus.stl) | — |
+## Other Files
+1. [algos.stl](./algos.stl)
+2. [catalyst.stl](./catalyst.stl)
+3. [eris.stl](./eris.stl)
+4. [hecate.stl](./hecate.stl)
+5. [magus.stl](./magus.stl)

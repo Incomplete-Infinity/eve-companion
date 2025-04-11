@@ -2,82 +2,80 @@
 
 # Inventory/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [abyssalFilamentL1.png](./abyssalFilamentL1.png) | ![](./abyssalFilamentL1.png) |
-| [abyssalFilamentL2.png](./abyssalFilamentL2.png) | ![](./abyssalFilamentL2.png) |
-| [abyssalFilamentL3.png](./abyssalFilamentL3.png) | ![](./abyssalFilamentL3.png) |
-| [abyssalFilamentL4.png](./abyssalFilamentL4.png) | ![](./abyssalFilamentL4.png) |
-| [abyssalFilamentL5.png](./abyssalFilamentL5.png) | ![](./abyssalFilamentL5.png) |
-| [Asteroid_Bezdnacine.png](./Asteroid_Bezdnacine.png) | ![](./Asteroid_Bezdnacine.png) |
-| [Asteroid_Rakovene.png](./Asteroid_Rakovene.png) | ![](./Asteroid_Rakovene.png) |
-| [Asteroid_Talassonite.png](./Asteroid_Talassonite.png) | ![](./Asteroid_Talassonite.png) |
-| [biochemMaterials.png](./biochemMaterials.png) | ![](./biochemMaterials.png) |
-| [boosterAgencyDamage.png](./boosterAgencyDamage.png) | ![](./boosterAgencyDamage.png) |
-| [boosterAgencySpeed.png](./boosterAgencySpeed.png) | ![](./boosterAgencySpeed.png) |
-| [boosterAgencyTank.png](./boosterAgencyTank.png) | ![](./boosterAgencyTank.png) |
-| [crateAmarr.png](./crateAmarr.png) | ![](./crateAmarr.png) |
-| [CrateApotheosis+SKIN.png](./CrateApotheosis+SKIN.png) | ![](./CrateApotheosis+SKIN.png) |
-| [crateCaldari.png](./crateCaldari.png) | ![](./crateCaldari.png) |
-| [crateCapsuleerDay.png](./crateCapsuleerDay.png) | ![](./crateCapsuleerDay.png) |
-| [crateChristmas.png](./crateChristmas.png) | ![](./crateChristmas.png) |
-| [crateCrimsonHarvest.png](./crateCrimsonHarvest.png) | ![](./crateCrimsonHarvest.png) |
-| [crateGallente.png](./crateGallente.png) | ![](./crateGallente.png) |
-| [CrateGnosis+SKIN.png](./CrateGnosis+SKIN.png) | ![](./CrateGnosis+SKIN.png) |
-| [crateGuardiansGala.png](./crateGuardiansGala.png) | ![](./crateGuardiansGala.png) |
-| [crateMinmatar.png](./crateMinmatar.png) | ![](./crateMinmatar.png) |
-| [crateNewYears.png](./crateNewYears.png) | ![](./crateNewYears.png) |
-| [cratePermabandCap.png](./cratePermabandCap.png) | ![](./cratePermabandCap.png) |
-| [cratePermabandShirt.png](./cratePermabandShirt.png) | ![](./cratePermabandShirt.png) |
-| [CratePraxis+SKIN.png](./CratePraxis+SKIN.png) | ![](./CratePraxis+SKIN.png) |
-| [crateSilverMonocle.png](./crateSilverMonocle.png) | ![](./crateSilverMonocle.png) |
-| [CrateSunesis+SKIN.png](./CrateSunesis+SKIN.png) | ![](./CrateSunesis+SKIN.png) |
-| [crateXVICap.png](./crateXVICap.png) | ![](./crateXVICap.png) |
-| [crateXVIShirt.png](./crateXVIShirt.png) | ![](./crateXVIShirt.png) |
-| [crystallineIsogen10.png](./crystallineIsogen10.png) | ![](./crystallineIsogen10.png) |
-| [dataCore.png](./dataCore.png) | ![](./dataCore.png) |
-| [empireCrate.png](./empireCrate.png) | ![](./empireCrate.png) |
-| [FacialAugmentBlue.png](./FacialAugmentBlue.png) | ![](./FacialAugmentBlue.png) |
-| [FacialAugmentOrange.png](./FacialAugmentOrange.png) | ![](./FacialAugmentOrange.png) |
-| [FacialAugmentPurple.png](./FacialAugmentPurple.png) | ![](./FacialAugmentPurple.png) |
-| [FacialAugmentsPackBlue.png](./FacialAugmentsPackBlue.png) | ![](./FacialAugmentsPackBlue.png) |
-| [FacialAugmentsPackOrange.png](./FacialAugmentsPackOrange.png) | ![](./FacialAugmentsPackOrange.png) |
-| [FacialAugmentXVI.png](./FacialAugmentXVI.png) | ![](./FacialAugmentXVI.png) |
-| [gong_64.png](./gong_64.png) | ![](./gong_64.png) |
-| [holidayCrate.png](./holidayCrate.png) | ![](./holidayCrate.png) |
-| [IndustryDatacore.PNG](./IndustryDatacore.PNG) | ![](./IndustryDatacore.PNG) |
-| [Lattice_locked_dekaisogen.PNG](./Lattice_locked_dekaisogen.PNG) | ![](./Lattice_locked_dekaisogen.PNG) |
-| [moonAsteroid_JackpotR16.png](./moonAsteroid_JackpotR16.png) | ![](./moonAsteroid_JackpotR16.png) |
-| [moonAsteroid_JackpotR32.png](./moonAsteroid_JackpotR32.png) | ![](./moonAsteroid_JackpotR32.png) |
-| [moonAsteroid_JackpotR4.png](./moonAsteroid_JackpotR4.png) | ![](./moonAsteroid_JackpotR4.png) |
-| [moonAsteroid_JackpotR64.png](./moonAsteroid_JackpotR64.png) | ![](./moonAsteroid_JackpotR64.png) |
-| [moonAsteroid_JackpotR8.png](./moonAsteroid_JackpotR8.png) | ![](./moonAsteroid_JackpotR8.png) |
-| [moonAsteroid_R16.png](./moonAsteroid_R16.png) | ![](./moonAsteroid_R16.png) |
-| [moonAsteroid_R32.png](./moonAsteroid_R32.png) | ![](./moonAsteroid_R32.png) |
-| [moonAsteroid_R4.png](./moonAsteroid_R4.png) | ![](./moonAsteroid_R4.png) |
-| [moonAsteroid_R64.png](./moonAsteroid_R64.png) | ![](./moonAsteroid_R64.png) |
-| [moonAsteroid_R8.png](./moonAsteroid_R8.png) | ![](./moonAsteroid_R8.png) |
-| [mutaPlasmidResidue.png](./mutaPlasmidResidue.png) | ![](./mutaPlasmidResidue.png) |
-| [Radiation_absorption_thruster.PNG](./Radiation_absorption_thruster.PNG) | ![](./Radiation_absorption_thruster.PNG) |
-| [relicVault.png](./relicVault.png) | ![](./relicVault.png) |
-| [rwAsteroid.png](./rwAsteroid.png) | ![](./rwAsteroid.png) |
-| [serpentisContainerBronze_128.png](./serpentisContainerBronze_128.png) | ![](./serpentisContainerBronze_128.png) |
-| [serpentisContainerBronze_64.png](./serpentisContainerBronze_64.png) | ![](./serpentisContainerBronze_64.png) |
-| [serpentisContainerGold_128.png](./serpentisContainerGold_128.png) | ![](./serpentisContainerGold_128.png) |
-| [serpentisContainerGold_64.png](./serpentisContainerGold_64.png) | ![](./serpentisContainerGold_64.png) |
-| [serpentisContainerSilver_128.png](./serpentisContainerSilver_128.png) | ![](./serpentisContainerSilver_128.png) |
-| [serpentisContainerSilver_64.png](./serpentisContainerSilver_64.png) | ![](./serpentisContainerSilver_64.png) |
-| [serpentisContainer_64.png](./serpentisContainer_64.png) | ![](./serpentisContainer_64.png) |
-| [Singularity_radiation_convertor.png](./Singularity_radiation_convertor.png) | ![](./Singularity_radiation_convertor.png) |
-| [skillInjectorAlpha.png](./skillInjectorAlpha.png) | ![](./skillInjectorAlpha.png) |
-| [skillInjectorMini_64.png](./skillInjectorMini_64.png) | ![](./skillInjectorMini_64.png) |
-| [starterPack.png](./starterPack.png) | ![](./starterPack.png) |
-| [triglavianCommunicator_Perun.png](./triglavianCommunicator_Perun.png) | ![](./triglavianCommunicator_Perun.png) |
-| [triglavianCommunicator_Svarog.png](./triglavianCommunicator_Svarog.png) | ![](./triglavianCommunicator_Svarog.png) |
-| [triglavianCommunicator_Veles.png](./triglavianCommunicator_Veles.png) | ![](./triglavianCommunicator_Veles.png) |
-| [triglavianSurveyData.png](./triglavianSurveyData.png) | ![](./triglavianSurveyData.png) |
-| [Trinary_state_processor.png](./Trinary_state_processor.png) | ![](./Trinary_state_processor.png) |
-| [zeroPointCondensate.png](./zeroPointCondensate.png) | ![](./zeroPointCondensate.png) |
-| [Zero_point_field_manipulator.PNG](./Zero_point_field_manipulator.PNG) | ![](./Zero_point_field_manipulator.PNG) |
+## Other Files
+1. [abyssalFilamentL1.png](./abyssalFilamentL1.png)
+2. [abyssalFilamentL2.png](./abyssalFilamentL2.png)
+3. [abyssalFilamentL3.png](./abyssalFilamentL3.png)
+4. [abyssalFilamentL4.png](./abyssalFilamentL4.png)
+5. [abyssalFilamentL5.png](./abyssalFilamentL5.png)
+6. [Asteroid_Bezdnacine.png](./Asteroid_Bezdnacine.png)
+7. [Asteroid_Rakovene.png](./Asteroid_Rakovene.png)
+8. [Asteroid_Talassonite.png](./Asteroid_Talassonite.png)
+9. [biochemMaterials.png](./biochemMaterials.png)
+10. [boosterAgencyDamage.png](./boosterAgencyDamage.png)
+11. [boosterAgencySpeed.png](./boosterAgencySpeed.png)
+12. [boosterAgencyTank.png](./boosterAgencyTank.png)
+13. [crateAmarr.png](./crateAmarr.png)
+14. [CrateApotheosis+SKIN.png](./CrateApotheosis+SKIN.png)
+15. [crateCaldari.png](./crateCaldari.png)
+16. [crateCapsuleerDay.png](./crateCapsuleerDay.png)
+17. [crateChristmas.png](./crateChristmas.png)
+18. [crateCrimsonHarvest.png](./crateCrimsonHarvest.png)
+19. [crateGallente.png](./crateGallente.png)
+20. [CrateGnosis+SKIN.png](./CrateGnosis+SKIN.png)
+21. [crateGuardiansGala.png](./crateGuardiansGala.png)
+22. [crateMinmatar.png](./crateMinmatar.png)
+23. [crateNewYears.png](./crateNewYears.png)
+24. [cratePermabandCap.png](./cratePermabandCap.png)
+25. [cratePermabandShirt.png](./cratePermabandShirt.png)
+26. [CratePraxis+SKIN.png](./CratePraxis+SKIN.png)
+27. [crateSilverMonocle.png](./crateSilverMonocle.png)
+28. [CrateSunesis+SKIN.png](./CrateSunesis+SKIN.png)
+29. [crateXVICap.png](./crateXVICap.png)
+30. [crateXVIShirt.png](./crateXVIShirt.png)
+31. [crystallineIsogen10.png](./crystallineIsogen10.png)
+32. [dataCore.png](./dataCore.png)
+33. [empireCrate.png](./empireCrate.png)
+34. [FacialAugmentBlue.png](./FacialAugmentBlue.png)
+35. [FacialAugmentOrange.png](./FacialAugmentOrange.png)
+36. [FacialAugmentPurple.png](./FacialAugmentPurple.png)
+37. [FacialAugmentsPackBlue.png](./FacialAugmentsPackBlue.png)
+38. [FacialAugmentsPackOrange.png](./FacialAugmentsPackOrange.png)
+39. [FacialAugmentXVI.png](./FacialAugmentXVI.png)
+40. [gong_64.png](./gong_64.png)
+41. [holidayCrate.png](./holidayCrate.png)
+42. [IndustryDatacore.PNG](./IndustryDatacore.PNG)
+43. [Lattice_locked_dekaisogen.PNG](./Lattice_locked_dekaisogen.PNG)
+44. [moonAsteroid_JackpotR16.png](./moonAsteroid_JackpotR16.png)
+45. [moonAsteroid_JackpotR32.png](./moonAsteroid_JackpotR32.png)
+46. [moonAsteroid_JackpotR4.png](./moonAsteroid_JackpotR4.png)
+47. [moonAsteroid_JackpotR64.png](./moonAsteroid_JackpotR64.png)
+48. [moonAsteroid_JackpotR8.png](./moonAsteroid_JackpotR8.png)
+49. [moonAsteroid_R16.png](./moonAsteroid_R16.png)
+50. [moonAsteroid_R32.png](./moonAsteroid_R32.png)
+51. [moonAsteroid_R4.png](./moonAsteroid_R4.png)
+52. [moonAsteroid_R64.png](./moonAsteroid_R64.png)
+53. [moonAsteroid_R8.png](./moonAsteroid_R8.png)
+54. [mutaPlasmidResidue.png](./mutaPlasmidResidue.png)
+55. [Radiation_absorption_thruster.PNG](./Radiation_absorption_thruster.PNG)
+56. [relicVault.png](./relicVault.png)
+57. [rwAsteroid.png](./rwAsteroid.png)
+58. [serpentisContainerBronze_128.png](./serpentisContainerBronze_128.png)
+59. [serpentisContainerBronze_64.png](./serpentisContainerBronze_64.png)
+60. [serpentisContainerGold_128.png](./serpentisContainerGold_128.png)
+61. [serpentisContainerGold_64.png](./serpentisContainerGold_64.png)
+62. [serpentisContainerSilver_128.png](./serpentisContainerSilver_128.png)
+63. [serpentisContainerSilver_64.png](./serpentisContainerSilver_64.png)
+64. [serpentisContainer_64.png](./serpentisContainer_64.png)
+65. [Singularity_radiation_convertor.png](./Singularity_radiation_convertor.png)
+66. [skillInjectorAlpha.png](./skillInjectorAlpha.png)
+67. [skillInjectorMini_64.png](./skillInjectorMini_64.png)
+68. [starterPack.png](./starterPack.png)
+69. [triglavianCommunicator_Perun.png](./triglavianCommunicator_Perun.png)
+70. [triglavianCommunicator_Svarog.png](./triglavianCommunicator_Svarog.png)
+71. [triglavianCommunicator_Veles.png](./triglavianCommunicator_Veles.png)
+72. [triglavianSurveyData.png](./triglavianSurveyData.png)
+73. [Trinary_state_processor.png](./Trinary_state_processor.png)
+74. [zeroPointCondensate.png](./zeroPointCondensate.png)
+75. [Zero_point_field_manipulator.PNG](./Zero_point_field_manipulator.PNG)

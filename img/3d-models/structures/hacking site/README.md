@@ -2,9 +2,7 @@
 
 # hacking site/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [data large.stl](./data large.stl) | — |
-| [data small.stl](./data small.stl) | — |
+## Other Files
+1. [data large.stl](./data large.stl)
+2. [data small.stl](./data small.stl)

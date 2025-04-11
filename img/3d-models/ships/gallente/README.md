@@ -2,11 +2,9 @@
 
 # gallente/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [shuttle_gallente.stl](./shuttle_gallente.stl) | — |
+## Other Files
+1. [shuttle_gallente.stl](./shuttle_gallente.stl)
 
 ## Subfolders
 - [battlecruiser/](./battlecruiser/README.md)

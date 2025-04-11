@@ -2,12 +2,10 @@
 
 # battlecruiser/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [absolution.stl](./absolution.stl) | — |
-| [cyclone.stl](./cyclone.stl) | — |
-| [hurricane.stl](./hurricane.stl) | — |
-| [sleipnir.stl](./sleipnir.stl) | — |
-| [tornado.stl](./tornado.stl) | — |
+## Other Files
+1. [absolution.stl](./absolution.stl)
+2. [cyclone.stl](./cyclone.stl)
+3. [hurricane.stl](./hurricane.stl)
+4. [sleipnir.stl](./sleipnir.stl)
+5. [tornado.stl](./tornado.stl)

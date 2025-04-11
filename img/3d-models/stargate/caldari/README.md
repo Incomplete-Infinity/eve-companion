@@ -2,11 +2,9 @@
 
 # caldari/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [caldari border.stl](./caldari border.stl) | — |
-| [caldari constellation.stl](./caldari constellation.stl) | — |
-| [caldari regional.stl](./caldari regional.stl) | — |
-| [caldari standard.stl](./caldari standard.stl) | — |
+## Other Files
+1. [caldari border.stl](./caldari border.stl)
+2. [caldari constellation.stl](./caldari constellation.stl)
+3. [caldari regional.stl](./caldari regional.stl)
+4. [caldari standard.stl](./caldari standard.stl)

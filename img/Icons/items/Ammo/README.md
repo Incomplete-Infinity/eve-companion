@@ -2,12 +2,10 @@
 
 # Ammo/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [disintegratorChargeGluon.png](./disintegratorChargeGluon.png) | ![](./disintegratorChargeGluon.png) |
-| [disintegratorChargeLepton.png](./disintegratorChargeLepton.png) | ![](./disintegratorChargeLepton.png) |
-| [disintegratorChargeMystic.png](./disintegratorChargeMystic.png) | ![](./disintegratorChargeMystic.png) |
-| [disintegratorChargeOccult.png](./disintegratorChargeOccult.png) | ![](./disintegratorChargeOccult.png) |
-| [disintegratorChargeQuark.png](./disintegratorChargeQuark.png) | ![](./disintegratorChargeQuark.png) |
+## Other Files
+1. [disintegratorChargeGluon.png](./disintegratorChargeGluon.png)
+2. [disintegratorChargeLepton.png](./disintegratorChargeLepton.png)
+3. [disintegratorChargeMystic.png](./disintegratorChargeMystic.png)
+4. [disintegratorChargeOccult.png](./disintegratorChargeOccult.png)
+5. [disintegratorChargeQuark.png](./disintegratorChargeQuark.png)

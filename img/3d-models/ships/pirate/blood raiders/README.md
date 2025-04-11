@@ -2,9 +2,7 @@
 
 # blood raiders/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [Ashimmu.stl](./Ashimmu.stl) | — |
-| [cruor.stl](./cruor.stl) | — |
+## Other Files
+1. [Ashimmu.stl](./Ashimmu.stl)
+2. [cruor.stl](./cruor.stl)

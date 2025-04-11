@@ -2,8 +2,6 @@
 
 # capsule/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [capsule.stl](./capsule.stl) | — |
+## Other Files
+1. [capsule.stl](./capsule.stl)

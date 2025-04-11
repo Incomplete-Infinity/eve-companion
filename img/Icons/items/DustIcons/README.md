@@ -2,111 +2,109 @@
 
 # DustIcons/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [dust_icon_aug_voicetransmitter.png](./dust_icon_aug_voicetransmitter.png) | ![](./dust_icon_aug_voicetransmitter.png) |
-| [dust_icon_booster_skillgain.png](./dust_icon_booster_skillgain.png) | ![](./dust_icon_booster_skillgain.png) |
-| [dust_icon_dropsuit_am_h.png](./dust_icon_dropsuit_am_h.png) | ![](./dust_icon_dropsuit_am_h.png) |
-| [dust_icon_dropsuit_am_m.png](./dust_icon_dropsuit_am_m.png) | ![](./dust_icon_dropsuit_am_m.png) |
-| [dust_icon_dropsuit_am_s.png](./dust_icon_dropsuit_am_s.png) | ![](./dust_icon_dropsuit_am_s.png) |
-| [dust_icon_dropsuit_ca_h.png](./dust_icon_dropsuit_ca_h.png) | ![](./dust_icon_dropsuit_ca_h.png) |
-| [dust_icon_dropsuit_ca_m.png](./dust_icon_dropsuit_ca_m.png) | ![](./dust_icon_dropsuit_ca_m.png) |
-| [dust_icon_dropsuit_ca_s.png](./dust_icon_dropsuit_ca_s.png) | ![](./dust_icon_dropsuit_ca_s.png) |
-| [dust_icon_dropsuit_default.png](./dust_icon_dropsuit_default.png) | ![](./dust_icon_dropsuit_default.png) |
-| [dust_icon_dropsuit_ga_h.png](./dust_icon_dropsuit_ga_h.png) | ![](./dust_icon_dropsuit_ga_h.png) |
-| [dust_icon_dropsuit_ga_m.png](./dust_icon_dropsuit_ga_m.png) | ![](./dust_icon_dropsuit_ga_m.png) |
-| [dust_icon_dropsuit_ga_s.png](./dust_icon_dropsuit_ga_s.png) | ![](./dust_icon_dropsuit_ga_s.png) |
-| [dust_icon_dropsuit_mi_h.png](./dust_icon_dropsuit_mi_h.png) | ![](./dust_icon_dropsuit_mi_h.png) |
-| [dust_icon_dropsuit_mi_m.png](./dust_icon_dropsuit_mi_m.png) | ![](./dust_icon_dropsuit_mi_m.png) |
-| [dust_icon_dropsuit_mi_s.png](./dust_icon_dropsuit_mi_s.png) | ![](./dust_icon_dropsuit_mi_s.png) |
-| [dust_icon_eq_activescanner.png](./dust_icon_eq_activescanner.png) | ![](./dust_icon_eq_activescanner.png) |
-| [dust_icon_eq_cloakfield.png](./dust_icon_eq_cloakfield.png) | ![](./dust_icon_eq_cloakfield.png) |
-| [dust_icon_eq_dropuplink.png](./dust_icon_eq_dropuplink.png) | ![](./dust_icon_eq_dropuplink.png) |
-| [dust_icon_eq_naniteinjector.png](./dust_icon_eq_naniteinjector.png) | ![](./dust_icon_eq_naniteinjector.png) |
-| [dust_icon_eq_nanohive.png](./dust_icon_eq_nanohive.png) | ![](./dust_icon_eq_nanohive.png) |
-| [dust_icon_eq_nanohive_armor.png](./dust_icon_eq_nanohive_armor.png) | ![](./dust_icon_eq_nanohive_armor.png) |
-| [dust_icon_eq_nanohive_healer.png](./dust_icon_eq_nanohive_healer.png) | ![](./dust_icon_eq_nanohive_healer.png) |
-| [dust_icon_eq_remotearmorrepair.png](./dust_icon_eq_remotearmorrepair.png) | ![](./dust_icon_eq_remotearmorrepair.png) |
-| [dust_icon_eq_remoteexplosive.png](./dust_icon_eq_remoteexplosive.png) | ![](./dust_icon_eq_remoteexplosive.png) |
-| [dust_icon_inst_capacitor.png](./dust_icon_inst_capacitor.png) | ![](./dust_icon_inst_capacitor.png) |
-| [dust_icon_inst_clonereserveunit.png](./dust_icon_inst_clonereserveunit.png) | ![](./dust_icon_inst_clonereserveunit.png) |
-| [dust_icon_inst_supplydepot.png](./dust_icon_inst_supplydepot.png) | ![](./dust_icon_inst_supplydepot.png) |
-| [dust_icon_mod_armor_armorhardener.png](./dust_icon_mod_armor_armorhardener.png) | ![](./dust_icon_mod_armor_armorhardener.png) |
-| [dust_icon_mod_armor_armorplates.png](./dust_icon_mod_armor_armorplates.png) | ![](./dust_icon_mod_armor_armorplates.png) |
-| [dust_icon_mod_armor_armorrepair.png](./dust_icon_mod_armor_armorrepair.png) | ![](./dust_icon_mod_armor_armorrepair.png) |
-| [dust_icon_mod_armor_lightweightchassis.png](./dust_icon_mod_armor_lightweightchassis.png) | ![](./dust_icon_mod_armor_lightweightchassis.png) |
-| [dust_icon_mod_armor_remotearmorrepair.png](./dust_icon_mod_armor_remotearmorrepair.png) | ![](./dust_icon_mod_armor_remotearmorrepair.png) |
-| [dust_icon_mod_armor_resistance.png](./dust_icon_mod_armor_resistance.png) | ![](./dust_icon_mod_armor_resistance.png) |
-| [dust_icon_mod_bio_healthbooster.png](./dust_icon_mod_bio_healthbooster.png) | ![](./dust_icon_mod_bio_healthbooster.png) |
-| [dust_icon_mod_bio_healthextender.png](./dust_icon_mod_bio_healthextender.png) | ![](./dust_icon_mod_bio_healthextender.png) |
-| [dust_icon_mod_bio_healthregenerator.png](./dust_icon_mod_bio_healthregenerator.png) | ![](./dust_icon_mod_bio_healthregenerator.png) |
-| [dust_icon_mod_codebreaker.png](./dust_icon_mod_codebreaker.png) | ![](./dust_icon_mod_codebreaker.png) |
-| [dust_icon_mod_default.png](./dust_icon_mod_default.png) | ![](./dust_icon_mod_default.png) |
-| [dust_icon_mod_eng_cpuupgrade.png](./dust_icon_mod_eng_cpuupgrade.png) | ![](./dust_icon_mod_eng_cpuupgrade.png) |
-| [dust_icon_mod_eng_damagecontrol.png](./dust_icon_mod_eng_damagecontrol.png) | ![](./dust_icon_mod_eng_damagecontrol.png) |
-| [dust_icon_mod_eng_mobilecru.png](./dust_icon_mod_eng_mobilecru.png) | ![](./dust_icon_mod_eng_mobilecru.png) |
-| [dust_icon_mod_eng_pgupgrade.png](./dust_icon_mod_eng_pgupgrade.png) | ![](./dust_icon_mod_eng_pgupgrade.png) |
-| [dust_icon_mod_eng_powerdiagnostic.png](./dust_icon_mod_eng_powerdiagnostic.png) | ![](./dust_icon_mod_eng_powerdiagnostic.png) |
-| [dust_icon_mod_eng_precisionenhancer.png](./dust_icon_mod_eng_precisionenhancer.png) | ![](./dust_icon_mod_eng_precisionenhancer.png) |
-| [dust_icon_mod_eng_profiledampener.png](./dust_icon_mod_eng_profiledampener.png) | ![](./dust_icon_mod_eng_profiledampener.png) |
-| [dust_icon_mod_eng_rangeamplifier.png](./dust_icon_mod_eng_rangeamplifier.png) | ![](./dust_icon_mod_eng_rangeamplifier.png) |
-| [dust_icon_mod_eng_reactorcoreunit.png](./dust_icon_mod_eng_reactorcoreunit.png) | ![](./dust_icon_mod_eng_reactorcoreunit.png) |
-| [dust_icon_mod_extendammo.png](./dust_icon_mod_extendammo.png) | ![](./dust_icon_mod_extendammo.png) |
-| [dust_icon_mod_imp_movement.png](./dust_icon_mod_imp_movement.png) | ![](./dust_icon_mod_imp_movement.png) |
-| [dust_icon_mod_prop_afterburner.png](./dust_icon_mod_prop_afterburner.png) | ![](./dust_icon_mod_prop_afterburner.png) |
-| [dust_icon_mod_prop_boost.png](./dust_icon_mod_prop_boost.png) | ![](./dust_icon_mod_prop_boost.png) |
-| [dust_icon_mod_prop_overdrive.png](./dust_icon_mod_prop_overdrive.png) | ![](./dust_icon_mod_prop_overdrive.png) |
-| [dust_icon_mod_scanning_activescanner.png](./dust_icon_mod_scanning_activescanner.png) | ![](./dust_icon_mod_scanning_activescanner.png) |
-| [dust_icon_mod_shield_booster.png](./dust_icon_mod_shield_booster.png) | ![](./dust_icon_mod_shield_booster.png) |
-| [dust_icon_mod_shield_regulator.png](./dust_icon_mod_shield_regulator.png) | ![](./dust_icon_mod_shield_regulator.png) |
-| [dust_icon_mod_shield_remoteshieldrecharger.png](./dust_icon_mod_shield_remoteshieldrecharger.png) | ![](./dust_icon_mod_shield_remoteshieldrecharger.png) |
-| [dust_icon_mod_shield_resistance.png](./dust_icon_mod_shield_resistance.png) | ![](./dust_icon_mod_shield_resistance.png) |
-| [dust_icon_mod_shield_shieldbooster.png](./dust_icon_mod_shield_shieldbooster.png) | ![](./dust_icon_mod_shield_shieldbooster.png) |
-| [dust_icon_mod_shield_shieldextender.png](./dust_icon_mod_shield_shieldextender.png) | ![](./dust_icon_mod_shield_shieldextender.png) |
-| [dust_icon_mod_shield_shieldhardener.png](./dust_icon_mod_shield_shieldhardener.png) | ![](./dust_icon_mod_shield_shieldhardener.png) |
-| [dust_icon_mod_shield_shieldrecharger.png](./dust_icon_mod_shield_shieldrecharger.png) | ![](./dust_icon_mod_shield_shieldrecharger.png) |
-| [dust_icon_mod_wpnupg_damagemodifier.png](./dust_icon_mod_wpnupg_damagemodifier.png) | ![](./dust_icon_mod_wpnupg_damagemodifier.png) |
-| [dust_icon_skill.png](./dust_icon_skill.png) | ![](./dust_icon_skill.png) |
-| [dust_icon_tur_blaster.png](./dust_icon_tur_blaster.png) | ![](./dust_icon_tur_blaster.png) |
-| [dust_icon_tur_blaster_l.png](./dust_icon_tur_blaster_l.png) | ![](./dust_icon_tur_blaster_l.png) |
-| [dust_icon_tur_blaster_s.png](./dust_icon_tur_blaster_s.png) | ![](./dust_icon_tur_blaster_s.png) |
-| [dust_icon_tur_default.png](./dust_icon_tur_default.png) | ![](./dust_icon_tur_default.png) |
-| [dust_icon_tur_missile.png](./dust_icon_tur_missile.png) | ![](./dust_icon_tur_missile.png) |
-| [dust_icon_tur_missile_l.png](./dust_icon_tur_missile_l.png) | ![](./dust_icon_tur_missile_l.png) |
-| [dust_icon_tur_missile_s.png](./dust_icon_tur_missile_s.png) | ![](./dust_icon_tur_missile_s.png) |
-| [dust_icon_tur_railgun_l.png](./dust_icon_tur_railgun_l.png) | ![](./dust_icon_tur_railgun_l.png) |
-| [dust_icon_tur_railgun_s.png](./dust_icon_tur_railgun_s.png) | ![](./dust_icon_tur_railgun_s.png) |
-| [dust_icon_veh_dropship_ca.png](./dust_icon_veh_dropship_ca.png) | ![](./dust_icon_veh_dropship_ca.png) |
-| [dust_icon_veh_dropship_ga.png](./dust_icon_veh_dropship_ga.png) | ![](./dust_icon_veh_dropship_ga.png) |
-| [dust_icon_veh_hav_ca.png](./dust_icon_veh_hav_ca.png) | ![](./dust_icon_veh_hav_ca.png) |
-| [dust_icon_veh_hav_ga.png](./dust_icon_veh_hav_ga.png) | ![](./dust_icon_veh_hav_ga.png) |
-| [dust_icon_veh_lav_ca.png](./dust_icon_veh_lav_ca.png) | ![](./dust_icon_veh_lav_ca.png) |
-| [dust_icon_veh_lav_ga.png](./dust_icon_veh_lav_ga.png) | ![](./dust_icon_veh_lav_ga.png) |
-| [dust_icon_veh_mcc.png](./dust_icon_veh_mcc.png) | ![](./dust_icon_veh_mcc.png) |
-| [dust_icon_veh_rdv.png](./dust_icon_veh_rdv.png) | ![](./dust_icon_veh_rdv.png) |
-| [dust_icon_wpn_assultrifle.png](./dust_icon_wpn_assultrifle.png) | ![](./dust_icon_wpn_assultrifle.png) |
-| [dust_icon_wpn_avgrenade.png](./dust_icon_wpn_avgrenade.png) | ![](./dust_icon_wpn_avgrenade.png) |
-| [dust_icon_wpn_boltpistol.png](./dust_icon_wpn_boltpistol.png) | ![](./dust_icon_wpn_boltpistol.png) |
-| [dust_icon_wpn_combatrifle.png](./dust_icon_wpn_combatrifle.png) | ![](./dust_icon_wpn_combatrifle.png) |
-| [dust_icon_wpn_flaylockpistol.png](./dust_icon_wpn_flaylockpistol.png) | ![](./dust_icon_wpn_flaylockpistol.png) |
-| [dust_icon_wpn_forgegun.png](./dust_icon_wpn_forgegun.png) | ![](./dust_icon_wpn_forgegun.png) |
-| [dust_icon_wpn_heavymachinegun.png](./dust_icon_wpn_heavymachinegun.png) | ![](./dust_icon_wpn_heavymachinegun.png) |
-| [dust_icon_wpn_hmg_std.png](./dust_icon_wpn_hmg_std.png) | ![](./dust_icon_wpn_hmg_std.png) |
-| [dust_icon_wpn_ionpistol.png](./dust_icon_wpn_ionpistol.png) | ![](./dust_icon_wpn_ionpistol.png) |
-| [dust_icon_wpn_knife.png](./dust_icon_wpn_knife.png) | ![](./dust_icon_wpn_knife.png) |
-| [dust_icon_wpn_laserrifle.png](./dust_icon_wpn_laserrifle.png) | ![](./dust_icon_wpn_laserrifle.png) |
-| [dust_icon_wpn_locusgrenade.png](./dust_icon_wpn_locusgrenade.png) | ![](./dust_icon_wpn_locusgrenade.png) |
-| [dust_icon_wpn_magsecsmg.png](./dust_icon_wpn_magsecsmg.png) | ![](./dust_icon_wpn_magsecsmg.png) |
-| [dust_icon_wpn_massdriver.png](./dust_icon_wpn_massdriver.png) | ![](./dust_icon_wpn_massdriver.png) |
-| [dust_icon_wpn_miasmagrenade.png](./dust_icon_wpn_miasmagrenade.png) | ![](./dust_icon_wpn_miasmagrenade.png) |
-| [dust_icon_wpn_plasmacannon.png](./dust_icon_wpn_plasmacannon.png) | ![](./dust_icon_wpn_plasmacannon.png) |
-| [dust_icon_wpn_precisionrifle.png](./dust_icon_wpn_precisionrifle.png) | ![](./dust_icon_wpn_precisionrifle.png) |
-| [dust_icon_wpn_railrifle.png](./dust_icon_wpn_railrifle.png) | ![](./dust_icon_wpn_railrifle.png) |
-| [dust_icon_wpn_scramblerpistol.png](./dust_icon_wpn_scramblerpistol.png) | ![](./dust_icon_wpn_scramblerpistol.png) |
-| [dust_icon_wpn_scramblerrifle.png](./dust_icon_wpn_scramblerrifle.png) | ![](./dust_icon_wpn_scramblerrifle.png) |
-| [dust_icon_wpn_shotgun.png](./dust_icon_wpn_shotgun.png) | ![](./dust_icon_wpn_shotgun.png) |
-| [dust_icon_wpn_sinperrifle.png](./dust_icon_wpn_sinperrifle.png) | ![](./dust_icon_wpn_sinperrifle.png) |
-| [dust_icon_wpn_submachinegun.png](./dust_icon_wpn_submachinegun.png) | ![](./dust_icon_wpn_submachinegun.png) |
-| [dust_icon_wpn_swarmlauncher.png](./dust_icon_wpn_swarmlauncher.png) | ![](./dust_icon_wpn_swarmlauncher.png) |
+## Other Files
+1. [dust_icon_aug_voicetransmitter.png](./dust_icon_aug_voicetransmitter.png)
+2. [dust_icon_booster_skillgain.png](./dust_icon_booster_skillgain.png)
+3. [dust_icon_dropsuit_am_h.png](./dust_icon_dropsuit_am_h.png)
+4. [dust_icon_dropsuit_am_m.png](./dust_icon_dropsuit_am_m.png)
+5. [dust_icon_dropsuit_am_s.png](./dust_icon_dropsuit_am_s.png)
+6. [dust_icon_dropsuit_ca_h.png](./dust_icon_dropsuit_ca_h.png)
+7. [dust_icon_dropsuit_ca_m.png](./dust_icon_dropsuit_ca_m.png)
+8. [dust_icon_dropsuit_ca_s.png](./dust_icon_dropsuit_ca_s.png)
+9. [dust_icon_dropsuit_default.png](./dust_icon_dropsuit_default.png)
+10. [dust_icon_dropsuit_ga_h.png](./dust_icon_dropsuit_ga_h.png)
+11. [dust_icon_dropsuit_ga_m.png](./dust_icon_dropsuit_ga_m.png)
+12. [dust_icon_dropsuit_ga_s.png](./dust_icon_dropsuit_ga_s.png)
+13. [dust_icon_dropsuit_mi_h.png](./dust_icon_dropsuit_mi_h.png)
+14. [dust_icon_dropsuit_mi_m.png](./dust_icon_dropsuit_mi_m.png)
+15. [dust_icon_dropsuit_mi_s.png](./dust_icon_dropsuit_mi_s.png)
+16. [dust_icon_eq_activescanner.png](./dust_icon_eq_activescanner.png)
+17. [dust_icon_eq_cloakfield.png](./dust_icon_eq_cloakfield.png)
+18. [dust_icon_eq_dropuplink.png](./dust_icon_eq_dropuplink.png)
+19. [dust_icon_eq_naniteinjector.png](./dust_icon_eq_naniteinjector.png)
+20. [dust_icon_eq_nanohive.png](./dust_icon_eq_nanohive.png)
+21. [dust_icon_eq_nanohive_armor.png](./dust_icon_eq_nanohive_armor.png)
+22. [dust_icon_eq_nanohive_healer.png](./dust_icon_eq_nanohive_healer.png)
+23. [dust_icon_eq_remotearmorrepair.png](./dust_icon_eq_remotearmorrepair.png)
+24. [dust_icon_eq_remoteexplosive.png](./dust_icon_eq_remoteexplosive.png)
+25. [dust_icon_inst_capacitor.png](./dust_icon_inst_capacitor.png)
+26. [dust_icon_inst_clonereserveunit.png](./dust_icon_inst_clonereserveunit.png)
+27. [dust_icon_inst_supplydepot.png](./dust_icon_inst_supplydepot.png)
+28. [dust_icon_mod_armor_armorhardener.png](./dust_icon_mod_armor_armorhardener.png)
+29. [dust_icon_mod_armor_armorplates.png](./dust_icon_mod_armor_armorplates.png)
+30. [dust_icon_mod_armor_armorrepair.png](./dust_icon_mod_armor_armorrepair.png)
+31. [dust_icon_mod_armor_lightweightchassis.png](./dust_icon_mod_armor_lightweightchassis.png)
+32. [dust_icon_mod_armor_remotearmorrepair.png](./dust_icon_mod_armor_remotearmorrepair.png)
+33. [dust_icon_mod_armor_resistance.png](./dust_icon_mod_armor_resistance.png)
+34. [dust_icon_mod_bio_healthbooster.png](./dust_icon_mod_bio_healthbooster.png)
+35. [dust_icon_mod_bio_healthextender.png](./dust_icon_mod_bio_healthextender.png)
+36. [dust_icon_mod_bio_healthregenerator.png](./dust_icon_mod_bio_healthregenerator.png)
+37. [dust_icon_mod_codebreaker.png](./dust_icon_mod_codebreaker.png)
+38. [dust_icon_mod_default.png](./dust_icon_mod_default.png)
+39. [dust_icon_mod_eng_cpuupgrade.png](./dust_icon_mod_eng_cpuupgrade.png)
+40. [dust_icon_mod_eng_damagecontrol.png](./dust_icon_mod_eng_damagecontrol.png)
+41. [dust_icon_mod_eng_mobilecru.png](./dust_icon_mod_eng_mobilecru.png)
+42. [dust_icon_mod_eng_pgupgrade.png](./dust_icon_mod_eng_pgupgrade.png)
+43. [dust_icon_mod_eng_powerdiagnostic.png](./dust_icon_mod_eng_powerdiagnostic.png)
+44. [dust_icon_mod_eng_precisionenhancer.png](./dust_icon_mod_eng_precisionenhancer.png)
+45. [dust_icon_mod_eng_profiledampener.png](./dust_icon_mod_eng_profiledampener.png)
+46. [dust_icon_mod_eng_rangeamplifier.png](./dust_icon_mod_eng_rangeamplifier.png)
+47. [dust_icon_mod_eng_reactorcoreunit.png](./dust_icon_mod_eng_reactorcoreunit.png)
+48. [dust_icon_mod_extendammo.png](./dust_icon_mod_extendammo.png)
+49. [dust_icon_mod_imp_movement.png](./dust_icon_mod_imp_movement.png)
+50. [dust_icon_mod_prop_afterburner.png](./dust_icon_mod_prop_afterburner.png)
+51. [dust_icon_mod_prop_boost.png](./dust_icon_mod_prop_boost.png)
+52. [dust_icon_mod_prop_overdrive.png](./dust_icon_mod_prop_overdrive.png)
+53. [dust_icon_mod_scanning_activescanner.png](./dust_icon_mod_scanning_activescanner.png)
+54. [dust_icon_mod_shield_booster.png](./dust_icon_mod_shield_booster.png)
+55. [dust_icon_mod_shield_regulator.png](./dust_icon_mod_shield_regulator.png)
+56. [dust_icon_mod_shield_remoteshieldrecharger.png](./dust_icon_mod_shield_remoteshieldrecharger.png)
+57. [dust_icon_mod_shield_resistance.png](./dust_icon_mod_shield_resistance.png)
+58. [dust_icon_mod_shield_shieldbooster.png](./dust_icon_mod_shield_shieldbooster.png)
+59. [dust_icon_mod_shield_shieldextender.png](./dust_icon_mod_shield_shieldextender.png)
+60. [dust_icon_mod_shield_shieldhardener.png](./dust_icon_mod_shield_shieldhardener.png)
+61. [dust_icon_mod_shield_shieldrecharger.png](./dust_icon_mod_shield_shieldrecharger.png)
+62. [dust_icon_mod_wpnupg_damagemodifier.png](./dust_icon_mod_wpnupg_damagemodifier.png)
+63. [dust_icon_skill.png](./dust_icon_skill.png)
+64. [dust_icon_tur_blaster.png](./dust_icon_tur_blaster.png)
+65. [dust_icon_tur_blaster_l.png](./dust_icon_tur_blaster_l.png)
+66. [dust_icon_tur_blaster_s.png](./dust_icon_tur_blaster_s.png)
+67. [dust_icon_tur_default.png](./dust_icon_tur_default.png)
+68. [dust_icon_tur_missile.png](./dust_icon_tur_missile.png)
+69. [dust_icon_tur_missile_l.png](./dust_icon_tur_missile_l.png)
+70. [dust_icon_tur_missile_s.png](./dust_icon_tur_missile_s.png)
+71. [dust_icon_tur_railgun_l.png](./dust_icon_tur_railgun_l.png)
+72. [dust_icon_tur_railgun_s.png](./dust_icon_tur_railgun_s.png)
+73. [dust_icon_veh_dropship_ca.png](./dust_icon_veh_dropship_ca.png)
+74. [dust_icon_veh_dropship_ga.png](./dust_icon_veh_dropship_ga.png)
+75. [dust_icon_veh_hav_ca.png](./dust_icon_veh_hav_ca.png)
+76. [dust_icon_veh_hav_ga.png](./dust_icon_veh_hav_ga.png)
+77. [dust_icon_veh_lav_ca.png](./dust_icon_veh_lav_ca.png)
+78. [dust_icon_veh_lav_ga.png](./dust_icon_veh_lav_ga.png)
+79. [dust_icon_veh_mcc.png](./dust_icon_veh_mcc.png)
+80. [dust_icon_veh_rdv.png](./dust_icon_veh_rdv.png)
+81. [dust_icon_wpn_assultrifle.png](./dust_icon_wpn_assultrifle.png)
+82. [dust_icon_wpn_avgrenade.png](./dust_icon_wpn_avgrenade.png)
+83. [dust_icon_wpn_boltpistol.png](./dust_icon_wpn_boltpistol.png)
+84. [dust_icon_wpn_combatrifle.png](./dust_icon_wpn_combatrifle.png)
+85. [dust_icon_wpn_flaylockpistol.png](./dust_icon_wpn_flaylockpistol.png)
+86. [dust_icon_wpn_forgegun.png](./dust_icon_wpn_forgegun.png)
+87. [dust_icon_wpn_heavymachinegun.png](./dust_icon_wpn_heavymachinegun.png)
+88. [dust_icon_wpn_hmg_std.png](./dust_icon_wpn_hmg_std.png)
+89. [dust_icon_wpn_ionpistol.png](./dust_icon_wpn_ionpistol.png)
+90. [dust_icon_wpn_knife.png](./dust_icon_wpn_knife.png)
+91. [dust_icon_wpn_laserrifle.png](./dust_icon_wpn_laserrifle.png)
+92. [dust_icon_wpn_locusgrenade.png](./dust_icon_wpn_locusgrenade.png)
+93. [dust_icon_wpn_magsecsmg.png](./dust_icon_wpn_magsecsmg.png)
+94. [dust_icon_wpn_massdriver.png](./dust_icon_wpn_massdriver.png)
+95. [dust_icon_wpn_miasmagrenade.png](./dust_icon_wpn_miasmagrenade.png)
+96. [dust_icon_wpn_plasmacannon.png](./dust_icon_wpn_plasmacannon.png)
+97. [dust_icon_wpn_precisionrifle.png](./dust_icon_wpn_precisionrifle.png)
+98. [dust_icon_wpn_railrifle.png](./dust_icon_wpn_railrifle.png)
+99. [dust_icon_wpn_scramblerpistol.png](./dust_icon_wpn_scramblerpistol.png)
+100. [dust_icon_wpn_scramblerrifle.png](./dust_icon_wpn_scramblerrifle.png)
+101. [dust_icon_wpn_shotgun.png](./dust_icon_wpn_shotgun.png)
+102. [dust_icon_wpn_sinperrifle.png](./dust_icon_wpn_sinperrifle.png)
+103. [dust_icon_wpn_submachinegun.png](./dust_icon_wpn_submachinegun.png)
+104. [dust_icon_wpn_swarmlauncher.png](./dust_icon_wpn_swarmlauncher.png)

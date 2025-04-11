@@ -2,10 +2,8 @@
 
 # industrial/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [hoarder.stl](./hoarder.stl) | — |
-| [mammoth.stl](./mammoth.stl) | — |
-| [wreathe.stl](./wreathe.stl) | — |
+## Other Files
+1. [hoarder.stl](./hoarder.stl)
+2. [mammoth.stl](./mammoth.stl)
+3. [wreathe.stl](./wreathe.stl)

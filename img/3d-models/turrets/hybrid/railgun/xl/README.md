@@ -2,8 +2,6 @@
 
 # xl/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [rail_1000mmdual.stl](./rail_1000mmdual.stl) | — |
+## Other Files
+1. [rail_1000mmdual.stl](./rail_1000mmdual.stl)

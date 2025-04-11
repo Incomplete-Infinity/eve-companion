@@ -2,9 +2,7 @@
 
 # spinner/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [index.html](./index.html) | — |
-| [script.js](./script.js) | — |
+## Other Files
+1. [index.html](./index.html)
+2. [script.js](./script.js)

@@ -2,13 +2,11 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [abaddon.stl](./abaddon.stl) | — |
-| [apocalypse.stl](./apocalypse.stl) | — |
-| [apocalypse_old.stl](./apocalypse_old.stl) | — |
-| [armageddon.stl](./armageddon.stl) | — |
-| [paladin.stl](./paladin.stl) | — |
-| [redeemer.stl](./redeemer.stl) | — |
+## Other Files
+1. [abaddon.stl](./abaddon.stl)
+2. [apocalypse.stl](./apocalypse.stl)
+3. [apocalypse_old.stl](./apocalypse_old.stl)
+4. [armageddon.stl](./armageddon.stl)
+5. [paladin.stl](./paladin.stl)
+6. [redeemer.stl](./redeemer.stl)

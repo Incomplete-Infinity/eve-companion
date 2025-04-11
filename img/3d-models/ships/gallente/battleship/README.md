@@ -2,13 +2,11 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [dominix.stl](./dominix.stl) | — |
-| [dominix_old.stl](./dominix_old.stl) | — |
-| [hyperion.stl](./hyperion.stl) | — |
-| [kronos.stl](./kronos.stl) | — |
-| [megathron.stl](./megathron.stl) | — |
-| [sin.stl](./sin.stl) | — |
+## Other Files
+1. [dominix.stl](./dominix.stl)
+2. [dominix_old.stl](./dominix_old.stl)
+3. [hyperion.stl](./hyperion.stl)
+4. [kronos.stl](./kronos.stl)
+5. [megathron.stl](./megathron.stl)
+6. [sin.stl](./sin.stl)

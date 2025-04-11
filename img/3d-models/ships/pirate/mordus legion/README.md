@@ -2,10 +2,8 @@
 
 # mordus legion/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [barghest.stl](./barghest.stl) | — |
-| [garmur.stl](./garmur.stl) | — |
-| [orthrus.stl](./orthrus.stl) | — |
+## Other Files
+1. [barghest.stl](./barghest.stl)
+2. [garmur.stl](./garmur.stl)
+3. [orthrus.stl](./orthrus.stl)

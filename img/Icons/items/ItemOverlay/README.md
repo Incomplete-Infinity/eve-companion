@@ -2,10 +2,8 @@
 
 # ItemOverlay/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [abyssal.png](./abyssal.png) | ![](./abyssal.png) |
-| [nes.png](./nes.png) | ![](./nes.png) |
-| [timeLimited.png](./timeLimited.png) | ![](./timeLimited.png) |
+## Other Files
+1. [abyssal.png](./abyssal.png)
+2. [nes.png](./nes.png)
+3. [timeLimited.png](./timeLimited.png)

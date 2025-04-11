@@ -2,12 +2,10 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [golem.stl](./golem.stl) | — |
-| [raven.stl](./raven.stl) | — |
-| [rokh.stl](./rokh.stl) | — |
-| [scorpion.stl](./scorpion.stl) | — |
-| [widow.stl](./widow.stl) | — |
+## Other Files
+1. [golem.stl](./golem.stl)
+2. [raven.stl](./raven.stl)
+3. [rokh.stl](./rokh.stl)
+4. [scorpion.stl](./scorpion.stl)
+5. [widow.stl](./widow.stl)

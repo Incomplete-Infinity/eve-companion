@@ -2,13 +2,11 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [maelstorm.stl](./maelstorm.stl) | — |
-| [panther.stl](./panther.stl) | — |
-| [tempest.stl](./tempest.stl) | — |
-| [typhoon (old).stl](./typhoon (old).stl) | — |
-| [typhoon.stl](./typhoon.stl) | — |
-| [vargur.stl](./vargur.stl) | — |
+## Other Files
+1. [maelstorm.stl](./maelstorm.stl)
+2. [panther.stl](./panther.stl)
+3. [tempest.stl](./tempest.stl)
+4. [typhoon (old).stl](./typhoon (old).stl)
+5. [typhoon.stl](./typhoon.stl)
+6. [vargur.stl](./vargur.stl)

@@ -2,11 +2,9 @@
 
 # battlecruiser/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [damnation.stl](./damnation.stl) | — |
-| [harbringer.stl](./harbringer.stl) | — |
-| [oracle.stl](./oracle.stl) | — |
-| [prophecy.stl](./prophecy.stl) | — |
+## Other Files
+1. [damnation.stl](./damnation.stl)
+2. [harbringer.stl](./harbringer.stl)
+3. [oracle.stl](./oracle.stl)
+4. [prophecy.stl](./prophecy.stl)

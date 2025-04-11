@@ -2,9 +2,7 @@
 
 # capital/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bowhead.stl](./bowhead.stl) | — |
-| [rorqual.stl](./rorqual.stl) | — |
+## Other Files
+1. [bowhead.stl](./bowhead.stl)
+2. [rorqual.stl](./rorqual.stl)

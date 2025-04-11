@@ -2,13 +2,11 @@
 
 # capital/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [fenrir.stl](./fenrir.stl) | — |
-| [hel.stl](./hel.stl) | — |
-| [lif.stl](./lif.stl) | — |
-| [naglfar.stl](./naglfar.stl) | — |
-| [nidhoggur.stl](./nidhoggur.stl) | — |
-| [ragnarok.stl](./ragnarok.stl) | — |
+## Other Files
+1. [fenrir.stl](./fenrir.stl)
+2. [hel.stl](./hel.stl)
+3. [lif.stl](./lif.stl)
+4. [naglfar.stl](./naglfar.stl)
+5. [nidhoggur.stl](./nidhoggur.stl)
+6. [ragnarok.stl](./ragnarok.stl)

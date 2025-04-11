@@ -20,32 +20,51 @@ function generateReadme(dir, parent = null) {
 
   const lines = [];
 
-  // Breadcrumb
   if (parent) lines.push(`📁 [⬅ Back to ${parent}/](../README.md)\n`);
 
-  // Title
   lines.push(`# ${path.basename(dir)}/\n`);
 
-  // Files
-  if (files.length) {
-    lines.push(`## Files\n`);
-    lines.push(`| Name | Preview |`);
-    lines.push(`|------|---------|`);
+  // Group SVGs as ship views
+  const groupedImages = {};
 
-    files.forEach(f => {
-      const ext = path.extname(f.name).toLowerCase();
-      const link = `./${f.name}`;
+  files.forEach(f => {
+    const ext = path.extname(f.name).toLowerCase();
+    if (ext !== '.svg') return;
 
-      if (IMAGE_EXTS.includes(ext)) {
-        lines.push(`| [${f.name}](${link}) | ![](${link}) |`);
-      } else {
-        lines.push(`| [${f.name}](${link}) | — |`);
-      }
+    const base = f.name.replace(/_(top|profile)\.svg$/, '');
+    const type = f.name.includes('_top') ? 'top' : f.name.includes('_profile') ? 'profile' : null;
+
+    if (!groupedImages[base]) groupedImages[base] = {};
+    if (type) groupedImages[base][type] = f.name;
+  });
+
+  const imageKeys = Object.keys(groupedImages);
+  const regularFiles = files.filter(f =>
+    !f.name.endsWith('_top.svg') &&
+    !f.name.endsWith('_profile.svg') &&
+    f.name !== 'README.md'
+  );
+
+  if (imageKeys.length > 0) {
+    lines.push(`## Ship SVGs\n`);
+    lines.push(`| Ship | Top View | Profile View |`);
+    lines.push(`|------|-----------|---------------|`);
+
+    imageKeys.forEach(key => {
+      const top = groupedImages[key].top ? `![](${groupedImages[key].top})` : '—';
+      const profile = groupedImages[key].profile ? `![](${groupedImages[key].profile})` : '—';
+      lines.push(`| ${key} | ${top} | ${profile} |`);
     });
   }
 
-  // Folders
-  if (folders.length) {
+  if (regularFiles.length > 0) {
+    lines.push(`\n## Other Files`);
+    regularFiles.forEach((f, i) => {
+      lines.push(`${i + 1}. [${f.name}](./${f.name})`);
+    });
+  }
+
+  if (folders.length > 0) {
     lines.push(`\n## Subfolders`);
     folders.forEach(sub =>
       lines.push(`- [${sub.name}/](./${sub.name}/README.md)`)
@@ -54,7 +73,6 @@ function generateReadme(dir, parent = null) {
 
   fs.writeFileSync(path.join(dir, 'README.md'), lines.join('\n'), 'utf-8');
 
-  // Recurse
   folders.forEach(sub =>
     generateReadme(path.join(dir, sub.name), path.basename(dir))
   );

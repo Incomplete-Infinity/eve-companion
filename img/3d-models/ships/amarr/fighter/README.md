@@ -2,9 +2,7 @@
 
 # fighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [malleus.stl](./malleus.stl) | — |
-| [templar.stl](./templar.stl) | — |
+## Other Files
+1. [malleus.stl](./malleus.stl)
+2. [templar.stl](./templar.stl)

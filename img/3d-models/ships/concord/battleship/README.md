@@ -2,9 +2,7 @@
 
 # battleship/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [conb1_t1_old.stl](./conb1_t1_old.stl) | — |
-| [marshal.stl](./marshal.stl) | — |
+## Other Files
+1. [conb1_t1_old.stl](./conb1_t1_old.stl)
+2. [marshal.stl](./marshal.stl)

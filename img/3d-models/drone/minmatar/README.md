@@ -2,11 +2,9 @@
 
 # minmatar/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [berserker.stl](./berserker.stl) | — |
-| [bouncer.stl](./bouncer.stl) | — |
-| [valkyrie.stl](./valkyrie.stl) | — |
-| [warrior.stl](./warrior.stl) | — |
+## Other Files
+1. [berserker.stl](./berserker.stl)
+2. [bouncer.stl](./bouncer.stl)
+3. [valkyrie.stl](./valkyrie.stl)
+4. [warrior.stl](./warrior.stl)

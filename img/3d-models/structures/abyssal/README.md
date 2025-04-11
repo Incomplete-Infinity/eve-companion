@@ -2,12 +2,10 @@
 
 # abyssal/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [shipyard(unrepaired).stl](./shipyard(unrepaired).stl) | — |
-| [storage.stl](./storage.stl) | — |
+## Other Files
+1. [shipyard(unrepaired).stl](./shipyard(unrepaired).stl)
+2. [storage.stl](./storage.stl)
 
 ## Subfolders
 - [driller/](./driller/README.md)

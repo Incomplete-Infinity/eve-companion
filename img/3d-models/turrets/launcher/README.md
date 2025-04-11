@@ -2,21 +2,19 @@
 
 # launcher/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bomb.stl](./bomb.stl) | — |
-| [citadelcruise.stl](./citadelcruise.stl) | — |
-| [citadeltorpedo.stl](./citadeltorpedo.stl) | — |
-| [cruise.stl](./cruise.stl) | — |
-| [festival.stl](./festival.stl) | — |
-| [heavy.stl](./heavy.stl) | — |
-| [heavyassault.stl](./heavyassault.stl) | — |
-| [holiday.stl](./holiday.stl) | — |
-| [light.stl](./light.stl) | — |
-| [rapidheavy.stl](./rapidheavy.stl) | — |
-| [rapidlight.stl](./rapidlight.stl) | — |
-| [rapidtorpedo.stl](./rapidtorpedo.stl) | — |
-| [rocket.stl](./rocket.stl) | — |
-| [torpedo.stl](./torpedo.stl) | — |
+## Other Files
+1. [bomb.stl](./bomb.stl)
+2. [citadelcruise.stl](./citadelcruise.stl)
+3. [citadeltorpedo.stl](./citadeltorpedo.stl)
+4. [cruise.stl](./cruise.stl)
+5. [festival.stl](./festival.stl)
+6. [heavy.stl](./heavy.stl)
+7. [heavyassault.stl](./heavyassault.stl)
+8. [holiday.stl](./holiday.stl)
+9. [light.stl](./light.stl)
+10. [rapidheavy.stl](./rapidheavy.stl)
+11. [rapidlight.stl](./rapidlight.stl)
+12. [rapidtorpedo.stl](./rapidtorpedo.stl)
+13. [rocket.stl](./rocket.stl)
+14. [torpedo.stl](./torpedo.stl)

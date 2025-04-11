@@ -2,13 +2,11 @@
 
 # capital/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [erebus.stl](./erebus.stl) | — |
-| [moros.stl](./moros.stl) | — |
-| [ninazu.stl](./ninazu.stl) | — |
-| [nyx.stl](./nyx.stl) | — |
-| [obelisk.stl](./obelisk.stl) | — |
-| [thanatos.stl](./thanatos.stl) | — |
+## Other Files
+1. [erebus.stl](./erebus.stl)
+2. [moros.stl](./moros.stl)
+3. [ninazu.stl](./ninazu.stl)
+4. [nyx.stl](./nyx.stl)
+5. [obelisk.stl](./obelisk.stl)
+6. [thanatos.stl](./thanatos.stl)

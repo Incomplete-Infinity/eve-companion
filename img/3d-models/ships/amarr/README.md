@@ -2,11 +2,9 @@
 
 # amarr/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [shuttle_amarr.stl](./shuttle_amarr.stl) | — |
+## Other Files
+1. [shuttle_amarr.stl](./shuttle_amarr.stl)
 
 ## Subfolders
 - [battlecruiser/](./battlecruiser/README.md)

@@ -2,9 +2,7 @@
 
 # fighter/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [dragonfly.stl](./dragonfly.stl) | — |
-| [mantis.stl](./mantis.stl) | — |
+## Other Files
+1. [dragonfly.stl](./dragonfly.stl)
+2. [mantis.stl](./mantis.stl)

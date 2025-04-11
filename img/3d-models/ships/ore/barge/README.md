@@ -2,10 +2,8 @@
 
 # barge/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [covetor.stl](./covetor.stl) | — |
-| [procurer.stl](./procurer.stl) | — |
-| [retriever.stl](./retriever.stl) | — |
+## Other Files
+1. [covetor.stl](./covetor.stl)
+2. [procurer.stl](./procurer.stl)
+3. [retriever.stl](./retriever.stl)

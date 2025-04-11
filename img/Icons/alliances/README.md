@@ -2,8 +2,6 @@
 
 # alliances/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [1.png](./1.png) | ![](./1.png) |
+## Other Files
+1. [1.png](./1.png)

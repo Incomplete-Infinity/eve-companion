@@ -2,11 +2,9 @@
 
 # gallente/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [garde.stl](./garde.stl) | — |
-| [hammerhead.stl](./hammerhead.stl) | — |
-| [hobgoblin.stl](./hobgoblin.stl) | — |
-| [ogre.stl](./ogre.stl) | — |
+## Other Files
+1. [garde.stl](./garde.stl)
+2. [hammerhead.stl](./hammerhead.stl)
+3. [hobgoblin.stl](./hobgoblin.stl)
+4. [ogre.stl](./ogre.stl)

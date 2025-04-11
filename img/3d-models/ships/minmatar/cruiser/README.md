@@ -2,17 +2,15 @@
 
 # cruiser/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [bellicose.stl](./bellicose.stl) | — |
-| [broadsword.stl](./broadsword.stl) | — |
-| [huginn.stl](./huginn.stl) | — |
-| [Loki.stl](./Loki.stl) | — |
-| [muninn.stl](./muninn.stl) | — |
-| [rapier.stl](./rapier.stl) | — |
-| [rupture.stl](./rupture.stl) | — |
-| [scythe.stl](./scythe.stl) | — |
-| [stabber.stl](./stabber.stl) | — |
-| [vagabond.stl](./vagabond.stl) | — |
+## Other Files
+1. [bellicose.stl](./bellicose.stl)
+2. [broadsword.stl](./broadsword.stl)
+3. [huginn.stl](./huginn.stl)
+4. [Loki.stl](./Loki.stl)
+5. [muninn.stl](./muninn.stl)
+6. [rapier.stl](./rapier.stl)
+7. [rupture.stl](./rupture.stl)
+8. [scythe.stl](./scythe.stl)
+9. [stabber.stl](./stabber.stl)
+10. [vagabond.stl](./vagabond.stl)

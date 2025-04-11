@@ -2,14 +2,12 @@
 
 # mining/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [deepcore.stl](./deepcore.stl) | — |
-| [gas.stl](./gas.stl) | — |
-| [ice.stl](./ice.stl) | — |
-| [modulated_strip.stl](./modulated_strip.stl) | — |
-| [standard.stl](./standard.stl) | — |
-| [standardice.stl](./standardice.stl) | — |
-| [strip.stl](./strip.stl) | — |
+## Other Files
+1. [deepcore.stl](./deepcore.stl)
+2. [gas.stl](./gas.stl)
+3. [ice.stl](./ice.stl)
+4. [modulated_strip.stl](./modulated_strip.stl)
+5. [standard.stl](./standard.stl)
+6. [standardice.stl](./standardice.stl)
+7. [strip.stl](./strip.stl)

@@ -2,8 +2,6 @@
 
 # triglavian/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [world ship.stl](./world ship.stl) | — |
+## Other Files
+1. [world ship.stl](./world ship.stl)

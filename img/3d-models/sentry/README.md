@@ -2,11 +2,9 @@
 
 # sentry/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [amarr sentry.stl](./amarr sentry.stl) | — |
-| [caldari sentry.stl](./caldari sentry.stl) | — |
-| [gallente sentry.stl](./gallente sentry.stl) | — |
-| [minmatar sentry.stl](./minmatar sentry.stl) | — |
+## Other Files
+1. [amarr sentry.stl](./amarr sentry.stl)
+2. [caldari sentry.stl](./caldari sentry.stl)
+3. [gallente sentry.stl](./gallente sentry.stl)
+4. [minmatar sentry.stl](./minmatar sentry.stl)

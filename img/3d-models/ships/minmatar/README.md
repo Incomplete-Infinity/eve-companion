@@ -2,11 +2,9 @@
 
 # minmatar/
 
-## Files
 
-| Name | Preview |
-|------|---------|
-| [shuttle_minmatar.stl](./shuttle_minmatar.stl) | — |
+## Other Files
+1. [shuttle_minmatar.stl](./shuttle_minmatar.stl)
 
 ## Subfolders
 - [battlecruiser/](./battlecruiser/README.md)
