@@ -4,6 +4,7 @@
   "description": "Eve Online related multi-media",
   "main": "index.js",
   "scripts": {
+    "generate-docs": "jsdoc -c jsdoc.json",
     "generate-readmes": "node GenerateReadmes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +25,8 @@
     "halfmoon": "^2.0.2",
     "topcoat": "^0.7.5",
     "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.4"
   }
 }

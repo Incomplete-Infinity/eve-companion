@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AuthTokenManager.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>AuthTokenManager.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require('eve_swagger_interface');
+
+/**
+ * @class AuthTokenManager
+ * @classdesc Manages OAuth token state, expiration, and refresh logic for secure ESI calls.
+ */
+class AuthTokenManager {
+  /**
+   * @param {Object} [config={}]
+   * @param {string} config.clientId
+   * @param {string} config.clientSecret
+   * @param {string} config.redirectUri
+   */
+  constructor({ clientId, clientSecret, redirectUri } = {}) {
+    this.accessToken = null;
+    this.refreshToken = null;
+    this.expiresAt = null;
+
+    this.clientId = clientId;
+    this.clientSecret = clientSecret;
+    this.redirectUri = redirectUri;
+
+    this.apiClient = ESI.ApiClient.instance;
+  }
+
+  /**
+   * Apply OAuth token and update Swagger client.
+   *
+   * @param {Object} tokenData
+   * @param {string} tokenData.access_token
+   * @param {string} tokenData.refresh_token
+   * @param {number} tokenData.expires_in
+   */
+  setToken({ access_token, refresh_token, expires_in }) {
+    this.accessToken = access_token;
+    this.refreshToken = refresh_token;
+    this.expiresAt = Date.now() + expires_in * 1000;
+
+    this.apiClient.authentications.evesso.accessToken = this.accessToken;
+  }
+
+  /**
+   * Return the current access token (may be expired).
+   * @returns {string|null}
+   */
+  getToken() {
+    return this.accessToken;
+  }
+
+  /**
+   * Check if the access token is still valid.
+   * @returns {boolean}
+   */
+  isTokenValid() {
+    return !!this.accessToken &amp;&amp; Date.now() &lt; this.expiresAt;
+  }
+
+  /**
+   * Refresh the access token using the refresh token.
+   * @returns {Promise&lt;Object>} New token data.
+   */
+  async refresh() {
+    if (!this.refreshToken) throw new Error('No refresh token available');
+
+    const res = await fetch('https://login.eveonline.com/v2/oauth/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + Buffer.from(`${this.clientId}:${this.clientSecret}`).toString('base64')
+      },
+      body: new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: this.refreshToken
+      })
+    });
+
+    if (!res.ok) throw new Error('Failed to refresh token');
+
+    const data = await res.json();
+    this.setToken(data);
+    return data;
+  }
+
+  /**
+   * Ensure a valid access token is present. Refreshes if expired.
+   */
+  async ensureValidToken() {
+    if (!this.isTokenValid()) {
+      await this.refresh();
+    }
+  }
+
+  /**
+   * Alias for `ensureValidToken()` to unify external checks.
+   */
+  async requireValidToken() {
+    await this.ensureValidToken();
+  }
+}
+
+module.exports = AuthTokenManager;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> InventoryType.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>InventoryType.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require('eve_swagger_interface');
+const Attribute = require('./Attribute');
+
+/**
+ * @class InventoryType
+ * @classdesc Represents an item type in the EVE universe (ships, implants, modules, etc.).
+ * Initialized with a type ID, and enriched with metadata and dogma attributes via `.load()`.
+ */
+class InventoryType {
+  /**
+   * Construct a new InventoryType with just the type ID.
+   *
+   * @constructor
+   * @param {number} typeId - Unique inventory type ID.
+   */
+  constructor(typeId) {
+    /** @type {number} Unique inventory type ID */
+    this.id = typeId;
+
+    /** @type {string|null} Human-readable item name */
+    this.name = null;
+
+    /** @type {string|null} Description of the item */
+    this.description = null;
+
+    /** @type {number|null} Group ID the item belongs to */
+    this.groupId = null;
+
+    /** @type {number|null} Market group ID */
+    this.marketGroupId = null;
+
+    /** @type {boolean|null} Whether the item is published */
+    this.published = null;
+
+    /** @type {ESI.UniverseApi} Swagger client API */
+    this.api = new ESI.UniverseApi();
+
+    /** @type {Attribute[]} Dogma attributes bound to this item */
+    this.attributes = [];
+  }
+
+  /**
+   * Construct and immediately load full metadata for an InventoryType.
+   *
+   * @static
+   * @param {number} typeId - EVE item type ID.
+   * @returns {Promise&lt;InventoryType>} Fully loaded instance.
+   */
+  static async fromTypeId(typeId) {
+    const instance = new InventoryType(typeId);
+    await instance.load();
+    return instance;
+  }
+
+  /**
+   * Fetch full metadata and dogma attributes for this type ID.
+   *
+   * @async
+   * @returns {Promise&lt;InventoryType>} This instance, enriched.
+   */
+  async load() {
+    const data = await this.api.getUniverseTypesTypeId(this.id, {
+      datasource: 'tranquility'
+    });
+
+    this.name = data.name;
+    this.description = data.description;
+    this.groupId = data.group_id;
+    this.marketGroupId = data.market_group_id;
+    this.published = data.published;
+
+    if (Array.isArray(data.dogma_attributes)) {
+      this.attributes = data.dogma_attributes.map(attr => new Attribute(attr));
+    }
+
+    return this;
+  }
+
+  /**
+   * Serialize the InventoryType for transport or storage.
+   *
+   * @returns {Object} JSON-safe representation of this item type.
+   */
+  toJSON() {
+    return {
+      id: this.id,
+      name: this.name,
+      description: this.description,
+      groupId: this.groupId,
+      marketGroupId: this.marketGroupId,
+      published: this.published,
+      attributes: this.attributes.map(a => a.toJSON())
+    };
+  }
+}
+
+module.exports = InventoryType;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

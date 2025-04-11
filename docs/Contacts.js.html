@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Contacts.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Contacts.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require('eve_swagger_interface');
+const Contact = require('./Contact');
+const AuthTokenManager = require('./AuthTokenManager');
+
+/**
+ * @class Contacts
+ * @classdesc Manages and loads a list of contacts (character, corp, or alliance)
+ * and associated labels from the EVE Swagger Interface.
+ */
+class Contacts {
+  /**
+   * Construct a new Contacts manager.
+   *
+   * @constructor
+   * @param {number} ownerId - ID of the character, corporation, or alliance.
+   * @param {Object} [options={}]
+   * @param {AuthTokenManager|null} [options.auth=null] - Auth for authenticated scopes.
+   * @param {'character'|'corporation'|'alliance'} [options.scope='character'] - The contact scope level.
+   */
+  constructor(ownerId, { auth = null, scope = 'character' } = {}) {
+    /** @type {number} ID of the entity owning the contacts */
+    this.ownerId = ownerId;
+
+    /** @type {AuthTokenManager|null} */
+    this.auth = auth instanceof AuthTokenManager ? auth : null;
+
+    /** @type {'character'|'corporation'|'alliance'} */
+    this.scope = scope;
+
+    /** @type {ESI.ContactsApi} */
+    this.api = new ESI.ContactsApi();
+
+    /** @type {Contact[]} */
+    this.contacts = [];
+
+    /** @type {Object[]} */
+    this.labels = [];
+  }
+
+  /**
+   * Ensures authentication is present and valid if required.
+   *
+   * @private
+   * @throws {Error} If character scope is used without auth.
+   */
+  async ensureAuth() {
+    if (this.scope === 'character' &amp;&amp; !this.auth) {
+      throw new Error('Character contacts require auth');
+    }
+    if (this.auth) await this.auth.ensureValidToken();
+  }
+
+  /**
+   * Loads the list of contacts based on the scope.
+   *
+   * @async
+   * @returns {Promise&lt;Contact[]>} Array of Contact instances.
+   *
+   * @throws {Error} If the scope is invalid.
+   *
+   * @example
+   * const c = new Contacts(charId, { auth });
+   * await c.loadContacts();
+   * console.log(c.contacts);
+   */
+  async loadContacts() {
+    await this.auth.requireValidToken();
+    const opts = { datasource: 'tranquility' };
+
+    let data;
+    if (this.scope === 'character') {
+      data = await this.api.getCharactersCharacterIdContacts(this.ownerId, opts);
+    } else if (this.scope === 'corporation') {
+      data = await this.api.getCorporationsCorporationIdContacts(this.ownerId, opts);
+    } else if (this.scope === 'alliance') {
+      data = await this.api.getAlliancesAllianceIdContacts(this.ownerId, opts);
+    } else {
+      throw new Error('Unknown contact scope');
+    }
+
+    this.contacts = data.map(entry =>
+      new Contact(entry.contact_id, this.auth, {
+        standing: entry.standing,
+        contactType: entry.contact_type,
+        labelIds: entry.label_ids,
+        isWatched: entry.is_watched
+      })
+    );
+
+    return this.contacts;
+  }
+
+  /**
+   * Loads contact labels (tags) based on the scope.
+   *
+   * @async
+   * @returns {Promise&lt;Object[]>} Array of label objects.
+   *
+   * @throws {Error} If the scope is invalid.
+   *
+   * @example
+   * await contacts.loadLabels();
+   * console.log(contacts.labels);
+   */
+  async loadLabels() {
+    await this.auth.requireValidToken();
+    const opts = { datasource: 'tranquility' };
+
+    let data;
+    if (this.scope === 'character') {
+      data = await this.api.getCharactersCharacterIdContactsLabels(this.ownerId, opts);
+    } else if (this.scope === 'corporation') {
+      data = await this.api.getCorporationsCorporationIdContactsLabels(this.ownerId, opts);
+    } else if (this.scope === 'alliance') {
+      data = await this.api.getAlliancesAllianceIdContactsLabels(this.ownerId, opts);
+    } else {
+      throw new Error('Unknown contact scope');
+    }
+
+    this.labels = data.labels;
+    return this.labels;
+  }
+
+  /**
+   * Return a plain JSON-safe version of the contacts list.
+   *
+   * @returns {Object[]} Array of serialized Contact objects.
+   */
+  toJSON() {
+    return this.contacts.map(c => c.toJSON());
+  }
+}
+
+module.exports = Contacts;
+
+/*
+Example:
+
+const Contacts = require('./Contacts');
+
+const corpContacts = new Contacts(corpId, { auth, scope: 'corporation' });
+await corpContacts.loadContacts();
+console.log(corpContacts.toJSON());
+*/
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

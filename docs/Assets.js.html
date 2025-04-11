@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Assets.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Assets.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require("eve_swagger_interface");
+const AuthTokenManager = require("./AuthTokenManager");
+
+/**
+ * @class Assets
+ * @classdesc Handles asset retrieval and lookup for a character or corporation using the EVE Online ESI API.
+ * Supports pagination, location and name resolution, and filtering by type or location.
+ */
+class Assets {
+  /**
+   * Construct a new Assets instance for a character or corporation.
+   *
+   * @constructor
+   * @param {number} ownerId - The character or corporation ID.
+   * @param {Object} [options={}] - Optional parameters.
+   * @param {AuthTokenManager|null} [options.auth=null] - Instance of AuthTokenManager for secure endpoints.
+   * @param {boolean} [options.isCharacter=true] - Whether the owner is a character (true) or corporation (false).
+   */
+  constructor(ownerId, { auth = null, isCharacter = true } = {}) {
+    /** @type {number} */
+    this.ownerId = ownerId;
+
+    /** @type {AuthTokenManager|null} */
+    this.auth = auth instanceof AuthTokenManager ? auth : null;
+
+    /** @type {boolean} */
+    this.isCharacter = isCharacter;
+
+    /** @type {ESI.AssetsApi} */
+    this.api = new ESI.AssetsApi();
+
+    /** @type {Object[]} */
+    this.assets = [];
+  }
+
+  /**
+   * Load all assets (paginated) for the owner. Automatically traverses all pages.
+   *
+   * @async
+   * @param {number} [page=1] - Starting page (default is 1).
+   * @returns {Promise&lt;Object[]>} Array of all asset entries retrieved so far.
+   *
+   * @throws {Error} If auth is invalid or not provided.
+   *
+   * @example
+   * const a = new Assets(charId, { auth });
+   * await a.load();
+   * console.log(a.assets.length);
+   */
+  async load(page = 1) {
+    await this.auth.requireValidToken();
+
+    const fn = this.isCharacter
+      ? this.api.getCharactersCharacterIdAssets
+      : this.api.getCorporationsCorporationIdAssets;
+
+    const data = await fn(this.ownerId, { page, datasource: "tranquility" });
+    this.assets.push(...data);
+
+    if (data.length === 1000) {
+      await this.load(page + 1);
+    }
+
+    return this.assets;
+  }
+
+  /**
+   * Resolve locations for a set of asset item IDs.
+   * 
+   * @async
+   * @param {number[]} itemIds - Array of item IDs to resolve.
+   * @returns {Promise&lt;Object[]>} Array of location objects with coordinates or parent containers.
+   * 
+   * @throws {Error} If auth is invalid or not provided.
+   */
+  async resolveLocations(itemIds) {
+    await this.auth.requireValidToken();
+
+    const fn = this.isCharacter
+      ? this.api.postCharactersCharacterIdAssetsLocations
+      : this.api.postCorporationsCorporationIdAssetsLocations;
+
+    return await fn(this.ownerId, {
+      item_ids: itemIds,
+      datasource: "tranquility",
+    });
+  }
+
+  /**
+   * Resolve item names for assembled/renamed assets.
+   * 
+   * @async
+   * @param {number[]} itemIds - Array of asset item IDs.
+   * @returns {Promise&lt;Object[]>} Array of resolved name objects.
+   * 
+   * @throws {Error} If auth is invalid or not provided.
+   */
+  async resolveNames(itemIds) {
+    await this.auth.requireValidToken();
+
+    const fn = this.isCharacter
+      ? this.api.postCharactersCharacterIdAssetsNames
+      : this.api.postCorporationsCorporationIdAssetsNames;
+
+    return await fn(this.ownerId, {
+      item_ids: itemIds,
+      datasource: "tranquility",
+    });
+  }
+
+  /**
+   * Filter loaded assets by their location ID.
+   *
+   * @param {number} locationId - The location to filter for.
+   * @returns {Object[]} Assets at the given location.
+   */
+  getByLocation(locationId) {
+    return this.assets.filter((a) => a.location_id === locationId);
+  }
+
+  /**
+   * Filter loaded assets by their type ID.
+   *
+   * @param {number} typeId - Type ID of the desired asset.
+   * @returns {Object[]} Assets matching the given type.
+   */
+  getByType(typeId) {
+    return this.assets.filter((a) => a.type_id === typeId);
+  }
+
+  /**
+   * Return all loaded assets as a plain array.
+   *
+   * @returns {Object[]} Serialized asset list.
+   */
+  toJSON() {
+    return this.assets;
+  }
+}
+
+module.exports = Assets;
+
+/*
+Example Usage:
+
+const Assets = require('./Assets');
+const assets = new Assets(characterId, { auth, isCharacter: true });
+
+await assets.load();
+const ships = assets.getByType(603); // Raven
+console.log(ships);
+*/
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

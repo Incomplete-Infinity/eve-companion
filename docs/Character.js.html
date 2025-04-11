@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Character.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Character.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require('eve_swagger_interface');
+const AuthTokenManager = require("./AuthTokenManager");
+
+/**
+ * @class Character
+ * @classdesc Represents an EVE Online character and provides methods for accessing
+ * both public and authenticated character data from the ESI API.
+ */
+class Character {
+  /**
+   * Construct a Character instance.
+   *
+   * @constructor
+   * @param {number} characterId - EVE character ID.
+   * @param {AuthTokenManager|null} [auth=null] - Optional AuthTokenManager for authenticated access.
+   */
+  constructor(characterId, auth = null) {
+    /** @type {number} Character ID */
+    this.characterId = characterId;
+
+    /** @type {AuthTokenManager|null} */
+    this.auth = auth instanceof AuthTokenManager ? auth : null;
+
+    /** @type {ESI.CharacterApi} ESI API interface for character data */
+    this.api = new ESI.CharacterApi();
+
+    /** @type {string|null} Character's in-game name */
+    this.name = null;
+
+    /** @type {number|null} Corporation ID the character belongs to */
+    this.corporationId = null;
+
+    /** @type {number|null} Alliance ID, if the character is in an alliance */
+    this.allianceId = null;
+
+    /** @type {Object|null} Character portrait URLs by resolution */
+    this.portrait = null;
+
+    /** @type {boolean} Whether the public data has been loaded */
+    this.loaded = false;
+  }
+
+  /**
+   * Validate auth presence and freshness before calling a secured endpoint.
+   *
+   * @private
+   * @throws {Error} If no auth is available or token is invalid.
+   */
+  async ensureAuth() {
+    if (!this.auth) throw new Error('Authenticated data requires an auth token');
+    await this.auth.ensureValidToken();
+  }
+
+  /**
+   * Check whether the instance has valid auth assigned.
+   *
+   * @returns {boolean} True if an auth token is available.
+   */
+  isAuthenticated() {
+    return !!this.auth;
+  }
+
+  /**
+   * Load public character info (name, corp, alliance) from the ESI API.
+   *
+   * @async
+   * @returns {Promise&lt;Object>} Raw ESI response with character metadata.
+   *
+   * @example
+   * await character.loadPublicInfo();
+   * console.log(character.name, character.corporationId);
+   */
+  async loadPublicInfo() {
+    const data = await this.api.getCharactersCharacterId(this.characterId, { datasource: 'tranquility' });
+
+    this.name = data.name;
+    this.corporationId = data.corporation_id;
+    this.allianceId = data.alliance_id ?? null;
+    this.loaded = true;
+
+    return data;
+  }
+
+  /**
+   * Load the character's portrait images (various sizes).
+   *
+   * @async
+   * @returns {Promise&lt;Object>} Object containing portrait URLs.
+   *
+   * @example
+   * const pic = await character.loadPortrait();
+   * document.src = pic.px128x128;
+   */
+  async loadPortrait() {
+    const data = await this.api.getCharactersCharacterIdPortrait(this.characterId, { datasource: 'tranquility' });
+    this.portrait = data;
+    return data;
+  }
+
+  /**
+   * Get the character’s current in-game location (system/station).
+   *
+   * @async
+   * @returns {Promise&lt;Object>} Object with `solar_system_id` and optionally `station_id`.
+   *
+   * @throws {Error} If auth is missing or invalid.
+   */
+  async getLocation() {
+    await this.auth.requireValidToken();
+    return await this.api.getCharactersCharacterIdLocation(this.characterId, { datasource: 'tranquility' });
+  }
+
+  /**
+   * Get the character’s current wallet balance (in ISK).
+   *
+   * @async
+   * @returns {Promise&lt;number>} Wallet balance in ISK.
+   *
+   * @throws {Error} If auth is missing or invalid.
+   */
+  async getWallet() {
+    await this.ensureAuth();
+    return await this.api.getCharactersCharacterIdWallet(this.characterId, { datasource: 'tranquility' });
+  }
+
+  // Add public/private methods as needed
+}
+
+module.exports = Character;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Blueprint.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Blueprint.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const InventoryType = require('./InventoryType');
+
+/**
+ * @class Blueprint
+ * @extends InventoryType
+ * @classdesc Represents a blueprint (copy or original) owned by a character or corporation.
+ * Includes manufacturing efficiencies, run counts, and container data.
+ */
+class Blueprint extends InventoryType {
+  /**
+   * Construct a new Blueprint instance from a type ID.
+   *
+   * @constructor
+   * @param {number} typeId - Inventory type ID of the blueprint.
+   */
+  constructor(typeId) {
+    super(typeId);
+
+    /** @type {number|null} Unique item ID for this blueprint instance */
+    this.itemId = null;
+
+    /** @type {number|null} Structure, station, or container ID */
+    this.locationId = null;
+
+    /** @type {string|null} Location flag (e.g., "Hangar", "CorpSAG1") */
+    this.locationFlag = null;
+
+    /** @type {number|null} Material efficiency (e.g., 10 means -10% materials) */
+    this.materialEfficiency = null;
+
+    /** @type {number|null} Time efficiency (e.g., 20 means -20% build time) */
+    this.timeEfficiency = null;
+
+    /** @type {number|null} Remaining runs (null for BPOs) */
+    this.runs = null;
+
+    /** @type {number|null} Blueprint quantity indicator (-1 for BPO, >0 for BPC) */
+    this.quantity = null;
+  }
+
+  /**
+   * Load blueprint metadata from an ESI blueprint entry (e.g., from assets).
+   *
+   * @param {Object} data - Raw blueprint data from ESI.
+   * @param {number} data.item_id
+   * @param {number} data.location_id
+   * @param {string} data.location_flag
+   * @param {number} data.material_efficiency
+   * @param {number} data.time_efficiency
+   * @param {number} data.runs
+   * @param {number} data.quantity
+   */
+  fromData({
+    item_id,
+    location_id,
+    location_flag,
+    material_efficiency,
+    time_efficiency,
+    runs,
+    quantity
+  }) {
+    this.itemId = item_id;
+    this.locationId = location_id;
+    this.locationFlag = location_flag;
+    this.materialEfficiency = material_efficiency;
+    this.timeEfficiency = time_efficiency;
+    this.runs = runs;
+    this.quantity = quantity;
+    return this;
+  }
+
+  /**
+   * Convert the blueprint and its inherited fields to a JSON-safe object.
+   *
+   * @returns {Object}
+   */
+  toJSON() {
+    return {
+      ...super.toJSON(),
+      itemId: this.itemId,
+      locationId: this.locationId,
+      locationFlag: this.locationFlag,
+      materialEfficiency: this.materialEfficiency,
+      timeEfficiency: this.timeEfficiency,
+      runs: this.runs,
+      quantity: this.quantity
+    };
+  }
+}
+
+module.exports = Blueprint;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

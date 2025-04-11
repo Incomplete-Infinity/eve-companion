@@ -1,8 +1,18 @@
 const ESI = require('eve_swagger_interface');
 
+/**
+ * @class AuthTokenManager
+ * @classdesc Manages OAuth token state, expiration, and refresh logic for secure ESI calls.
+ */
 class AuthTokenManager {
+  /**
+   * @param {Object} [config={}]
+   * @param {string} config.clientId
+   * @param {string} config.clientSecret
+   * @param {string} config.redirectUri
+   */
   constructor({ clientId, clientSecret, redirectUri } = {}) {
-    this.token = null;
+    this.accessToken = null;
     this.refreshToken = null;
     this.expiresAt = null;
 
@@ -14,32 +24,40 @@ class AuthTokenManager {
   }
 
   /**
-   * Initialize token and sync with swagger client
+   * Apply OAuth token and update Swagger client.
+   *
+   * @param {Object} tokenData
+   * @param {string} tokenData.access_token
+   * @param {string} tokenData.refresh_token
+   * @param {number} tokenData.expires_in
    */
   setToken({ access_token, refresh_token, expires_in }) {
-    this.token = access_token;
+    this.accessToken = access_token;
     this.refreshToken = refresh_token;
-    this.expiresAt = Date.now() + (expires_in * 1000);
+    this.expiresAt = Date.now() + expires_in * 1000;
 
-    this.apiClient.authentications.evesso.accessToken = this.token;
+    this.apiClient.authentications.evesso.accessToken = this.accessToken;
   }
 
   /**
-   * Returns current token if valid
+   * Return the current access token (may be expired).
+   * @returns {string|null}
    */
   getToken() {
-    return this.token;
+    return this.accessToken;
   }
 
   /**
-   * Whether the token is still valid
+   * Check if the access token is still valid.
+   * @returns {boolean}
    */
   isTokenValid() {
-    return !!this.token && Date.now() < this.expiresAt;
+    return !!this.accessToken && Date.now() < this.expiresAt;
   }
 
   /**
-   * Attempt token refresh using the refresh token
+   * Refresh the access token using the refresh token.
+   * @returns {Promise<Object>} New token data.
    */
   async refresh() {
     if (!this.refreshToken) throw new Error('No refresh token available');
@@ -64,34 +82,20 @@ class AuthTokenManager {
   }
 
   /**
-   * Use before API calls to ensure freshness
+   * Ensure a valid access token is present. Refreshes if expired.
    */
   async ensureValidToken() {
     if (!this.isTokenValid()) {
       await this.refresh();
     }
   }
+
+  /**
+   * Alias for `ensureValidToken()` to unify external checks.
+   */
+  async requireValidToken() {
+    await this.ensureValidToken();
+  }
 }
 
 module.exports = AuthTokenManager;
-/* Usage
-const auth = new AuthTokenManager({
-    clientId: 'your-client-id',
-    clientSecret: 'your-client-secret',
-    redirectUri: 'your-redirect-uri'
-  });
-  
-  // After login
-  auth.setToken({
-    access_token: 'abc',
-    refresh_token: 'def',
-    expires_in: 1200
-  });
-  
-  // Before API call
-  await auth.ensureValidToken();
-  
-  // Your mailbox can now use swagger normally
-  const mailbox = new Mailbox(characterId, auth);
-  */
-

@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Alliance.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Alliance.html">Alliance</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="InventoryType.html">InventoryType</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Alliance.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ESI = require('eve_swagger_interface');
+
+/**
+ * @class Alliance
+ * @classdesc Represents an EVE Online alliance and provides methods to retrieve
+ *            its metadata and member corporations from the EVE Swagger Interface (ESI).
+ */
+class Alliance {
+  /**
+   * Create a new Alliance instance.
+   * 
+   * @constructor
+   * @param {number|null} [allianceId=null] - The unique identifier of the alliance, if known.
+   *                                          If not provided, must be set before calling instance methods.
+   */
+  constructor(allianceId = null) {
+    /**
+     * @type {number|null}
+     * @description The alliance's unique ID in the EVE universe.
+     */
+    this.allianceId = allianceId;
+
+    /**
+     * @type {ESI.AllianceApi}
+     * @description Internal instance of the EVE Swagger Interface Alliance API class.
+     */
+    this.api = new ESI.AllianceApi();
+
+    /** @type {string|null} Human-readable name of the alliance. */
+    this.name = null;
+
+    /** @type {string|null} Ticker symbol of the alliance. */
+    this.ticker = null;
+
+    /** @type {number|null} Corporation ID of the executor corp. */
+    this.executorCorpId = null;
+
+    /** @type {string|null} ISO 8601 date when the alliance was founded. */
+    this.dateFounded = null;
+
+    /** @type {number[]} List of corporation IDs that are members of the alliance. */
+    this.corporations = [];
+  }
+
+  /**
+   * Retrieve metadata for the alliance specified by `this.allianceId`.
+   * 
+   * @async
+   * @function
+   * @returns {Promise&lt;Object>} Resolves to the raw alliance info returned by ESI.
+   * 
+   * @throws {Error} If `allianceId` is not set.
+   * 
+   * @example
+   * const alliance = new Alliance(99000006);
+   * await alliance.loadInfo();
+   * console.log(alliance.name);
+   */
+  async loadInfo() {
+    if (!this.allianceId)
+      throw new Error('Alliance ID is required');
+
+    const data = await this.api.getAlliancesAllianceId(this.allianceId, { datasource: 'tranquility' });
+    this.name = data.name;
+    this.ticker = data.ticker;
+    this.executorCorpId = data.executor_corporation_id;
+    this.dateFounded = data.date_founded;
+    return data;
+  }
+
+  /**
+   * Fetch a list of all corporation IDs that are part of this alliance.
+   * 
+   * @async
+   * @function
+   * @returns {Promise&lt;number[]>} Array of corporation IDs.
+   * 
+   * @throws {Error} If `allianceId` is not set.
+   * 
+   * @example
+   * const alliance = new Alliance(99000006);
+   * await alliance.loadCorporations();
+   * console.log(alliance.corporations);
+   */
+  async loadCorporations() {
+    if (!this.allianceId)
+      throw new Error('Alliance ID is required');
+
+    const data = await this.api.getAlliancesAllianceIdCorporations(this.allianceId, { datasource: 'tranquility' });
+    this.corporations = data;
+    return data;
+  }
+
+  /**
+   * Static method to retrieve the IDs of all alliances in the EVE universe.
+   * 
+   * @static
+   * @async
+   * @function
+   * @returns {Promise&lt;number[]>} Array of all alliance IDs.
+   * 
+   * @example
+   * const ids = await Alliance.getAllAllianceIds();
+   */
+  static async getAllAllianceIds() {
+    const api = new ESI.AllianceApi();
+    return await api.getAlliances({ datasource: 'tranquility' });
+  }
+
+  /**
+   * Static method to map alliance names to their respective IDs.
+   * Note: This endpoint is deprecated by ESI but may still return useful results.
+   * 
+   * @static
+   * @async
+   * @function
+   * @param {string[]} names - Array of alliance names to look up.
+   * 
+   * @returns {Promise&lt;Object[]>} Array of name-to-ID mapping objects.
+   * 
+   * @example
+   * const results = await Alliance.getAllianceIdsByName(["Goonswarm Federation"]);
+   * console.log(results); // [{ alliance_id: 1354830081, name: "Goonswarm Federation" }]
+   */
+  static async getAllianceIdsByName(names) {
+    const api = new ESI.AllianceApi();
+    const opts = { datasource: 'tranquility', names };
+    return await api.postAlliancesNames(opts); // deprecated
+  }
+
+  /**
+   * Serialize the Alliance instance into a plain object.
+   * 
+   * @function
+   * @returns {Object} A JSON-safe object representation of this Alliance instance.
+   * 
+   * @example
+   * const json = alliance.toJSON();
+   * console.log(JSON.stringify(json));
+   */
+  toJSON() {
+    return {
+      allianceId: this.allianceId,
+      name: this.name,
+      ticker: this.ticker,
+      executorCorpId: this.executorCorpId,
+      dateFounded: this.dateFounded,
+      corporations: this.corporations
+    };
+  }
+}
+
+module.exports = Alliance;
+
+/*
+Example Usage:
+
+const Alliance = require('./Alliance');
+
+(async () => {
+  const a = new Alliance(99000006);
+  await a.loadInfo();
+  await a.loadCorporations();
+  console.log(a.toJSON());
+})();
+*/
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>
