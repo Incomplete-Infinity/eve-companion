@@ -3,12 +3,15 @@ const path = require('path');
 
 function generateReadme(dir, parent = null) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
+
   const files = entries.filter(e => e.isFile() && e.name.endsWith('.js'));
-  const folders = entries.filter(e => e.isDirectory());
+  const folders = entries.filter(e => 
+    e.isDirectory() && e.name !== 'node_modules'
+  );
 
   const lines = [];
 
-  // Breadcrumb link to parent
+  // Breadcrumb
   if (parent) lines.push(`📁 [⬅ Back to ${parent}](../README.md)\n`);
 
   // Title
@@ -26,9 +29,11 @@ function generateReadme(dir, parent = null) {
 
   fs.writeFileSync(path.join(dir, 'README.md'), lines.join('\n'), 'utf-8');
 
-  // Recurse into subfolders
-  folders.forEach(sub => generateReadme(path.join(dir, sub.name), path.basename(dir)));
+  // Recurse
+  folders.forEach(sub =>
+    generateReadme(path.join(dir, sub.name), path.basename(dir))
+  );
 }
 
-// Start at current folder or specify your path
+// Run
 generateReadme(process.cwd());
