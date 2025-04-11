@@ -5,7 +5,7 @@ function generateReadme(dir, parent = null) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   const files = entries.filter(e => e.isFile() && e.name.endsWith('.js'));
   const folders = entries.filter(e => 
-    e.isDirectory() && e.name !== 'node_modules'
+    e.isDirectory() && e.name !== 'node_modules' && e.name !== '.git'
   );
 
   const lines = [];
