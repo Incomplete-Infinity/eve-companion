@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Incomplete-Infinity/assets/issues"
   },
-  "homepage": "https://github.com/Incomplete-Infinity/assets#readme"
+  "homepage": "https://github.com/Incomplete-Infinity/assets#readme",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
 }
