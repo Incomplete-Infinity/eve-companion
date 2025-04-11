@@ -1,5 +1,14 @@
+📁 [⬅ Back to img/](../README.md)
+
 # svg/
 
-Premade SVG silliouettes of Eve Online ships.
+## Files
 
-> Ref: [https://maximilianazendorf.github.io/eve-ships-svg/](https://maximilianazendorf.github.io/eve-ships-svg/)
+| Name | Preview |
+|------|---------|
+| [all.zip](./all.zip) | — |
+| [all_top.zip](./all_top.zip) | — |
+
+## Subfolders
+- [profile/](./profile/README.md)
+- [top/](./top/README.md)
