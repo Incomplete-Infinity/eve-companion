@@ -1,6 +1,5 @@
 # assets
 Eve Online related multi-media
 
-[img/](./img/README.md)
-
-[src/](./src/README.md)
+1. [img/](./img/README.md)
+2. [src/](./src/README.md)
