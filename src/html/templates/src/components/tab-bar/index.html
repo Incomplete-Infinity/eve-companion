@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Bar Template</title>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet"
+        integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M=" crossorigin="anonymous">
+    <!-- Halfmoon modern core theme -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.modern.css" rel="stylesheet"
+        integrity="sha256-DD6elX+jPmbFYPsGvzodUv2+9FHkxHlVtQi0/RJVULs=" crossorigin="anonymous">
+    <link id="topcoat-stylesheet" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css" />
+</head>
+
+<body data-bs-theme="dark" data-bs-core="modern">
+    <!-- 🔹 Template for a Single Tab -->
+    <template id="tab-bar-tab-template">
+        <label class="topcoat-tab-bar__item">
+            <input type="radio" class="topcoat-tab-bar__input" name="tab-bar" />
+            <a class="topcoat-tab-bar__button"></a>
+        </label>
+    </template>
+
+    <!-- 🔹 Template for the Tab Bar -->
+    <template id="tab-bar-template">
+        <div class="topcoat-tab-bar"></div>
+    </template>
+
+    <!-- 🔹 Container where tab bars will be added -->
+    <div id="tab-bar-1-container"></div>
+    <div id="tab-bar-2-container"></div>
+    <div id="tab-bar-3-container"></div>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{
+  "name": "eve-companion",
+  "productName": "eve-companion",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": ".webpack/main",
+  "scripts": {
+    "generate-readmes": "node GenerateReadmes.js",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "PhobiaCide",
+    "email": "aamason86@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.0",
+    "@electron-forge/maker-deb": "^7.8.0",
+    "@electron-forge/maker-rpm": "^7.8.0",
+    "@electron-forge/maker-squirrel": "^7.8.0",
+    "@electron-forge/maker-zip": "^7.8.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
+    "@electron-forge/plugin-fuses": "^7.8.0",
+    "@electron-forge/plugin-vite": "^7.8.0",
+    "@electron-forge/plugin-webpack": "^7.8.0",
+    "@electron/fuses": "^1.8.0",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "css-loader": "^6.11.0",
+    "electron": "35.1.5",
+    "node-loader": "^2.1.0",
+    "style-loader": "^3.3.4"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "augmented-ui": "^2.0.0",
+    "bootstrap": "^5.3.5",
+    "electron-squirrel-startup": "^1.0.1",
+    "halfmoon": "^2.0.2",
+    "three": "^0.175.0",
+    "three-orbitcontrols": "^2.110.3",
+    "topcoat": "^0.7.5",
+    "xml2js": "^0.6.2"
+  }
+}

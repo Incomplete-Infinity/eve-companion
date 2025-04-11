@@ -1,0 +1,12 @@
+@import url('./media-queries/apple-iphone.css');
+@import url('./media-queries/galaxy-phone.css');
+@import url('./media-queries/galaxy-tablet.css');
+@import url('./media-queries/google-pixel.css');
+@import url('./media-queries/htc-phone.css');
+@import url('./media-queries/ipad.css');
+@import url('./media-queries/kindle-fire.css');
+@import url('./media-queries/laptop.css');
+@import url('./media-queries/nexus-phone.css');
+@import url('./media-queries/nexus-tablet.css');
+@import url('./media-queries/watch.css');
+@import url('./media-queries/windows-phone.css');

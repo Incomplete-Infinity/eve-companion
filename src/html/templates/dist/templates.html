@@ -1,0 +1,115 @@
+<template id="button-bar-template">
+  <div class="topcoat-button-bar"></div>
+</template>
+<template id="checkbox-template">
+  <label class="topcoat-checkbox">
+    <input type="checkbox">
+    <div class="topcoat-checkbox__checkmark"></div>
+    <span class="checkbox-label"></span>
+  </label>
+</template>
+<template id="modal-template">
+  <div class="modal fade" id="dynamic-modal" tabindex="-1" aria-labelledby="dynamic-modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="dynamic-modal-title">Modal Title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">This is a reusable modal template.</div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="notification-template">
+  <span class="topcoat-notification"></span>
+</template>
+<template id="offcanvas-template">
+  <div class="offcanvas" tabindex="-1" id="dynamic-offcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="dynamic-offcanvas-title">Offcanvas Title</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>This is a reusable offcanvas template.</p>
+    </div>
+  </div>
+</template>
+<template id="radio-template">
+  <label class="topcoat-radio-button">
+    <span class="radio-label"></span>
+    <input type="radio" name="radio-group">
+    <div class="topcoat-radio-button__checkmark"></div>
+  </label>
+</template>
+<template id="sidebar-template">
+  <nav id="app-sidebar" class="sidebar offcanvas-start offcanvas-md" tabindex="-1">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+      <a class="sidebar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+        MyApp
+      </a>
+      <button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="mt-2 mb-3">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <ul class="sidebar-nav">
+        <li>
+          <h6 class="sidebar-header">Getting Started</h6>
+        </li>
+        <li>
+          <hr class="sidebar-divider">
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#">Installation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">CLI Commands</a></li>
+        <li class="mt-3">
+          <h6 class="sidebar-header">Components</h6>
+        </li>
+        <li>
+          <hr class="sidebar-divider">
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">File Explorer</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Spreadsheet</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Messenger</a></li>
+      </ul>
+    </div>
+  </nav>
+</template>
+<template id="spinner-template">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</template>
+<template id="switch-template">
+  <label class="topcoat-switch">
+    <input type="checkbox" class="topcoat-switch__input">
+    <div class="topcoat-switch__toggle"></div>
+  </label>
+</template>
+<template id="tab-template">
+  <label class="topcoat-tab-bar__item">
+    <input type="radio" class="topcoat-tab-bar__input" name="tab-bar">
+    <button class="topcoat-tab-bar__button"></button>
+  </label>
+</template>
+<template id="toast-template">
+  <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <span class="toast-icon me-2"></span>
+      <strong class="me-auto toast-title">Notification</strong>
+      <small class="toast-time">Just now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">This is a toast message.</div>
+  </div>
+</template>

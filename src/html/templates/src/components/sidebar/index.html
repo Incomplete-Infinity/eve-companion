@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Template</title>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet"
+        integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M=" crossorigin="anonymous">
+    <!-- Halfmoon modern core theme -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.modern.css" rel="stylesheet"
+        integrity="sha256-DD6elX+jPmbFYPsGvzodUv2+9FHkxHlVtQi0/RJVULs=" crossorigin="anonymous">
+    <link id="topcoat-stylesheet" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css" />
+</head>
+
+<body data-bs-theme="dark" data-bs-core="modern">
+
+    <!-- 🔹 Sidebar Template (Hidden) -->
+    <template id="sidebar-template">
+        <nav id="app-sidebar" class="sidebar offcanvas-start offcanvas-md" tabindex="-1">
+            <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+                <a class="sidebar-brand" href="#">
+                    <img src="logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+                    MyApp
+                </a>
+                <button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mt-2 mb-3">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <ul class="sidebar-nav">
+                    <li>
+                        <h6 class="sidebar-header">Getting Started</h6>
+                    </li>
+                    <li>
+                        <hr class="sidebar-divider">
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Installation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CLI Commands</a></li>
+                    <li class="mt-3">
+                        <h6 class="sidebar-header">Components</h6>
+                    </li>
+                    <li>
+                        <hr class="sidebar-divider">
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">File Explorer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Spreadsheet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Messenger</a></li>
+                </ul>
+            </div>
+        </nav>
+    </template>
+
+    <!-- Sidebar Toggle Button (Visible on Small Screens) -->
+    <button id="sidebar-toggle" type="button" class="btn btn-secondary d-md-none">
+        <i class="fa-light fa-sidebar me-1"></i> Sidebar
+    </button>
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
