@@ -1,12 +1,12 @@
 const ESI = require("eve_swagger_interface");
-const Division = require("./Division");
-const Shareholder = require("./Shareholder");
-const CorporationMember = require("./CorporationMember");
-const Facility = require("./Facility");
-const Starbase = require("./Starbase");
-const Blueprint = require("./Blueprint");
+const Division = require("./Division.js");
+const Shareholder = require("./Shareholder.js");
+const CorporationMember = require("./CorporationMember.js");
+const Facility = require("./Facility.js");
+const Starbase = require("./Starbase.js");
+const Blueprint = require("./Blueprint.js");
 const Medal = require("./Medal.js");
-const Faction = require('./Faction'); // new
+const Faction = require('./Faction.js'); // new
 
 class Corporation extends Faction {
   constructor(corporationId, auth = null) {
