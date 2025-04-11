@@ -4,6 +4,7 @@
   "description": "Eve Online related multi-media",
   "main": "index.js",
   "scripts": {
+    "generate-readmes": "node GenerateReadmes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
