@@ -1,5 +1,5 @@
 # src/
 
-[js/](./js)
+[js/](./js/README.md)
 
-[html/](./html)
+[html/](./html/README.md)
