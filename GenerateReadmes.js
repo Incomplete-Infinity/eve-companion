@@ -15,16 +15,16 @@ function generateReadme(dir, parent = null) {
   if (parent) lines.push(`📁 [⬅ Back to ${parent}](../README.md)\n`);
 
   // Title
-  lines.push(`# ${path.basename(dir)}\n`);
+  lines.push(`# ${path.basename(dir)}/\n`);
 
   if (files.length) {
     lines.push(`## Files`);
-    files.forEach(f => lines.push(`- [${f.name}](./${f.name})`));
+    files.forEach(f => lines.push(`1. [${f.name}](./${f.name})`));
   }
 
   if (folders.length) {
     lines.push(`\n## Subfolders`);
-    folders.forEach(sub => lines.push(`- [${sub.name}](./${sub.name}/README.md)`));
+    folders.forEach(sub => lines.push(`- [${sub.name/}](./${sub.name}/README.md)`));
   }
 
   fs.writeFileSync(path.join(dir, 'README.md'), lines.join('\n'), 'utf-8');
