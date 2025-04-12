@@ -1,4 +1,4 @@
-📁 [⬅ Back to assets/](../README.md)
+📁 [⬅ Back to eve-companion/](../README.md)
 
 # src/
 

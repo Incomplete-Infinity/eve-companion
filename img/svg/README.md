@@ -125,7 +125,7 @@
 | inquisitor | ![](inquisitor_top.svg) | ![](inquisitor_profile.svg) |
 | ishkur | ![](ishkur_top.svg) | ![](ishkur_profile.svg) |
 | ishtar | ![](ishtar_top.svg) | ![](ishtar_profile.svg) |
-| iteron mark v | ![](iteron mark v_top.svg) | ![](iteron mark v_profile.svg) |
+| iteron_mark_v | ![](iteron_mark_v_top.svg) | ![](iteron_mark_v_profile.svg) |
 | Jackdaw | ![](Jackdaw_top.svg) | ![](Jackdaw_profile.svg) |
 | jaguar | ![](jaguar_top.svg) | ![](jaguar_profile.svg) |
 | keres | ![](keres_top.svg) | ![](keres_profile.svg) |
@@ -273,7 +273,3 @@
 | zealot | ![](zealot_top.svg) | ![](zealot_profile.svg) |
 | zephyr | ![](zephyr_top.svg) | ![](zephyr_profile.svg) |
 | zirnitra | ![](zirnitra_top.svg) | ![](zirnitra_profile.svg) |
-
-## Other Files
-1. [all.zip](./all.zip)
-2. [all_top.zip](./all_top.zip)

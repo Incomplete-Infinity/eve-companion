@@ -4,8 +4,9 @@
 
 
 ## Other Files
-1. [sizes.txt](./sizes.txt)
-2. [weapon-colors.txt](./weapon-colors.txt)
+1. [index.html](./index.html)
+2. [sizes.txt](./sizes.txt)
+3. [weapon-colors.txt](./weapon-colors.txt)
 
 ## Subfolders
 - [asteroid/](./asteroid/README.md)

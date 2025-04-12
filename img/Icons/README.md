@@ -1,6 +1,6 @@
 📁 [⬅ Back to img/](../README.md)
 
-# icons/
+# Icons/
 
 
 ## Subfolders

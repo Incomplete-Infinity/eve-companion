@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Fitting.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Asset.html">Asset</a></li><li><a href="Assets.html">Assets</a></li><li><a href="Attendee.html">Attendee</a></li><li><a href="Attribute.html">Attribute</a></li><li><a href="AuthTokenManager.html">AuthTokenManager</a></li><li><a href="Blueprint.html">Blueprint</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="Character.html">Character</a></li><li><a href="Contact.html">Contact</a></li><li><a href="ContactNotification.html">ContactNotification</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="FleetMember.html">FleetMember</a></li><li><a href="Fleets.html">Fleets</a></li><li><a href="Galaxy.html">Galaxy</a></li><li><a href="Incursions.html">Incursions</a></li><li><a href="Industry.html">Industry</a></li><li><a href="IndustryJob.html">IndustryJob</a></li><li><a href="Insurance.html">Insurance</a></li><li><a href="InventoryCategory.html">InventoryCategory</a></li><li><a href="Item.html">Item</a></li><li><a href="Killmail.html">Killmail</a></li><li><a href="Killmails.html">Killmails</a></li><li><a href="Label.html">Label</a></li><li><a href="Location.html">Location</a></li><li><a href="Loyalty.html">Loyalty</a></li><li><a href="Mail.html">Mail</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketGroup.html">MarketGroup</a></li><li><a href="Medal.html">Medal</a></li><li><a href="Notification.html">Notification</a></li><li><a href="Order.html">Order</a></li><li><a href="Planet.html">Planet</a></li><li><a href="PlanetaryInteraction.html">PlanetaryInteraction</a></li><li><a href="Region.html">Region</a></li><li><a href="Routes.html">Routes</a></li><li><a href="Search.html">Search</a></li><li><a href="Shareholder.html">Shareholder</a></li><li><a href="SkillQueue.html">SkillQueue</a></li><li><a href="Skills.html">Skills</a></li><li><a href="Sovereignty.html">Sovereignty</a></li><li><a href="Squad.html">Squad</a></li><li><a href="Starbase.html">Starbase</a></li><li><a href="Status.html">Status</a></li><li><a href="Structure.html">Structure</a></li><li><a href="System.html">System</a></li><li><a href="Title.html">Title</a></li><li><a href="Universe.html">Universe</a></li><li><a href="UserInterface.html">UserInterface</a></li><li><a href="Wallet.html">Wallet</a></li><li><a href="Wars.html">Wars</a></li><li><a href="Wing.html">Wing</a></li><li><a href="module.exports.html">exports</a></li><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#add">add</a></li><li><a href="global.html#addAttendee">addAttendee</a></li><li><a href="global.html#addConstellation">addConstellation</a></li><li><a href="global.html#addMoon">addMoon</a></li><li><a href="global.html#addPlanet">addPlanet</a></li><li><a href="global.html#addRegion">addRegion</a></li><li><a href="global.html#delete">delete</a></li><li><a href="global.html#deleteLabel">deleteLabel</a></li><li><a href="global.html#detectAndParse">detectAndParse</a></li><li><a href="global.html#dispatch">dispatch</a></li><li><a href="global.html#ensureAuth">ensureAuth</a></li><li><a href="global.html#ensureValidToken">ensureValidToken</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#fromDNA">fromDNA</a></li><li><a href="global.html#fromData">fromData</a></li><li><a href="global.html#fromEFT">fromEFT</a></li><li><a href="global.html#fromXML">fromXML</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getActiveSystems">getActiveSystems</a></li><li><a href="global.html#getAllAttributes">getAllAttributes</a></li><li><a href="global.html#getAllEffects">getAllEffects</a></li><li><a href="global.html#getAttribute">getAttribute</a></li><li><a href="global.html#getByConstellation">getByConstellation</a></li><li><a href="global.html#getByLocation">getByLocation</a></li><li><a href="global.html#getByStagingSystem">getByStagingSystem</a></li><li><a href="global.html#getByType">getByType</a></li><li><a href="global.html#getCharacterStats">getCharacterStats</a></li><li><a href="global.html#getContent">getContent</a></li><li><a href="global.html#getCorporationStats">getCorporationStats</a></li><li><a href="global.html#getEffect">getEffect</a></li><li><a href="global.html#getEvent">getEvent</a></li><li><a href="global.html#getHeaders">getHeaders</a></li><li><a href="global.html#getItem">getItem</a></li><li><a href="global.html#getLabels">getLabels</a></li><li><a href="global.html#getLocation">getLocation</a></li><li><a href="global.html#getMailSubscriptions">getMailSubscriptions</a></li><li><a href="global.html#getNPCCorps">getNPCCorps</a></li><li><a href="global.html#getOffers">getOffers</a></li><li><a href="global.html#getPayout">getPayout</a></li><li><a href="global.html#getPlanetById">getPlanetById</a></li><li><a href="global.html#getRegionById">getRegionById</a></li><li><a href="global.html#getSecure">getSecure</a></li><li><a href="global.html#getShortest">getShortest</a></li><li><a href="global.html#getToken">getToken</a></li><li><a href="global.html#getUnsafe">getUnsafe</a></li><li><a href="global.html#getWallet">getWallet</a></li><li><a href="global.html#isAuthenticated">isAuthenticated</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isTokenValid">isTokenValid</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#loadAllianceHistory">loadAllianceHistory</a></li><li><a href="global.html#loadBalance">loadBalance</a></li><li><a href="global.html#loadBids">loadBids</a></li><li><a href="global.html#loadBlueprints">loadBlueprints</a></li><li><a href="global.html#loadCampaigns">loadCampaigns</a></li><li><a href="global.html#loadCategory">loadCategory</a></li><li><a href="global.html#loadCharacterJobs">loadCharacterJobs</a></li><li><a href="global.html#loadContacts">loadContacts</a></li><li><a href="global.html#loadContainerLogs">loadContainerLogs</a></li><li><a href="global.html#loadCorporationJobs">loadCorporationJobs</a></li><li><a href="global.html#loadDetails">loadDetails</a></li><li><a href="global.html#loadDivisions">loadDivisions</a></li><li><a href="global.html#loadEvents">loadEvents</a></li><li><a href="global.html#loadFacilities">loadFacilities</a></li><li><a href="global.html#loadFactions">loadFactions</a></li><li><a href="global.html#loadFleet">loadFleet</a></li><li><a href="global.html#loadGroup">loadGroup</a></li><li><a href="global.html#loadIcons">loadIcons</a></li><li><a href="global.html#loadInfo">loadInfo</a></li><li><a href="global.html#loadItems">loadItems</a></li><li><a href="global.html#loadJournal">loadJournal</a></li><li><a href="global.html#loadKillmail">loadKillmail</a></li><li><a href="global.html#loadLabels">loadLabels</a></li><li><a href="global.html#loadLeaderboards">loadLeaderboards</a></li><li><a href="global.html#loadMap">loadMap</a></li><li><a href="global.html#loadMarketGroup">loadMarketGroup</a></li><li><a href="global.html#loadMedals">loadMedals</a></li><li><a href="global.html#loadMedalsIssued">loadMedalsIssued</a></li><li><a href="global.html#loadMemberLimit">loadMemberLimit</a></li><li><a href="global.html#loadMemberTracking">loadMemberTracking</a></li><li><a href="global.html#loadMembers">loadMembers</a></li><li><a href="global.html#loadOffers">loadOffers</a></li><li><a href="global.html#loadOrdersByRegion">loadOrdersByRegion</a></li><li><a href="global.html#loadOrdersByStructure">loadOrdersByStructure</a></li><li><a href="global.html#loadPlanetDetail">loadPlanetDetail</a></li><li><a href="global.html#loadPlanetMeta">loadPlanetMeta</a></li><li><a href="global.html#loadPlanets">loadPlanets</a></li><li><a href="global.html#loadPortrait">loadPortrait</a></li><li><a href="global.html#loadPublicInfo">loadPublicInfo</a></li><li><a href="global.html#loadRecent">loadRecent</a></li><li><a href="global.html#loadRoles">loadRoles</a></li><li><a href="global.html#loadRolesHistory">loadRolesHistory</a></li><li><a href="global.html#loadSchematic">loadSchematic</a></li><li><a href="global.html#loadShareholders">loadShareholders</a></li><li><a href="global.html#loadStandings">loadStandings</a></li><li><a href="global.html#loadStarbaseDetails">loadStarbaseDetails</a></li><li><a href="global.html#loadStarbases">loadStarbases</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#loadStructures">loadStructures</a></li><li><a href="global.html#loadSystemIndexes">loadSystemIndexes</a></li><li><a href="global.html#loadSystems">loadSystems</a></li><li><a href="global.html#loadTitles">loadTitles</a></li><li><a href="global.html#loadTransactions">loadTransactions</a></li><li><a href="global.html#loadType">loadType</a></li><li><a href="global.html#loadWar">loadWar</a></li><li><a href="global.html#loadWings">loadWings</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#markRead">markRead</a></li><li><a href="global.html#postLabel">postLabel</a></li><li><a href="global.html#putMetaData">putMetaData</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#requireValidToken">requireValidToken</a></li><li><a href="global.html#resolveItems">resolveItems</a></li><li><a href="global.html#resolveLocations">resolveLocations</a></li><li><a href="global.html#resolveNames">resolveNames</a></li><li><a href="global.html#search">search</a></li><li><a href="global.html#searchPublic">searchPublic</a></li><li><a href="global.html#sendToFrontend">sendToFrontend</a></li><li><a href="global.html#setAttributes">setAttributes</a></li><li><a href="global.html#setDetails">setDetails</a></li><li><a href="global.html#setEffects">setEffects</a></li><li><a href="global.html#setResponse">setResponse</a></li><li><a href="global.html#setToken">setToken</a></li><li><a href="global.html#subscribe">subscribe</a></li><li><a href="global.html#summary">summary</a></li><li><a href="global.html#toJSON">toJSON</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateComponent">updateComponent</a></li><li><a href="global.html#updateResponse">updateResponse</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Fitting.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const xml2js = require('xml2js');
+const InventoryType = require('./InventoryType');
+const Dogma = require('../dogma/Dogma');
+
+/**
+ * Represents a fitting for a ship in the EVE Online universe.
+ * This class provides methods to handle and parse different fitting formats (EFT, DNA, XML),
+ * as well as resolve item details and convert the fitting to a plain JavaScript object.
+ */
+export default class Fitting {
+  /**
+   * Creates an instance of the Fitting class.
+   * @param {Object} fittingData - The fitting data.
+   * @param {number} [fittingData.fitting_id=null] - The ID of the fitting.
+   * @param {string} fittingData.name - The name of the fitting.
+   * @param {string} fittingData.description - The description of the fitting.
+   * @param {number} fittingData.ship_type_id - The type ID of the ship being fitted.
+   * @param {Array&lt;Object>} [fittingData.items=[]] - A list of items in the fitting, each containing `type_id`, `flag`, and `quantity`.
+   */
+  constructor({
+    fitting_id = null,
+    name,
+    description,
+    ship_type_id,
+    items = []
+  }) {
+    /**
+     * @type {number}
+     * @description The unique ID of the fitting.
+     */
+    this.id = fitting_id;
+
+    /**
+     * @type {string}
+     * @description The name of the fitting.
+     */
+    this.name = name;
+
+    /**
+     * @type {string}
+     * @description The description of the fitting.
+     */
+    this.description = description;
+
+    /**
+     * @type {number}
+     * @description The type ID of the ship being fitted.
+     */
+    this.shipTypeId = ship_type_id;
+
+    /**
+     * @type {Array&lt;Object>}
+     * @description The items that make up the fitting, each containing `type_id`, `flag`, and `quantity`.
+     */
+    this.items = items; // {type_id, flag, quantity}
+  }
+
+  /**
+   * Parses an EFT (EVE Fitting Tool) string into a Fitting object.
+   * @param {string} eftString - The EFT format fitting string.
+   * @returns {Fitting} The parsed Fitting instance.
+   * @throws {Error} Throws an error if the EFT string is invalid.
+   */
+  static fromEFT(eftString) {
+    const lines = eftString
+      .split(/\r?\n/)
+      .map(line => line.trim())
+      .filter(Boolean);
+
+    if (!lines.length || !lines[0].startsWith('[')) {
+      throw new Error('Invalid EFT format');
+    }
+
+    const [shipSection, name] = lines[0]
+      .slice(1, -1)
+      .split(',')
+      .map(s => s.trim());
+
+    const shipTypeId = parseInt(shipSection); // fallback, override this if needed
+    const items = [];
+
+    const flagMap = [
+      11, // High
+      12, // Mid
+      13, // Low
+      14, // Rig
+      92  // Subsystem
+    ];
+
+    let currentFlag = 11;
+    let group = 0;
+
+    for (let i = 1; i &lt; lines.length; i++) {
+      const line = lines[i];
+
+      if (line === '') continue;
+
+      if (line.startsWith('[')) {
+        group++;
+        currentFlag = flagMap[group] || 11;
+        continue;
+      }
+
+      const item = {
+        type_id: 0, // You’ll map this from the item name later
+        flag: currentFlag,
+        quantity: 1,
+        name: line
+      };
+
+      items.push(item);
+    }
+
+    const fitting = new Fitting({
+      name: name || 'Imported Fit',
+      description: 'Parsed from EFT',
+      ship_type_id: shipTypeId,
+      items
+    });
+
+    return fitting;
+  }
+
+  /**
+   * Parses a DNA (direct ship fitting string) format string into a Fitting object.
+   * @param {string} dnaString - The DNA string format fitting string.
+   * @returns {Fitting} The parsed Fitting instance.
+   */
+  static fromDNA(dnaString) {
+    const [shipPart, ...items] = dnaString.split(':');
+    const [shipTypeId] = shipPart.split(';').map(Number);
+    const fittingItems = [];
+
+    items.forEach(entry => {
+      const [typeIdStr, qtyStr, flagStr] = entry.split(';');
+      if (!typeIdStr || !qtyStr || !flagStr) return;
+
+      fittingItems.push({
+        type_id: Number(typeIdStr),
+        quantity: Number(qtyStr),
+        flag: Number(flagStr),
+      });
+    });
+
+    return new Fitting({
+      name: 'DNA Imported',
+      description: 'Parsed from DNA string',
+      ship_type_id: shipTypeId,
+      items: fittingItems
+    });
+  }
+
+  /**
+   * Parses an XML fitting string into a Fitting object.
+   * @param {string} xmlString - The XML string fitting data.
+   * @returns {Promise&lt;Fitting>} A promise that resolves to a parsed Fitting instance.
+   */
+  static async fromXML(xmlString) {
+    const parsed = await xml2js.parseStringPromise(xmlString, { explicitArray: false });
+
+    const fit = parsed.fitting;
+    const name = fit.$.name || 'XML Fit';
+    const shipTypeId = parseInt(fit.ship.$.typeID);
+    const items = [];
+
+    const slotList = Array.isArray(fit.hardware) ? fit.hardware : [fit.hardware];
+
+    slotList.forEach(h => {
+      items.push({
+        type_id: parseInt(h.$.typeID),
+        quantity: parseInt(h.$.quantity) || 1,
+        flag: parseInt(h.$.flag),
+      });
+    });
+
+    return new Fitting({
+      name,
+      description: 'Parsed from XML',
+      ship_type_id: shipTypeId,
+      items
+    });
+  }
+
+  /**
+   * Detects and parses an input string in one of the supported fitting formats (EFT, DNA, XML).
+   * @param {string} input - The input fitting string to be detected and parsed.
+   * @returns {Promise&lt;Fitting>} A promise that resolves to the parsed Fitting instance.
+   * @throws {Error} Throws an error if the format of the input is unknown.
+   */
+  static async detectAndParse(input) {
+    input = input.trim();
+
+    if (input.startsWith('[')) {
+      return Fitting.fromEFT(input);
+    } else if (/^\d+:/.test(input)) {
+      return Fitting.fromDNA(input);
+    } else if (input.startsWith('&lt;fitting')) {
+      return await Fitting.fromXML(input);
+    }
+
+    throw new Error('Unknown fitting format');
+  }
+
+  /**
+   * Resolves the items in the fitting by enriching them with dogma data.
+   * This method queries the inventory type and dogma effects for each item.
+   * @returns {Promise&lt;void>} Resolves once all items are enriched with their corresponding dogma data.
+   */
+  async resolveItems() {
+    const dogma = new Dogma();
+
+    for (const item of this.items) {
+      const inv = await InventoryType.fromTypeId(item.type_id);
+      const enriched = await dogma.getItem(item.type_id);
+      inv.setDogma(enriched);
+      item.resolved = inv;
+    }
+  }
+
+  /**
+   * Converts the fitting instance into a plain JavaScript object.
+   * @returns {Object} The plain JavaScript object representing the fitting.
+   */
+  toJSON() {
+    return {
+      fitting_id: this.id,
+      name: this.name,
+      description: this.description,
+      ship_type_id: this.shipTypeId,
+      items: this.items
+    };
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

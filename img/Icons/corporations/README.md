@@ -1,4 +1,4 @@
-📁 [⬅ Back to icons/](../README.md)
+📁 [⬅ Back to Icons/](../README.md)
 
 # corporations/
 

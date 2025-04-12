@@ -1,6 +1,6 @@
 📁 [⬅ Back to img/](../README.md)
 
-# types/
+# Types/
 
 
 ## Other Files
