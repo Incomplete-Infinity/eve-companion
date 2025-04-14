@@ -7,5 +7,6 @@
 1. [Core.js](./Core.js)
 
 ## Subfolders
-- [core/](./core/README.md)
+- [main/](./main/README.md)
 - [renderer/](./renderer/README.md)
+- [test/](./test/README.md)

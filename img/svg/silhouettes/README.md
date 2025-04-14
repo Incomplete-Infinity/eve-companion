@@ -1,6 +1,6 @@
-📁 [⬅ Back to img/](../README.md)
+📁 [⬅ Back to svg/](../README.md)
 
-# svg/
+# silhouettes/
 
 ## Ship SVGs
 
