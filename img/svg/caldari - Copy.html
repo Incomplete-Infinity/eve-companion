@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <svg width="300" height="500" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Steel blue brushed background -->
+        <linearGradient id="caldariSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1B263B" />
+          <stop offset="100%" stop-color="#415A77" />
+        </linearGradient>
+    
+        <!-- Metallic hardware bar -->
+        <linearGradient id="caldariMetalBar" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#AAA" />
+          <stop offset="100%" stop-color="#444" />
+        </linearGradient>
+    
+        <!-- Bevel/Emboss filter -->
+        <filter id="caldariBevel" x="-10%" y="-10%" width="120%" height="120%">
+          <feOffset dx="2" dy="2" result="shadow" />
+          <feGaussianBlur in="shadow" stdDeviation="2" />
+          <feComposite in2="SourceAlpha" operator="in" />
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    
+      <!-- Base slab -->
+      <rect width="300" height="500" fill="url(#caldariSteel)" rx="12" />
+    
+      <!-- Top and bottom accent bars -->
+      <rect x="0" y="0" width="300" height="20" fill="url(#caldariMetalBar)" />
+      <rect x="0" y="480" width="300" height="20" fill="url(#caldariMetalBar)" />
+    
+      <!-- Vertical inset slot -->
+      <rect x="60" y="100" width="20" height="300" rx="4" fill="#000" opacity="0.3" filter="url(#caldariBevel)" />
+    
+      <!-- Bottom stroke detail -->
+      <line x1="0" y1="460" x2="300" y2="460" stroke="#8899AA" stroke-opacity="0.15" stroke-width="2" />
+    
+      <!-- Footer label -->
+      <text x="150" y="470" font-size="18" fill="#9DC1E2" font-family="sans-serif" text-anchor="middle" letter-spacing="2">
+        CALDARI
+      </text>
+    </svg>    
+  </body>
+</html>

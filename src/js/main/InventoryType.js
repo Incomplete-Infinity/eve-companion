@@ -1,12 +1,12 @@
-const ESI = require('eve_swagger_interface');
-const Attribute = require('../../../dogma/Attribute');
+const EveSwaggerInterface = require('eve_swagger_interface');
+const Universe = require('../../../Universe');
 
 /**
  * @class InventoryType
  * @classdesc Represents an item type in the EVE universe (ships, implants, modules, etc.).
  * Initialized with a type ID, and enriched with metadata and dogma attributes via `.load()`.
  */
-export defaule class InventoryType {
+export default class InventoryType {
   /**
    * Construct a new InventoryType with just the type ID.
    *
@@ -16,6 +16,27 @@ export defaule class InventoryType {
   constructor(typeId) {
     /** @type {number} Unique inventory type ID */
     this.id = typeId;
+
+    const apiInstance = new Universe.UniverseApi();
+        
+    const opts = { 
+      'acceptLanguage': "en-us", // String | Language to use in the response
+      'datasource': "tranquility", // String | The server name you would like data from
+      'ifNoneMatch': "ifNoneMatch_example", // String | ETag from a previous request. A 304 will be returned if this matches the current ETag
+      'language': "en-us" // String | Language to use in the response, takes precedence over Accept-Language
+    };
+    
+    const callback = function(error, data, response) {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('/Universe/Types/{TypeId} called successfully. Returned data: ' + data);
+      }
+    };
+    apiInstance.getUniverseTypesTypeId(typeId, opts, callback);
+
+
+
 
     /** @type {string|null} Human-readable item name */
     this.name = null;

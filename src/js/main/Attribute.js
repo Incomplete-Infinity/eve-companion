@@ -15,13 +15,7 @@ export default class Attribute {
    * @param {string|null} [param0.description=null] - Optional description of what the attribute does.
    * @param {number|null} [param0.unit_id=null] - Optional unit ID (e.g., meters, seconds).
    */
-  constructor({
-    attribute_id,
-    value,
-    name = null,
-    description = null,
-    unit_id = null,
-  }) {
+  constructor(attribute_id) {
     /**
      * @type {number}
      * @description The dogma attribute ID.

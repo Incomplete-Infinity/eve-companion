@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <svg width="300" height="500" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Futuristic green texture -->
+        <linearGradient id="gallenteBody" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0F2E2E" />
+          <stop offset="100%" stop-color="#2E8B57" />
+        </linearGradient>
+    
+        <!-- Silver metallic edge -->
+        <linearGradient id="gallenteEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#DDD" />
+          <stop offset="100%" stop-color="#444" />
+        </linearGradient>
+    
+        <!-- Rounded tech glow -->
+        <filter id="gallenteGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    
+      <!-- Base slab -->
+      <rect width="300" height="500" fill="url(#gallenteBody)" rx="24" />
+    
+      <!-- Inner silver border -->
+      <rect x="30" y="40" width="240" height="400" rx="24" fill="none" stroke="url(#gallenteEdge)" stroke-width="4" filter="url(#gallenteGlow)" />
+    
+      <!-- Central data slot or indicator panel -->
+      <rect x="60" y="140" width="180" height="220" rx="12" fill="#1A3B34" opacity="0.3" />
+    
+      <!-- Footer label -->
+      <text x="150" y="470" font-size="18" fill="#A9FBD7" font-family="sans-serif" text-anchor="middle" letter-spacing="2">
+        GALLENTE
+      </text>
+    </svg> 
+  </body>
+</html>

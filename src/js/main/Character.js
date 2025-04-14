@@ -14,7 +14,7 @@ export default class Character {
    * @param {number} characterId - EVE character ID.
    * @param {AuthTokenManager|null} [auth=null] - Optional AuthTokenManager for authenticated access.
    */
-  constructor(characterId, auth = null) {
+  constructor(characterId) {
     /** @type {number} Character ID */
     this.characterId = characterId;
 
@@ -48,7 +48,7 @@ export default class Character {
    */
   async ensureAuth() {
     if (!this.auth) throw new Error('Authenticated data requires an auth token');
-    await this.auth.ensureValidToken();
+    await this.auth.requireValidToken();
   }
 
   /**

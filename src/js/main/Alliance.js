@@ -5,7 +5,7 @@ const ESI = require('eve_swagger_interface');
  * @classdesc Represents an EVE Online alliance and provides methods to retrieve
  *            its metadata and member corporations from the EVE Swagger Interface (ESI).
  */
-export default Alliance {
+export default class Alliance {
   /**
    * Create a new Alliance instance.
    * 

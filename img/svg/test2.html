@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVE Empire Panels</title>
+  <style>
+    html, body {
+      background: #111;
+      margin: 0;
+      padding: 2rem;
+      font-family: sans-serif;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .panel-container {
+      display: flex;
+      gap: 2rem;
+    }
+    .panel {
+      width: 200px;
+      height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #0007;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+    .label {
+      color: #aaa;
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="panel-container">
+  <!-- Amarr -->
+  <div>
+    <div class="panel">
+      <svg viewBox="0 0 200 400">
+        <defs>
+          <linearGradient id="amarr-marble" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F9F4E6"/>
+            <stop offset="100%" stop-color="#E3D6BA"/>
+          </linearGradient>
+          <linearGradient id="amarr-gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="100%" stop-color="#8B7500"/>
+          </linearGradient>
+        </defs>
+        <rect width="200" height="400" fill="url(#amarr-marble)" />
+        <rect x="30" y="40" width="140" height="320" rx="10" fill="url(#amarr-gold)" opacity="0.1"/>
+        <path d="M40 50 H160 V350 H40 Z" stroke="url(#amarr-gold)" stroke-width="4" fill="none" />
+      </svg>
+    </div>
+    <div class="label" style="color: #FFD700;">AMARR</div>
+  </div>
+
+  <!-- Caldari -->
+  <div>
+    <div class="panel">
+      <svg viewBox="0 0 200 400">
+        <defs>
+          <linearGradient id="caldari-metal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1B263B"/>
+            <stop offset="100%" stop-color="#415A77"/>
+          </linearGradient>
+        </defs>
+        <rect width="200" height="400" fill="url(#caldari-metal)" />
+        <rect x="40" y="60" width="20" height="280" rx="4" fill="#000" opacity="0.4"/>
+        <line x1="0" y1="30" x2="200" y2="30" stroke="#AAA" stroke-opacity="0.2" stroke-width="2"/>
+        <line x1="0" y1="370" x2="200" y2="370" stroke="#AAA" stroke-opacity="0.2" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="label" style="color: #6FA3D6;">CALDARI</div>
+  </div>
+
+  <!-- Gallente -->
+  <div>
+    <div class="panel">
+      <svg viewBox="0 0 200 400">
+        <defs>
+          <linearGradient id="gallente-body" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0F2E2E"/>
+            <stop offset="100%" stop-color="#2E8B57"/>
+          </linearGradient>
+          <linearGradient id="gallente-silver" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#CCCCCC"/>
+            <stop offset="100%" stop-color="#666666"/>
+          </linearGradient>
+        </defs>
+        <rect width="200" height="400" fill="url(#gallente-body)" />
+        <rect x="30" y="40" width="140" height="320" rx="20" fill="none" stroke="url(#gallente-silver)" stroke-width="4"/>
+      </svg>
+    </div>
+    <div class="label" style="color: #A9FBD7;">GALLENTE</div>
+  </div>
+
+  <!-- Minmatar -->
+  <div>
+    <div class="panel">
+      <svg viewBox="0 0 200 400">
+        <defs>
+          <linearGradient id="minmatar-rust" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4B1E0A"/>
+            <stop offset="100%" stop-color="#8B3A3A"/>
+          </linearGradient>
+          <radialGradient id="minmatar-bolts" cx="50%" cy="0%" r="50%">
+            <stop offset="0%" stop-color="#AAA" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#333" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="200" height="400" fill="url(#minmatar-rust)" />
+        <circle cx="25" cy="25" r="5" fill="url(#minmatar-bolts)" />
+        <circle cx="175" cy="25" r="5" fill="url(#minmatar-bolts)" />
+        <path d="M40 120 L160 320" stroke="#553322" stroke-width="6" opacity="0.3"/>
+        <path d="M160 120 L40 320" stroke="#553322" stroke-width="6" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="label" style="color: #D16E43;">MINMATAR</div>
+  </div>
+</div>
+
+</body>
+</html>

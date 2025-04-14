@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <svg width="300" height="500" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Rusty base gradient -->
+        <linearGradient id="minmatarRust" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#3B1F14" />
+          <stop offset="100%" stop-color="#8B3A3A" />
+        </linearGradient>
+    
+        <!-- Dark tungsten accent -->
+        <linearGradient id="tungstenEdge" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#888" />
+          <stop offset="100%" stop-color="#333" />
+        </linearGradient>
+    
+        <!-- Rust pitting texture -->
+        <filter id="rustTexture" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise" />
+          <feColorMatrix in="noise" type="saturate" values="0" />
+          <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
+        </filter>
+    
+        <!-- Inner bevel for plates -->
+        <filter id="minmatarBevel">
+          <feOffset dx="1.5" dy="1.5" result="shadow" />
+          <feGaussianBlur in="shadow" stdDeviation="1" />
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+    
+        <!-- Grain overlay -->
+        <pattern id="grain" patternUnits="userSpaceOnUse" width="4" height="4">
+          <rect width="4" height="4" fill="#000" opacity="0.04" />
+          <circle cx="2" cy="2" r="0.5" fill="#fff" opacity="0.04" />
+        </pattern>
+    
+        <!-- Grunge scratches -->
+        <filter id="scratches">
+          <feTurbulence type="turbulence" baseFrequency="0.8" numOctaves="2" result="scratchNoise" />
+          <feDisplacementMap in2="scratchNoise" in="SourceGraphic" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+    
+      <!-- Base slab -->
+      <rect width="300" height="500" fill="url(#minmatarRust)" rx="8" filter="url(#rustTexture)" />
+      <rect width="300" height="500" fill="url(#grain)" rx="8" />
+    
+      <!-- Outer grunge scratches -->
+      <rect width="300" height="500" rx="8" fill="transparent" filter="url(#scratches)" />
+    
+      <!-- Edge border trim -->
+      <rect x="8" y="8" width="284" height="484" rx="12" fill="none" stroke="url(#tungstenEdge)" stroke-width="2" />
+    
+      <!-- Upper plate -->
+      <path d="M40 80 L260 80 L260 140 L40 140 Z" fill="url(#tungstenEdge)" filter="url(#minmatarBevel)" />
+      <!-- Lower plate -->
+      <path d="M60 380 L240 380 L240 440 L60 440 Z" fill="url(#tungstenEdge)" filter="url(#minmatarBevel)" />
+    
+      <!-- Bolts -->
+      <circle cx="50" cy="100" r="5" fill="#555" />
+      <circle cx="250" cy="100" r="5" fill="#555" />
+      <circle cx="70" cy="400" r="5" fill="#555" />
+      <circle cx="230" cy="400" r="5" fill="#555" />
+      <circle cx="150" cy="260" r="3" fill="#555" opacity="0.5" />
+      <circle cx="150" cy="280" r="2" fill="#222" opacity="0.4" />
+    
+      <!-- Crossbeam -->
+      <path d="M40 460 L260 180" stroke="#422" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+      <path d="M260 460 L40 180" stroke="#422" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+    
+      <!-- Inner panel frame -->
+      <path d="M70 100 L230 100 L230 400 L70 400 Z" fill="none" stroke="#744" stroke-opacity="0.2" stroke-width="2" />
+      <path d="M100 160 H200" stroke="#553322" stroke-opacity="0.3" stroke-width="1.5" />
+      <path d="M100 180 H200" stroke="#553322" stroke-opacity="0.2" stroke-width="1" />
+      <path d="M100 200 H200" stroke="#553322" stroke-opacity="0.15" stroke-width="1" />
+    
+      <!-- Footer label -->
+      <text x="150" y="470" font-size="18" fill="#E16A44" font-family="sans-serif" text-anchor="middle" letter-spacing="2">
+        MINMATAR
+      </text>
+    </svg>
+    
+  </body>
+</html>

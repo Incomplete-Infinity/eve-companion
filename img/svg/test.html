@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVE Empires Panel Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/augmented-ui/augmented-ui.min.css"
+    />
+    <style>
+      * {
+        --bg-carbon-fiber: url("https://www.transparenttextures.com/patterns/real-carbon-fibre.png");
+        --bg-gun-metal: url("https://www.transparenttextures.com/patterns/gun-metal.png");
+        --bg-brushed-aluminum: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+        --bg-elegant-grid: url("https://www.transparenttextures.com/patterns/elegant-grid.png");
+        --bg-project-paper: url("https://www.transparenttextures.com/patterns/project-paper.png");
+        --bg-random-grey-variations: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
+        --bg-gradient-squares: url("https://www.transparenttextures.com/patterns/gradient-squares.png");
+        --bg-fabric-of-squares: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+        font-family: "Orbitron", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 2rem;
+        color: #fff;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .panel {
+        width: 320px;
+        height: 420px;
+        margin: 1rem;
+        padding: 1.5rem;
+        color: inherit;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s ease-in-out;
+        box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.03),
+          0 0 20px rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: blur(2px);
+        border-radius: 10px;
+      }
+
+      .panel h2 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      .panel p {
+        font-size: 0.95rem;
+        opacity: 0.8;
+      }
+
+      .amarr {
+        --aug-border: 4px;
+        --aug-border-top: gold;
+        --aug-border-bottom: #d4af37;
+        --aug-border-left: rgba(255, 255, 255, 0.2);
+        --aug-border-right: #222;
+
+        --aug-inlay: #d4af37;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.05),
+            transparent
+          ),
+          linear-gradient(135deg, #bfb8a5, #d4af37, #333333),
+          url("https://www.transparenttextures.com/patterns/marble.png");
+        background-blend-mode: soft-light, normal;
+      }
+
+      .caldari {
+        --aug-border: 4px;
+        --aug-border-all: #2f4f4f;
+        --aug-inlay: #0f1923;
+        background-image: linear-gradient(to bottom right, #0f1114, #2c3e50),
+          url("https://www.transparenttextures.com/patterns/hexellence.png");
+        background-blend-mode: overlay;
+      }
+
+      .gallente {
+        --aug-border: 4px;
+        --aug-border-all: copper;
+        --aug-inlay: #2e8b57;
+        background-image: linear-gradient(to bottom right, #2e8b57, #3a5f49),
+          url("https://www.transparenttextures.com/patterns/glossy.png");
+        background-blend-mode: screen;
+      }
+
+      .minmatar {
+        --aug-border: 4px;
+        --aug-border-all: #cd853f;
+        --aug-inlay: #1a0c0c;
+        background-image: linear-gradient(to bottom right, #5c1e1e, #120c0a),
+          url("https://www.transparenttextures.com/patterns/rusted-metal.png");
+        background-blend-mode: multiply;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>EVE Empire Panels</h1>
+    <div class="container">
+      <div
+        class="panel amarr fabric-of-squares"
+        data-augmented-ui="tl-2-round-xy t-round-x tr-2-round-xy r-round-y br-2-round-xy b-round-x bl-2-round-xy l-round-y border"
+      >
+        <h2>Amarr</h2>
+        <p>Holy gold and ancient power.</p>
+      </div>
+      <div
+        class="panel caldari"
+        data-augmented-ui="tl-2-clip-y t-clip tr-2-clip-x r-clip br-2-clip-y b-clip bl-2-clip-x l-clip inlay"
+      >
+        <h2>Caldari</h2>
+        <p>Corporate precision and steel resolve.</p>
+      </div>
+      <div
+        class="panel gallente"
+        data-augmented-ui="tl-2-round-y t-round-x tr-2-round-x r-round-y br-2-round-y b-round-x bl-2-round-x l-round-y inlay"
+      >
+        <h2>Gallente</h2>
+        <p>Elegance fused with innovation.</p>
+      </div>
+      <div
+        class="panel minmatar"
+        data-augmented-ui="tl-2-rect-y t-rect tr-2-rect-x r-rect br-2-rect-y b-rect bl-2-rect-x l-rect inlay"
+      >
+        <h2>Minmatar</h2>
+        <p>Rugged, rusted, and battle-worn.</p>
+      </div>
+    </div>
+  </body>
+</html>

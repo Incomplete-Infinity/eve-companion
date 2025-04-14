@@ -4,7 +4,7 @@ const System = require("./System");
 
 export default class Constellation {
   constructor(id = null) {
-    this.constellationId = id;
+    this.id = id;
     this.api = new ESI.UniverseApi();
 
     if (id) return this.fetch();

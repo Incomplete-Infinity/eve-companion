@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <svg width="300" height="500" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Marble background -->
+        <linearGradient id="marbleBase" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f9f6f0"/>
+          <stop offset="100%" stop-color="#e6ddcc"/>
+        </linearGradient>
+    
+        <!-- Gold trim -->
+        <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFD700" />
+          <stop offset="50%" stop-color="#B8860B" />
+          <stop offset="100%" stop-color="#8B7500" />
+        </linearGradient>
+    
+        <!-- Bevel shadow -->
+        <filter id="innerBevel" x="-10%" y="-10%" width="120%" height="120%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+          <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
+          <feComposite in="SourceGraphic" in2="offsetBlur" operator="arithmetic" k2="1" k3="-1" />
+        </filter>
+      </defs>
+    
+      <!-- Base slab -->
+      <rect width="300" height="500" fill="url(#marbleBase)" rx="16" />
+    
+      <!-- Inner inset -->
+      <rect x="30" y="60" width="240" height="380" rx="18" fill="#d8c6a8" filter="url(#innerBevel)" />
+    
+      <!-- Outer gold trim -->
+      <rect x="28" y="58" width="244" height="384" rx="20" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+    
+      <!-- Gold arch design -->
+      <path d="M75 100 Q150 30 225 100" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+      <path d="M150 100 Q150 150 135 165 Q150 160 165 165 Q150 150 150 100" fill="url(#goldTrim)" opacity="0.9"/>
+    
+      <!-- Footer label -->
+      <text x="150" y="470" font-size="18" fill="url(#goldTrim)" font-family="sans-serif" text-anchor="middle" letter-spacing="2">
+        AMARR
+      </text>
+    </svg>
+    
+
+  </body>
+</html>
