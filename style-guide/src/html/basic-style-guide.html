@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Guide</title>    
+    <link rel="stylesheet" href="../css/topcoat-popover.css" />
+    <link rel="stylesheet" href="../css/topcoat-select.css" />
+    <link rel="stylesheet" href="../css/topcoat-breadcrumb.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="dark-mode">
+    <!--Buttons-->
+    <div class="container">
+      <h1>Button Examples</h1>
+
+      <!-- Primary Button -->
+      <button class="btn btn-primary">Primary Button</button>
+
+      <!-- Secondary Button -->
+      <button type="button" class="btn btn-secondary">Secondary Button</button>
+
+      <!-- Success Button -->
+      <button type="button" class="btn btn-success">Success Button</button>
+
+      <!-- Warning Button -->
+      <button type="button" class="btn btn-warning">Warning Button</button>
+
+      <!-- Danger Button -->
+      <button type="button" class="btn btn-danger">Danger Button</button>
+
+      <!-- Large, Small, and Regular Sizes -->
+      <button type="button" class="btn btn-primary btn-lg">Large Button</button>
+      <button type="button" class="btn btn-secondary btn-sm">
+        Small Button
+      </button>
+      <button type="button" class="btn btn-success">Regular Button</button>
+    </div>
+    <!--Alerts-->
+    <div class="container">
+      <h1>Alerts Example</h1>
+
+      <!-- Success Alert -->
+      <div class="alert alert-success" role="alert">
+        Success Alert: Something was successful!
+      </div>
+
+      <!-- Info Alert -->
+      <div class="alert alert-info" role="alert">
+        Info Alert: Important information here.
+      </div>
+
+      <!-- Warning Alert -->
+      <div class="alert alert-warning" role="alert">
+        Warning Alert: Be cautious, something might be wrong.
+      </div>
+
+      <!-- Danger Alert -->
+      <div class="alert alert-danger" role="alert">
+        Danger Alert: Something went terribly wrong!
+      </div>
+
+      <!-- Dismissible Alerts -->
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Dismissible Success Alert: Click the close button to dismiss.
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        Dismissible Info Alert: Click the close button to dismiss.
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Dismissible Warning Alert: Click the close button to dismiss.
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Dismissible Danger Alert: Click the close button to dismiss.
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <!--Typography-->
+    <div class="container">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+
+      <p>
+        This is a paragraph of text. It can contain multiple lines and cover
+        various topics.
+      </p>
+
+      <blockquote>
+        This is a blockquote. It's a great way to emphasize a portion of text.
+      </blockquote>
+
+      <h2>Lists</h2>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ol>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+      </ul>
+    </div>
+    <!--Forms-->
+    <div class="container">
+      <h1>Form Elements</h1>
+
+      <!-- Input Fields -->
+      <div class="form-group">
+        <label for="inputField">Input Field:</label>
+        <input type="text" id="inputField" class="form-control" />
+      </div>
+
+      <!-- Textareas -->
+      <div class="form-group">
+        <label for="textarea">Textarea:</label>
+        <textarea id="textarea" class="form-control"></textarea>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="checkbox"
+        />
+        <label class="form-check-label" for="checkbox"> Checkbox </label>
+      </div>
+
+      <!-- Radio Buttons -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="radioGroup"
+          id="radio1"
+          checked
+        />
+        <label class="form-check-label" for="radio1"> Radio 1 </label>
+      </div>
+
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="radioGroup"
+          id="radio2"
+        />
+        <label class="form-check-label" for="radio2"> Radio 2 </label>
+      </div>
+
+      <!-- Select Boxes -->
+      <div class="form-group">
+        <label for="selectField">Select Box:</label>
+        <select id="selectField" class="form-control">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+
+      <!-- Form Validation States -->
+      <div class="form-group has-success">
+        <label class="form-control-label" for="validInput">Valid Input:</label>
+        <input type="text" id="validInput" class="form-control is-valid" />
+        <div class="valid-feedback">This input is valid.</div>
+      </div>
+
+      <div class="form-group has-danger">
+        <label class="form-control-label" for="invalidInput"
+          >Invalid Input:</label
+        >
+        <input type="text" id="invalidInput" class="form-control is-invalid" />
+        <div class="invalid-feedback">This input is invalid.</div>
+      </div>
+    </div>
+    <!--Navigation-->
+    <div class="container">
+      <!-- Navbar -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        aria-label="Main Navigation"
+      >
+        <a class="navbar-brand" href="#">Your Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <!-- Add more navigation items as needed -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Section</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Current Page
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Pagination -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs" id="tabs" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+            >Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="contact-tab"
+            data-toggle="tab"
+            href="#contact"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabsContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          Tab 1 content
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          Tab 2 content
+        </div>
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          Tab 3 content
+        </div>
+      </div>
+
+      <!-- Dropdown Menus -->
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <!--Cards-->
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Some example text.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img
+          src="path/to/image.jpg"
+          class="card-img-top"
+          alt="Image Alt Text"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Some example text.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Some example text.</p>
+          <a href="#" class="btn btn-primary">Button 1</a>
+          <a href="#" class="btn btn-secondary">Button 2</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Featured</div>
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Some example text.</p>
+        </div>
+        <div class="card-footer">Footer content</div>
+      </div>
+    </div>
+    <!--Tables-->
+    <div class="container">
+      <!-- Basic Table -->
+      <section>
+        <h2>Basic Table</h2>
+        <table class="table">
+          <caption>
+            Description of the table.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Striped Rows -->
+      <section>
+        <h2>Striped Rows</h2>
+        <table class="table table-striped">
+          <caption>
+            Description of the table.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Hover Rows -->
+      <section>
+        <h2>Hover Rows</h2>
+        <table class="table table-hover">
+          <caption>
+            Description of the table.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Table with Responsive Breakpoints -->
+      <section>
+        <h2>Table with Responsive Breakpoints</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <caption>
+              Description of the table.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <!--Modals-->
+    <div class="container">
+      <!-- Basic Modal -->
+      <button
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#basicModal"
+      >
+        Open Basic Modal
+      </button>
+
+      <div class="modal" id="basicModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Basic Modal</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This is a basic modal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal with Form -->
+      <button
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#formModal"
+      >
+        Open Modal with Form
+      </button>
+
+      <div class="modal" id="formModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal with Form</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <!-- Your form elements go here -->
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Modal -->
+      <button
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#largeModal"
+      >
+        Open Large Modal
+      </button>
+
+      <div class="modal" id="largeModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Large Modal</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This is a large modal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small Modal -->
+      <button
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#smallModal"
+      >
+        Open Small Modal
+      </button>
+
+      <div class="modal" id="smallModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Small Modal</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This is a small modal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dismissible Modal -->
+      <button
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#dismissibleModal"
+      >
+        Open Dismissible Modal
+      </button>
+
+      <div class="modal" id="dismissibleModal" data-dismissible="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Dismissible Modal</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This is a dismissible modal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Tooltips and Popovers-->
+    <div class="container mt-5">
+      <h1>Tooltip and Popover Examples</h1>
+
+      <!-- Basic Tooltip -->
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Basic Tooltip"
+      >
+        Hover me for a tooltip
+      </button>
+
+      <!-- Tooltip with HTML Content -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="tooltip"
+        data-html="true"
+        title="<em>Tooltip</em> with <b>HTML</b> content"
+      >
+        HTML Tooltip
+      </button>
+
+      <!-- Popover -->
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-toggle="popover"
+        data-placement="bottom"
+        title="Popover Title"
+        data-content="This is a popover with some content."
+      >
+        Click me for a Popover
+      </button>
+    </div>
+    <!--Progress Bars-->
+    <div class="container">
+      <h1>Progress Bars Example</h1>
+
+      <!-- Basic Progress Bar -->
+      <div class="progress">
+        <div
+          class="progress-bar"
+          style="width: 50%"
+          role="progressbar"
+          aria-valuenow="50"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+
+      <!-- Progress Bar with Labels -->
+      <div class="progress">
+        <div
+          class="progress-bar"
+          style="width: 25%"
+          role="progressbar"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          25%
+        </div>
+      </div>
+    </div>
+    <!--Icons-->
+    <div class="container">
+      <h1>Icons Example</h1>
+
+      <!-- Bootstrap Icons -->
+      <h2>Bootstrap Icons</h2>
+      <p>
+        <span class="bi bi-heart"></span>
+        <!-- Heart Icon -->
+        <span class="bi bi-star"></span>
+        <!-- Star Icon -->
+        <span class="bi bi-envelope"></span>
+        <!-- Envelope Icon -->
+        <!-- Add more icons as needed -->
+      </p>
+
+      <!-- Custom Icons -->
+      <h2>Custom Icons</h2>
+      <!-- Include your custom icons here -->
+      <p>
+        <span class="custom-icon"></span>
+        <!-- Example custom icon -->
+      </p>
+    </div>
+    <!--Badges and Labels-->
+    <div class="container">
+      <h1>Badges and Labels</h1>
+
+      <!-- Basic Badge -->
+      <span class="badge badge-primary">Basic Badge</span>
+
+      <!-- Badge with Colors -->
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-danger">Danger</span>
+
+      <!-- Label for Information -->
+      <span class="label label-info">Information</span>
+    </div>
+    <!--Accordion and Collapse-->
+    <div class="container">
+      <h1>Accordion and Collapse Example</h1>
+
+      <!-- Basic Accordion -->
+      <div class="accordion" id="basicAccordion">
+        <div class="card">
+          <div class="card-header" id="section1">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapse1"
+                aria-expanded="true"
+                aria-controls="collapse1"
+              >
+                Section 1
+              </button>
+            </h2>
+          </div>
+
+          <div
+            id="collapse1"
+            class="collapse show"
+            aria-labelledby="section1"
+            data-parent="#basicAccordion"
+          >
+            <div class="card-body">Content of Section 1 goes here.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="section2">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapse2"
+                aria-expanded="false"
+                aria-controls="collapse2"
+              >
+                Section 2
+              </button>
+            </h2>
+          </div>
+
+          <div
+            id="collapse2"
+            class="collapse"
+            aria-labelledby="section2"
+            data-parent="#basicAccordion"
+          >
+            <div class="card-body">Content of Section 2 goes here.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Sections -->
+      <div class="accordion" id="collapsibleSections">
+        <div class="card">
+          <div class="card-header" id="sectionA">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseA"
+                aria-expanded="true"
+                aria-controls="collapseA"
+              >
+                Section A
+              </button>
+            </h2>
+          </div>
+
+          <div
+            id="collapseA"
+            class="collapse show"
+            aria-labelledby="sectionA"
+            data-parent="#collapsibleSections"
+          >
+            <div class="card-body">Content of Section A goes here.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="sectionB">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseB"
+                aria-expanded="false"
+                aria-controls="collapseB"
+              >
+                Section B
+              </button>
+            </h2>
+          </div>
+
+          <div
+            id="collapseB"
+            class="collapse"
+            aria-labelledby="sectionB"
+            data-parent="#collapsibleSections"
+          >
+            <div class="card-body">Content of Section B goes here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Media Objects-->
+    <div class="container">
+      <h1>Media Objects</h1>
+
+      <!-- Image with Caption -->
+      <div class="media">
+        <img src="path/to/your/image.jpg" class="mr-3" alt="Image Caption" />
+        <div class="media-body">
+          <h5 class="mt-0">Image Caption</h5>
+          <p>Your image description or additional information goes here.</p>
+        </div>
+      </div>
+
+      <!-- Video Embed -->
+      <div class="embed-responsive embed-responsive-16by9 mt-4">
+        <!-- Replace the following URL with your video embed code -->
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/your-video-id"
+          allowfullscreen
+          title="Your Video"
+        ></iframe>
+      </div>
+    </div>
+    <!--Tabs and Pills-->
+    <div class="container">
+      <h1>Comprehensive Style Guide</h1>
+
+      <!-- Tabs with Content -->
+      <section>
+        <h2>Tabs with Content</h2>
+        <ul class="nav nav-tabs" id="tabs-with-content">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="home-tab-with-content"
+              data-toggle="tab"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="profile-tab-with-content"
+              data-toggle="tab"
+              href="#profile"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="contact-tab-with-content"
+              data-toggle="tab"
+              href="#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="home-content">
+            <p>Content for Home tab goes here.</p>
+          </div>
+          <div class="tab-pane fade" id="profile-tab-content">
+            <p>Content for Profile tab goes here.</p>
+          </div>
+          <div class="tab-pane fade" id="contact-tab-content">
+            <p>Content for Contact tab goes here.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pills Navigation -->
+      <section>
+        <h2>Pills Navigation</h2>
+        <ul class="nav nav-pills" id="myPills">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="pill-home"
+              data-toggle="pill"
+              href="#pill-home-content"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pill-profile"
+              data-toggle="pill"
+              href="#pill-profile-content"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="pill-contact"
+              data-toggle="pill"
+              href="#pill-contact-content"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="pill-home-content">
+            <p>Content for Home pill goes here.</p>
+          </div>
+          <div class="tab-pane fade" id="pill-profile-content">
+            <p>Content for Profile pill goes here.</p>
+          </div>
+          <div class="tab-pane fade" id="pill-contact-content">
+            <p>Content for Contact pill goes here.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ... (Include other UI elements as needed) -->
+    </div>
+    <!--Carousel-->
+    <div class="container">
+      <h2>Basic Image Carousel</h2>
+
+      <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image1.jpg" class="d-block w-100" alt="Image 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="image2.jpg" class="d-block w-100" alt="Image 2" />
+          </div>
+          <div class="carousel-item">
+            <img src="image3.jpg" class="d-block w-100" alt="Image 3" />
+          </div>
+          <!-- Add more items as needed -->
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#imageCarousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#imageCarousel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!--Panels and Panels with Navigation-->
+    <div class="container">
+      <!-- Basic Panel -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Basic Panel</h5>
+          <p class="card-text">
+            This is a basic panel without additional navigation links.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel with Navigation Links -->
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Tab 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tab 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tab 3</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Panel with Navigation Links</h5>
+          <p class="card-text">
+            This is a panel with navigation links using Bootstrap tabs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Dropdowns-->
+    <div class="container">
+      <!-- Basic Dropdown -->
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="basicDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Basic Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="basicDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+
+      <!-- Dropdowns in Navbar -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        aria-label="Main navigation"
+      >
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdowns
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--Spinners and Loaders-->
+    <div class="container">
+      <h1>Loading Spinner Example</h1>
+
+      <!-- Loading Spinner -->
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!--Chips-->
+    <div class="container">
+      <h2>Chips</h2>
+      <div class="chip">
+        Basic Chip
+        <button class="close" type="button" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      // Activate Bootstrap tooltips and popovers
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+      });
+    </script>
+  </body>
+</html>

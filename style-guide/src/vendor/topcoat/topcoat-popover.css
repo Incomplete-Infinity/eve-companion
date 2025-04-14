@@ -1,0 +1,59 @@
+    /* there's weird positioning, yes I know. */
+    .topcoat-popover {
+      position: absolute;
+      /* remove this it's for positioning */
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+      /* end remove */
+      width: 22rem;
+      height: auto;
+      padding: 1.2rem;
+      border-radius: 0.3rem;
+    }
+
+    .topcoat-popover:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: -11px;
+      margin: 0 auto;
+      width: 2rem;
+      height: 2rem;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /* dark theme colors */
+    html[data-bs-theme="dark"] .topcoat-popover {
+      color: #f0f1f1;
+      border-color: #323232;
+      background-color: #646666;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      text-shadow: 0 -1px #000;
+    }
+
+    html[data-bs-theme="dark"] .topcoat-popover:before {
+      border-right-color: #323232;
+      border-bottom-color: #323232;
+      background-color: #646666;
+    }
+
+    /* dark theme colors */
+    html[data-bs-theme="light"] .topcoat-popover {
+      color: #010;
+      background: #e5e9e8;
+      border: 0.1rem solid #a0afab;
+      box-shadow: 0 0.4rem 0.6rem 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 #fff;
+      text-shadow: 0 0.1rem #fff;
+    }
+
+    html[data-bs-theme="light"] .topcoat-popover:before {
+      border-right-color: #a0afab;
+      border-bottom-color: #a0afab;
+      background-color: #e5e9e8;
+    }

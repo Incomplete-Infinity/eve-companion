@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-core="modern">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Guide</title>
+    <!-- Halfmoon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
+      rel="stylesheet"
+      integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M="
+      crossorigin="anonymous"
+    />
+    <!-- Halfmoon modern core theme -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.modern.css"
+      rel="stylesheet"
+      integrity="sha256-DD6elX+jPmbFYPsGvzodUv2+9FHkxHlVtQi0/RJVULs="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css"
+      integrity="sha512-3axCmtM0Aq1Zin8EQ/BgsaYCdR9jY488aH7JYG4zTUeEHWGqOjm86hjL4cx6nIWGLMJ/UU4m+MOcQ2D/f2QdfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-dark.min.css"
+      integrity="sha512-Cwdrdy7iqIj7n5XjgDqvpCOO4aztpoIISOcabdx5igD8Z51YuOWa8BBbI8+2oOI6Rf77xMZ1vAlXvGn6jc6O5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/topcoat-popover.css" />
+    <link rel="stylesheet" href="./css/topcoat-select.css" />
+    <link rel="stylesheet" href="./css/topcoat-breadcrumb.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body id="body" class="container-fluid bg-gradient" data-bs-theme="dark">
+    <header
+      class="d-block jumbotron text-start fixed-top"
+    >
+      <figure class="bg-secondary bg-gradient float-start border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-bottom-pill rounded-start-0 w-50 w-lg-25 w-md-25 w-sm-50 ps-5">
+        <h1 class="">Style Guide</h1>
+        <small class="text-muted">A collection of UI elements</small>
+      </figure>
+
+      <nav class="float-end rounded-bottom-pill" aria-label="Toolbar">
+        <span class="topcoat-button-bar btn-group rounded-start-pill">
+          <input
+            aria-controls="body"
+            id="mode-toggle"
+            type="button"
+            aria-current="false"
+            class="fs-4 btn btn-primary topcoat-button--large bg-light text-dark border border-dark border-5 border-top-0 border-start-0 border-end-0 rounded-start-0 rounded-bottom-pill"
+            value="Light Mode"
+            onclick="toggleMode(this)"
+          />
+          <input
+            aria-controls="table-of-contents"
+            type="button"
+            class="fs-4 btn btn-success topcoat-button--large--cta border border-primary border-5 border-top-0 border-start-0 border-end-0"
+            value="Contents"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#table-of-contents"
+          />
+        </span>
+      </nav>
+    </header>
+    <br />
+    <!-- Offcanvas -->
+    <aside
+      class="offcanvas offcanvas-start w-lg-25 w-md-50 w-sm-75"
+      style="overflow-y: auto"
+      tabindex="-1"
+      id="table-of-contents"
+      aria-labelledby="table-of-contents-title"
+    ></aside>
+    <main
+      class="container bg-body text-body rounded-5 border border-secondary px-1 my-1"
+    >
+      <!--Typography-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2 class="text-center">Typography</h2>
+        </header>
+        <section class="card shadow m-3">
+          <header class="card-header">
+            <h3 class="card-title p-1 my-1">Font Selection</h3>
+          </header>
+          <span class="p-5">
+            <p>
+              In this section, we explore the typography and font choices that
+              contribute to the visual style of the application.
+            </p>
+
+            <dl class="w-100 border">
+              <dt class="w-25">Headings(h1, h2, h3, h4, h5, h6 tags)</dt>
+              <dd class="w-75">Fragma Medium</dd>
+              <dt class="w-25">Content</dt>
+              <dd class="w-75">Eve Sans Neue Expanded</dd>
+              <dt class="w-25">Special Emphasis</dt>
+              <dd class="w-75">Eve Sans Neue Condensed</dd>
+            </dl>
+
+            <h3>Headings</h3>
+            <p>
+              The main heading of our application uses a bold and modern font to
+              make a strong visual impact. It sets the tone for the entire user
+              interface.
+            </p>
+            <p class="text-center fragma">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+
+            <h3>Body Text</h3>
+            <p>
+              The body text is presented in a clean and readable font. It
+              ensures a comfortable reading experience for users interacting
+              with different sections of our application.
+            </p>
+            <p class="text-center eve-sans-neue-expanded">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+
+            <h3>Special Emphasis</h3>
+            <p class="text-center eve-sans-neue-condensed">
+              For special emphasis, such as highlighting important information
+              or calls to action, we use a distinctive font style to draw the
+              user's attention.
+            </p>
+            <p>
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+          </span>
+        </section>
+        <section class="card shadow m-3">
+          <figure class="p-3 m-3">
+            <header class="py-2 my-2 mb-5">
+              <h3 class="p-1 my-1">Headings 🧑‍🦰🧑🏿‍🦱👧🏾</h3>
+            </header>
+            <figcaption>
+              <h1 class="display-1">Display 1</h1>
+              <h2 class="display-2">Display 2</h2>
+              <h3 class="display-3">Display 3</h3>
+              <h4 class="display-4">Display 4</h4>
+              <h5 class="display-5">Display 5</h5>
+              <h1 class="h1">Heading 1</h1>
+              <h2 class="h2">Heading 2</h2>
+              <h3 class="h3">Heading 3</h3>
+              <h4 class="h4">Heading 4</h4>
+              <h5 class="h5">Heading 5</h5>
+              <h6 class="h6">Heading 6</h6>
+            </figcaption>
+          </figure>
+        </section>
+        <section class="card shadow m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Paragraphs✍🏾📝</h3>
+          </legend>
+          <p>
+            This is a paragraph of text. It can contain multiple lines and cover
+            various topics.
+          </p>
+        </section>
+        <section class="card shadow m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Blockquote🗣️</h3>
+          </legend>
+          <blockquote>
+            This is a blockquote. It's a great way to emphasize a portion of
+            text.
+          </blockquote>
+        </section>
+        <section class="card shadow m-3">
+          <legend>
+            <h3 class="text-center">Lists📃</h3>
+          </legend>
+          <h4>Ordered List</h4>
+          <ol class="topcoat-list-container">
+            <li class="topcoat-list-item">Item 1</li>
+            <li class="topcoat-list-item">Item 2</li>
+            <li class="topcoat-list-item">Item 3</li>
+          </ol>
+
+          <h4>Unordered List</h4>
+          <ul class="topcoat-list-container">
+            <li class="topcoat-list__item">Item A</li>
+            <li class="topcoat-list__item">Item B</li>
+            <li class="topcoat-list__item">Item C</li>
+          </ul>
+        </section>
+      </article>
+
+      <!--Buttons-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2 class="text-center">Buttons🔲🔳</h2>
+        </header>
+        <fieldset class="p-3 m-3">
+          <legend>
+            <h3 class="">Free-standing Buttons</h3>
+          </legend>
+          <span class="d-block text-center p-2 m-2">
+            <!-- Primary Button -->
+            <input
+              type="button"
+              class="btn btn-outline-primary topcoat-button bg-primary text-dark"
+              value="Primary Button"
+            />
+
+            <!-- Secondary Button -->
+            <input
+              type="button"
+              class="btn btn-outline-secondary topcoat-button bg-secondary"
+              value="Secondary Button"
+            />
+            <br />
+            <br />
+            <!-- Success Button -->
+            <input
+              type="button"
+              class="btn btn-outline-success topcoat-button bg-success"
+              value="Success Button"
+            />
+
+            <!-- Info Button -->
+            <input
+              type="button"
+              class="btn btn-outline-info topcoat-button bg-info"
+              value="Info Button"
+            />
+
+            <!-- Warning Button -->
+            <input
+              type="button"
+              class="btn btn-outline-warning topcoat-button bg-warning text-dark"
+              value="Warning Button"
+            />
+
+            <!-- Danger Button -->
+            <input
+              type="button"
+              class="btn btn-outlinedanger topcoat-button bg-danger text-dark"
+              value="Danger Button"
+            />
+            <br />
+            <br />
+            <!-- Large, Small, and Regular Sizes -->
+            <input
+              type="button"
+              class="btn btn-outline-secondary topcoat-button--large btn-lg"
+              value="Large Button"
+            />
+
+            <input
+              type="button"
+              class="btn btn-outline-primary topcoat-button--quiet btn-sm"
+              value="Quiet Button"
+            />
+
+            <input
+              type="button"
+              class="btn btn-outline-success topcoat-button"
+              value="Regular Button"
+            />
+          </span>
+        </fieldset>
+        <fieldset class="p-3 m-3" disabled>
+          <legend>
+            <h3 class="">Disabled Buttons</h3>
+          </legend>
+          <span class="d-block text-center p-2 m-2">
+            <!-- Primary Button -->
+            <input
+              type="button"
+              class="btn btn-outline-primary topcoat-button bg-primary text-dark"
+              value="Primary Button"
+            />
+
+            <!-- Secondary Button -->
+            <input
+              type="button"
+              class="btn btn-outline-secondary topcoat-button bg-secondary"
+              value="Secondary Button"
+            />
+            <br />
+            <br />
+            <!-- Success Button -->
+            <input
+              type="button"
+              class="btn btn-outline-success topcoat-button bg-success"
+              value="Success Button"
+            />
+
+            <!-- Info Button -->
+            <input
+              type="button"
+              class="btn btn-outline-info topcoat-button bg-info"
+              value="Info Button"
+            />
+
+            <!-- Warning Button -->
+            <input
+              type="button"
+              class="btn btn-outline-warning topcoat-button bg-warning text-dark"
+              value="Warning Button"
+            />
+
+            <!-- Danger Button -->
+            <input
+              type="button"
+              class="btn btn-outlinedanger topcoat-button bg-danger text-dark"
+              value="Danger Button"
+            />
+            <br />
+            <br />
+            <!-- Large, Small, and Regular Sizes -->
+            <input
+              type="button"
+              class="btn btn-outline-secondary topcoat-button--large"
+              value="Large Button"
+            />
+
+            <input
+              type="button"
+              class="btn btn-outline-primary topcoat-button--quiet"
+              value="Quiet Button"
+            />
+
+            <input
+              type="button"
+              class="btn btn-outline-success topcoat-button"
+              value="Regular Button"
+            />
+          </span>
+        </fieldset>
+      </article>
+
+      <!--Alerts-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom mt-5">
+          <h2 class="text-center">Alerts⚠️</h2>
+        </header>
+        <section class="p-3 mt-3">
+          <header class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Delayed Fading Alerts</h3>
+          </header>
+          <!-- Success Alert -->
+          <figure
+            class="alert alert-success bg-gradient text-center border border-success border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <figcaption
+              class="bg-body border border-success border-end-0 border-top-0 border-start-0 text-success p-2 px-3 rounded-start-pill"
+            >
+              Success Alert: Something was successful!
+            </figcaption>
+          </figure>
+
+          <!-- Info Alert -->
+          <figure
+            class="alert alert-info bg-gradient text-center border border-info border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <figcaption
+              class="bg-body border border-info border-end-0 border-top-0 border-start-0 text-info p-2 px-3 rounded-start-pill"
+            >
+              Info Alert: Important information here.
+            </figcaption>
+          </figure>
+
+          <!-- Warning Alert -->
+          <figure
+            class="alert alert-warning bg-gradient text-center border border-warning border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <figcaption
+              class="bg-body border border-warning border-end-0 border-top-0 border-start-0 text-warning p-2 px-3 rounded-start-pill"
+            >
+              Warning Alert: Be cautious, something might be wrong.
+            </figcaption>
+          </figure>
+
+          <!-- Danger Alert -->
+          <figure
+            class="alert alert-danger bg-gradient text-center border border-danger border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <figcaption
+              class="bg-body border border-danger border-end-0 border-top-0 border-start-0 text-danger p-2 px-3 rounded-start-pill"
+            >
+              Danger Alert: Something went terribly wrong!
+            </figcaption>
+          </figure>
+        </section>
+        <!-- Dismissible Alerts -->
+        <section class="p-3 mt-3">
+          <header class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Dismissible Alerts</h3>
+          </header>
+
+          <figure
+            class="alert alert-success alert-dismissible fade show bg-gradient text-center border border-success border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true" class="">❌</span>
+            </button>
+            <figcaption
+              class="bg-body border border-success border-end-0 border-top-0 border-start-0 text-success p-2 px-3 rounded-pill rounded-end-0"
+            >
+              Dismissible Success Alert: Click the close button to dismiss.
+            </figcaption>
+          </figure>
+
+          <figure
+            class="alert alert-info alert-dismissible fade show bg-gradient text-center border border-info border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">❌</span>
+            </button>
+            <figcaption
+              class="bg-body border border-info border-end-0 border-top-0 border-start-0 text-info p-2 px-3 rounded-pill rounded-end-0"
+            >
+              Dismissible Info Alert: Click the close button to dismiss.
+            </figcaption>
+          </figure>
+
+          <figure
+            class="alert alert-warning alert-dismissible fade show bg-gradient text-center border border-warning border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">❌</span>
+            </button>
+            <figcaption
+              class="bg-body border border-warning border-end-0 border-top-0 border-start-0 text-warning p-2 px-3 rounded-pill rounded-end-0"
+            >
+              Dismissible Warning Alert: Click the close button to dismiss.
+            </figcaption>
+          </figure>
+
+          <figure
+            class="float-end alert alert-danger alert-dismissible fade show bg-gradient text-center border border-danger border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            role="alert"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">❌</span>
+            </button>
+            <figcaption
+              class="bg-body border border-danger border-end-0 border-top-0 border-start-0 text-danger p-2 px-3 rounded-pill rounded-end-0"
+            >
+              Dismissible Danger Alert: Click the close button to dismiss.
+            </figcaption>
+          </figure>
+        </section>
+      </article>
+
+      <!--Forms-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Form Elements🧻</h2>
+        </header>
+
+        <!-- Input Fields -->
+        <section>
+          <fieldset class="form-group p-3 m-3">
+            <legend class="form-group-label">
+              <h3 class="text-center">Input Field</h3>
+            </legend>
+            <span class="input-group">
+              <label for="inputField" class="input-group-text">Label</label>
+              <input
+                type="text"
+                id="inputField"
+                placeholder="Placeholder - Enter text here..."
+                class="topcoat-text-input form-control"
+              />
+            </span>
+          </fieldset>
+
+          <fieldset class="form-group p-3 m-3">
+            <legend class="form-group-label">
+              <h3 class="text-center">Disabled Input Field</h3>
+            </legend>
+            <span class="input-group">
+              <label for="disabled-input-Field" class="input-group-text"
+                >Label</label
+              >
+              <input
+                type="text"
+                id="disabled-input-Field"
+                class="topcoat-text-input form-control"
+                disabled
+              />
+            </span>
+          </fieldset>
+        </section>
+        <section>
+          <!-- Textareas -->
+          <fieldset class="form-group py-3 my-3">
+            <legend class="form-group-label">
+              <h3 class="text-center">Text Area</h3>
+            </legend>
+            <span class="input-group">
+              <label for="textarea1" class="input-group-text">Label</label>
+              <textarea
+                id="textarea1"
+                rows="6"
+                class="form-control w-100-sm w-75-md w-50-lg topcoat-textarea"
+              ></textarea>
+            </span>
+          </fieldset>
+
+          <fieldset class="form-group py-3 my-3">
+            <legend class="form-group-label">
+              <h3 class="text-center">Disabled Text Area</h3>
+            </legend>
+            <span class="input-group">
+              <label for="textarea2" class="input-group-text">Label</label>
+              <textarea
+                id="textarea2"
+                rows="6"
+                columns="6"
+                class="form-control w-100-sm w-75-md w-50-lg topcoat-textarea"
+                disabled
+              ></textarea>
+            </span>
+          </fieldset>
+        </section>
+        <!-- Checkboxes -->
+        <section>
+          <fieldset class="form-group py-3 my-3">
+            <legend class="form-group-label">
+              <h3 class="text-center">Checkboxes</h3>
+            </legend>
+            <section class="form-check">
+              Left Label
+              <label class="form-check-label topcoat-checkbox" for="checkbox">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkbox2"
+                />
+                <span class="topcoat-checkbox__checkmark"></span>
+                Right Label
+              </label>
+            </section>
+            <section class="form-check">
+              Left Label
+              <label class="form-check-label topcoat-checkbox" for="checkbox">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkbox1"
+                  disabled
+                />
+                <span class="topcoat-checkbox__checkmark"></span>
+                Right Label
+              </label>
+            </section>
+          </fieldset>
+
+          <!-- Radio Buttons -->
+          <fieldset class="form-check">
+            <legend class="form-group-label">
+              <h3 class="text-center">Radio Buttons</h3>
+            </legend>
+            <label class="form-check-label topcoat-radio-button" for="radio1">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radioGroup"
+                id="radio1"
+                checked
+              />
+              <span class="topcoat-radio-button__checkmark"></span>
+              Radio 1
+            </label>
+
+            <label class="form-check-label topcoat-radio-button" for="radio2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radioGroup"
+                id="radio2"
+              />
+              <span class="topcoat-radio-button__checkmark"></span>
+              Radio 2
+            </label>
+          </fieldset>
+
+          <!-- Select Boxes -->
+          <fieldset class="form-group">
+            <legend class="form-group-label">
+              <h3 class="text-center">Select Box</h3>
+            </legend>
+            <span class="input-group">
+              <label for="selectField" class="input-group-text">Label</label>
+              <select id="selectField" class="form-control topcoat-select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </span>
+          </fieldset>
+
+          <!-- Form Validation States -->
+          <fieldset class="form-group">
+            <legend class="form-group-label">
+              <h3 class="text-center">Form Validation States</h3>
+            </legend>
+            <div class="form-group has-success">
+              <label class="form-control-label" for="validInput"
+                >Valid Input:</label
+              >
+              <input
+                type="text"
+                id="validInput"
+                class="form-control is-valid"
+              />
+              <div class="valid-feedback">This input is valid.</div>
+            </div>
+
+            <div class="form-group has-danger">
+              <label class="form-control-label" for="invalidInput"
+                >Invalid Input:</label
+              >
+              <input
+                type="text"
+                id="invalidInput"
+                class="form-control is-invalid"
+              />
+              <div class="invalid-feedback">This input is invalid.</div>
+            </div>
+          </fieldset>
+        </section>
+      </article>
+
+      <!--Navigation-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Navigation</h2>
+        </header>
+        <!-- Navbar -->
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-light p-3 m-3"
+          aria-label="Main Navigation"
+        >
+          <a class="navbar-brand" href="#">Your Logo</a>
+          <button
+            class="navbar-toggler topcoat-button--quiet"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home<span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <!-- Add more navigation items as needed -->
+            </ul>
+          </div>
+        </nav>
+
+        <div class="breadcrumb border border-success">
+          <a href="#" class="px-4">One</a>
+          <a href="#" class="px-4">Two</a>
+          <a href="#" class="px-4">Three</a>
+          <a href="#" aria-current="page" class="px-4">Four</a>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="border border-success">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Section</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Current Page
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="home-tab"
+              data-toggle="tab"
+              href="#home"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="profile-tab"
+              data-toggle="tab"
+              href="#profile"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="contact-tab"
+              data-toggle="tab"
+              href="#contact"
+              role="tab"
+              aria-controls="contact"
+              aria-selected="false"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabsContent">
+          <div
+            class="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            Tab 1 content
+          </div>
+          <div
+            class="tab-pane fade"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          >
+            Tab 2 content
+          </div>
+          <div
+            class="tab-pane fade"
+            id="contact"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          >
+            Tab 3 content
+          </div>
+        </div>
+
+        <!-- Dropdown Menus -->
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </article>
+
+      <!--Cards-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Cards</h2>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some example text.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img
+            src="path/to/image.jpg"
+            class="card-img-top"
+            alt="Image Alt Text"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some example text.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some example text.</p>
+            <a href="#" class="btn btn-primary">Button 1</a>
+            <a href="#" class="btn btn-secondary">Button 2</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Featured</div>
+          <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some example text.</p>
+          </div>
+          <div class="card-footer">Footer content</div>
+        </div>
+      </article>
+
+      <!--Tables-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Tables</h2>
+        </header>
+        <!-- Basic Table -->
+        <section>
+          <h2>Basic Table</h2>
+          <table class="table">
+            <caption>
+              Description of the table
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Striped Rows -->
+        <section>
+          <h2>Striped Rows</h2>
+          <table class="table table-striped">
+            <caption>
+              Description of the table.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Hover Rows -->
+        <section>
+          <h2>Hover Rows</h2>
+          <table class="table table-hover">
+            <caption>
+              Description of the table.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Table with Responsive Breakpoints -->
+        <section>
+          <h2>Table with Responsive Breakpoints</h2>
+          <div class="table-responsive">
+            <table class="table">
+              <caption>
+                Description of the table.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <!--Modals-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Modals</h2>
+        </header>
+        <!-- Basic Modal -->
+        <figure class="p-3 m-3">
+          <figcaption>
+            <header class="py-2 my-2 mb-5">
+              <h3 class="p-1 my-1">Basic Modal</h3>
+            </header>
+            <button
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#basicModal"
+            >
+              Open Basic Modal
+            </button>
+          </figcaption>
+          <aside class="modal" id="basicModal" aria-label="Basic Modal">
+            <div class="modal-dialog">
+              <figure class="card modal-content">
+                <header class="card-header modal-header">
+                  <h5 class="card-title modal-title">Basic Modal</h5>
+                  <button
+                    type="button"
+                    class="close btn btn-outline-danger text-danger topcoat-button--quiet"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">❌</span>
+                  </button>
+                </header>
+                <figcaption class="card-body modal-body">
+                  <p>This is a basic modal.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </aside>
+        </figure>
+        <fieldset class="p-3 m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Modal with Form</h3>
+          </legend>
+          <!-- Modal with Form -->
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#formModal"
+          >
+            Open Modal with Form
+          </button>
+
+          <div class="modal" id="formModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal with Form</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <!-- Your form elements go here -->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="name@example.com"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Modal with Image</h3>
+          </legend>
+          <!-- Large Modal -->
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#largeModal"
+          >
+            Open Large Modal
+          </button>
+
+          <aside class="modal" id="largeModal" aria-label="Large Modal">
+            <div class="modal-dialog modal-lg">
+              <figure class="modal-content">
+                <header class="modal-header">
+                  <h5 class="modal-title">Large Modal</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </header>
+                <figcaption class="modal-body">
+                  <p>This is a large modal.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </aside>
+        </fieldset>
+        <fieldset class="p-3 m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Modal with Image</h3>
+          </legend>
+          <!-- Small Modal -->
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#smallModal"
+          >
+            Open Small Modal
+          </button>
+
+          <div class="modal" id="smallModal">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Small Modal</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>This is a small modal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 m-3">
+          <legend class="py-2 my-2 mb-5">
+            <h3 class="p-1 my-1">Dismissible Modal</h3>
+          </legend>
+          <!-- Dismissible Modal -->
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#dismissibleModal"
+          >
+            Open Dismissible Modal
+          </button>
+
+          <aside
+            class="modal"
+            id="dismissibleModal"
+            data-dismissible="true"
+            aria-label="Dismissible Modal"
+          >
+            <div class="modal-dialog">
+              <figure class="modal-content">
+                <header class="modal-header">
+                  <h5 class="modal-title">Dismissible Modal</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </header>
+                <figcaption class="modal-body">
+                  <p>This is a dismissible modal.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </aside>
+        </fieldset>
+      </article>
+
+      <!--Tooltips and Popovers-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Tooltips and popovers</h2>
+        </header>
+
+        <!-- Basic Tooltip -->
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Basic Tooltip"
+        >
+          <div class="topcoat-popover">Put stuff in here</div>
+          Hover me for a tooltip
+        </button>
+
+        <!-- Tooltip with HTML Content -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="tooltip"
+          data-html="true"
+          title="<em>Tooltip</em> with <b>HTML</b> content"
+        >
+          HTML Tooltip
+        </button>
+
+        <!-- Popover -->
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-toggle="popover"
+          data-placement="bottom"
+          title="Popover Title"
+          data-content="This is a popover with some content."
+        >
+          Click me for a Popover
+        </button>
+      </article>
+
+      <!--Progress Bars-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Progress Bars</h2>
+        </header>
+        <section class="card p-4 m-4">
+          <!-- Basic Progress Bar -->
+          <label for="basic-progress-bar-primary" class="form-label"
+            >Basic Progress Bar</label
+          >
+          <figure class="progress">
+            <figcaption
+              id="basic-progress-bar-primary"
+              class="progress-bar bg-primary"
+              style="width: 50%"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></figcaption>
+          </figure>
+
+          <!-- Progress Bar with Labels -->
+          <figure class="progress">
+            <figcaption
+              class="progress-bar bg-primary"
+              style="width: 25%"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              25%
+            </figcaption>
+          </figure>
+          <figure class="progress">
+            <figcaption
+              class="progress-bar bg-info"
+              style="width: 25%"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              25%
+            </figcaption>
+          </figure>
+          <figure class="progress">
+            <figcaption
+              class="progress-bar bg-success"
+              style="width: 25%"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              25%
+            </figcaption>
+          </figure>
+          <figure class="progress">
+            <figcaption
+              class="progress-bar bg-warning"
+              style="width: 25%"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              25%
+            </figcaption>
+          </figure>
+          <figure class="progress h-100 rounded">
+            <figcaption
+              class="progress-bar bg-danger fs-6"
+              style="width: 50%"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              50%
+            </figcaption>
+          </figure>
+        </section>
+      </article>
+
+      <!--Icons-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Icons</h2>
+        </header>
+
+        <!-- Bootstrap Icons -->
+        <h2>Bootstrap Icons</h2>
+        <p>
+          <span class="bi bi-heart"></span>
+          <!-- Heart Icon -->
+          <span class="bi bi-star"></span>
+          <!-- Star Icon -->
+          <span class="bi bi-envelope"></span>
+          <!-- Envelope Icon -->
+          <!-- Add more icons as needed -->
+        </p>
+
+        <!-- Custom Icons -->
+        <h2>Custom Icons</h2>
+        <!-- Include your custom icons here -->
+        <p>
+          <span class="custom-icon"></span>
+          <!-- Example custom icon -->
+        </p>
+      </article>
+
+      <!--Badges and Labels-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Badges and Labels</h2>
+        </header>
+        <fieldset class="form-group p-3 m-3">
+          <legend class="form-group-label">
+            <h3 class="text-center">Badges</h3>
+          </legend>
+
+          <!-- Basic Badge -->
+          <span
+            class="badge bg-secondary bg-opacity-50 border border-secondary rounded-pill"
+            ><sup>Basic Badge</sup></span
+          >
+
+          <!-- Badge with Colors -->
+          <span
+            class="badge bg-success bg-opacity-50 border border-success rounded-pill"
+            ><sup>Success</sup></span
+          >
+          <span
+            class="badge bg-warning bg-opacity-50 border border-warning rounded-pill"
+            ><sup>Warning</sup></span
+          >
+          <span
+            class="badge bg-danger bg-opacity-50 border border-danger rounded-pill"
+            ><sup>Danger</sup></span
+          >
+        </fieldset>
+        <fieldset class="form-group p-3 m-3">
+          <legend class="form-group-label">
+            <h3 class="text-center">Labels</h3>
+          </legend>
+          <!-- Label for Information -->
+          <span class="label label-info"><sub>Information</sub></span>
+        </fieldset>
+      </article>
+
+      <!--Accordion and Collapse-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Accordion and Collapse</h2>
+        </header>
+        <fieldset>
+          <legend class="form-group-label">
+            <h3 class="text-center">Basic Accordion</h3>
+          </legend>
+
+          <!-- Basic Accordion -->
+          <div class="accordion" id="basicAccordion">
+            <div class="card">
+              <div class="card-header" id="section1">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapse1"
+                    aria-expanded="true"
+                    aria-controls="collapse1"
+                  >
+                    Section 1
+                  </button>
+                </h2>
+              </div>
+
+              <div
+                id="collapse1"
+                class="collapse show"
+                aria-labelledby="section1"
+                data-parent="#basicAccordion"
+              >
+                <div class="card-body">Content of Section 1 goes here.</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="section2">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapse2"
+                    aria-expanded="false"
+                    aria-controls="collapse2"
+                  >
+                    Section 2
+                  </button>
+                </h2>
+              </div>
+
+              <div
+                id="collapse2"
+                class="collapse"
+                aria-labelledby="section2"
+                data-parent="#basicAccordion"
+              >
+                <div class="card-body">Content of Section 2 goes here.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collapsible Sections -->
+          <div class="accordion" id="collapsibleSections">
+            <div class="card">
+              <div class="card-header" id="sectionA">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseA"
+                    aria-expanded="true"
+                    aria-controls="collapseA"
+                  >
+                    Section A
+                  </button>
+                </h2>
+              </div>
+
+              <div
+                id="collapseA"
+                class="collapse show"
+                aria-labelledby="sectionA"
+                data-parent="#collapsibleSections"
+              >
+                <div class="card-body">Content of Section A goes here.</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="sectionB">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseB"
+                    aria-expanded="false"
+                    aria-controls="collapseB"
+                  >
+                    Section B
+                  </button>
+                </h2>
+              </div>
+
+              <div
+                id="collapseB"
+                class="collapse"
+                aria-labelledby="sectionB"
+                data-parent="#collapsibleSections"
+              >
+                <div class="card-body">Content of Section B goes here.</div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </article>
+
+      <!--Media Objects-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Media Objects</h2>
+        </header>
+
+        <!-- Image with Caption -->
+        <figure class="card media">
+          <img src="path/to/your/image.jpg" class="mr-3" alt="Image Caption" />
+          <figcaption class="media-body">
+            <h5 class="mt-0">Image Caption</h5>
+            <p>Your image description or additional information goes here.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Video Embed -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <!-- Replace the following URL with your video embed code -->
+          <iframe
+            class="embed-responsive-item"
+            src="https://www.youtube.com/embed/your-video-id"
+            allowfullscreen
+            title="Your Video"
+          ></iframe>
+        </div>
+      </article>
+
+      <!--Tabs and Pills-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Tabs And Pills</h2>
+        </header>
+
+        <!-- Tabs with Content -->
+        <section>
+          <h2>Tabs with Content</h2>
+          <ul class="nav nav-tabs" id="demo-tabs">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="demo-home-tab"
+                data-toggle="tab"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="demo-profile-tab"
+                data-toggle="tab"
+                href="#profile"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="demo-contact-tab"
+                data-toggle="tab"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="demo-home">
+              <p>Content for Home tab goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="demo-profile">
+              <p>Content for Profile tab goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="demo-contact">
+              <p>Content for Contact tab goes here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pills Navigation -->
+        <section>
+          <h2>Pills Navigation</h2>
+          <ul class="nav nav-pills" id="myPills">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="pill-home"
+                data-toggle="pill"
+                href="#pill-home-content"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="pill-profile"
+                data-toggle="pill"
+                href="#pill-profile-content"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="pill-contact"
+                data-toggle="pill"
+                href="#pill-contact-content"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="pill-home-content">
+              <p>Content for Home pill goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="pill-profile-content">
+              <p>Content for Profile pill goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="pill-contact-content">
+              <p>Content for Contact pill goes here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ... (Include other UI elements as needed) -->
+      </article>
+
+      <!--Carousel-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Basic Image Carousel</h2>
+        </header>
+
+        <figure
+          id="imageCarousel"
+          class="card carousel slide"
+          data-ride="carousel"
+        >
+          <figcaption class="sr-only card-header">
+            <h4 class="card-title text-center">Carousel Title</h4>
+          </figcaption>
+          <ul class="carousel-inner p-0 m-0 border" style="list-style: none">
+            <li class="carousel-item active">
+              <img
+                src="image1.jpg"
+                height="512"
+                width="512"
+                class="d-block w-100 bg-body"
+                alt="Image 1"
+              />
+            </li>
+            <li class="carousel-item">
+              <img
+                src="image2.jpg"
+                height="512"
+                width="512"
+                class="d-block w-100 bg-body-secondary"
+                alt="Image 2"
+              />
+            </li>
+            <li class="carousel-item">
+              <img
+                src="image3.jpg"
+                height="512"
+                width="512"
+                class="d-block w-100 bg-body-tertiary"
+                alt="Image 3"
+              />
+            </li>
+          </ul>
+          <footer class="card-footer text-center">
+            <!-- Add more items as needed -->
+            <nav
+              class="d-block topcoat-button-bar btn-group"
+              aria-label="Carousel Navigation"
+            >
+              <a
+                class="d-inline-block carousel-control-prev topcoat-button--quiet rounded-start-pill border border-secondary border-end-0 border-top-0 border-bottom-0"
+                href="#imageCarousel"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon btn rounded-circle border-secondary border-end-0"
+                  style="transform: scale(2)"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="sr-only ms-4 d-inline">Prev</h3>
+              </a>
+              <a
+                class="d-inline-block carousel-control-next topcoat-button--quiet rounded-end-pill border border-secondary border-end-0 border-top-0 border-bottom-0"
+                href="#imageCarousel"
+                role="button"
+                data-slide="next"
+              >
+                <h3 class="sr-only me-4 d-inline">Next</h3>
+                <span
+                  class="carousel-control-next-icon btn rounded-circle border-secondary border-start-0"
+                  style="transform: scale(2)"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </nav>
+          </footer>
+        </figure>
+      </article>
+
+      <!--Panels and Panels with Navigation-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Panels</h2>
+        </header>
+        <!-- Basic Panel -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Basic Panel</h5>
+            <p class="card-text">
+              This is a basic panel without additional navigation links.
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel with Navigation Links -->
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Tab 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tab 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tab 3</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Panel with Navigation Links</h5>
+            <p class="card-text">
+              This is a panel with navigation links using Bootstrap tabs.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!--Dropdowns-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Dropdowns</h2>
+        </header>
+        <!-- Basic Dropdown -->
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="basicDropdown"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Basic Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="basicDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+
+        <!-- Dropdowns in Navbar -->
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-light"
+          aria-label="Demo navigation"
+        >
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapse-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Dropdowns
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </article>
+
+      <!--Spinners and Loaders-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Spinners And Loaders</h2>
+        </header>
+        <!-- Loading Spinner -->
+        <figure class="text-center">
+          <div class="spinner-border" role="status"></div>
+          <figcaption class="sr-only">Loading...</figcaption>
+        </figure>
+      </article>
+
+      <!--Chips-->
+      <article class="container p-4 mt-5">
+        <header class="border-bottom my-5">
+          <h2>Chips</h2>
+        </header>
+        <div class="chip">
+          Basic Chip
+          <button class="close" type="button" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </article>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
+      integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/mode-switcher.js"></script>
+    <script src="./js/activate.js"></script>
+    <script src="./js/generate-table-of-contents.js"></script>
+    <script src="./js/theme-switcher.js"></script>
+  </body>
+</html>
