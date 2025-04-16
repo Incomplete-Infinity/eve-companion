@@ -1059,27 +1059,26 @@
                 <form>
                   <fieldset>
                     <legend>Form Fields</legend>
-                    <div class="my-2">
-                      <label for="text-input">Text input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="text-input"
                         type="text"
                         class="topcoat-text-input form-control"
                       />
+                      <label for="text-input">Text input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="text-input-placeholder"
-                        >Text input with placeholder</label
-                      >
+                    <div class="my-2 form-floating">
                       <input
                         id="text-input-placeholder"
                         type="text"
-                        placeholder="I'm placeholder text"
+                        placeholder="This won't display but is required for the floating form effect"
                         class="topcoat-text-input form-control"
                       />
+                      <label for="text-input-placeholder"
+                        >Text input with placeholder</label
+                      >
                     </div>
-                    <div class="my-2">
-                      <label for="readonly-input">Readonly input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="readonly-input"
                         type="text"
@@ -1087,9 +1086,9 @@
                         class="topcoat-text-input form-control"
                         readonly
                       />
+                      <label for="readonly-input">Readonly input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="disabled-input">Disabled input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="disabled-input"
                         type="text"
@@ -1097,71 +1096,78 @@
                         class="topcoat-text-input form-control"
                         disabled
                       />
+                      <label for="disabled-input">Disabled input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="required-input"
-                        >Required input
-                        <sup class="required text-danger">*</sup></label
-                      >
+                    <div class="my-2 form-floating">
                       <input
                         id="required-input"
                         type="text"
                         class="topcoat-text-input form-control"
                         required
                         aria-required="true"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="required-input"
+                        >Required input
+                        <sup class="required text-danger">*</sup></label
+                      >
                     </div>
-                    <div class="my-2">
-                      <label for="email-input">Email input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="email-input"
                         type="email"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="email-input">Email input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="search-input">Search input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="search-input"
                         type="search"
-                        class="topcoat-search-input"
+                        class="topcoat-search-input form-control ps-5"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="search-input" class="ms-4">Search input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="speech-input">Speech recognition input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="speech-input"
                         type="text"
                         name="speech"
                         x-webkit-speech=""
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="speech-input">Speech recognition input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="tel-input">Tel input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="tel-input"
                         type="tel"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="tel-input">Tel input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="url-input">URL input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="url-input"
                         type="url"
                         placeholder="http://"
                         class="topcoat-text-input form-control"
                       />
+                      <label for="url-input">URL input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="password-input">Password input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="password-input"
                         type="password"
-                        value="password"
+   
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="password-input">Password input</label>
                     </div>
                     <div class="my-2">
                       <label for="select-field">Select field</label>
@@ -1208,36 +1214,37 @@
                         Checkbox input</label
                       >
                     </div>
-                    <div class="my-2">
-                      <label for="file-input">File input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="file-input"
                         type="file"
                         class="topcoat-button form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="file-input">File input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="textarea">Textarea</label>
+                    <div class="my-2 form-floating">
                       <textarea
                         id="textarea"
                         cols="30"
                         rows="5"
                         class="topcoat-textarea form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       >
-Textarea text</textarea
-                      >
+Textarea text</textarea>
+<label for="textarea">Textarea</label>
                     </div>
-                    <div class="my-2">
-                      <label for="color-input">Color input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="color-input"
                         type="color"
                         value="#000000"
                         class="topcoat-text-input form-select"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="color-input">Color input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="number-input">Number input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="number-input"
                         type="number"
@@ -1246,9 +1253,9 @@ Textarea text</textarea
                         max="10"
                         class="topcoat-text-input form-control"
                       />
+                      <label for="number-input">Number input</label>
                     </div>
-                    <form id="range" class="form my-2">
-                      <label for="range-input">Range input</label>
+                    <form id="range" class="form-floating my-2">
                       <input
                         id="range-input"
                         type="range"
@@ -1257,6 +1264,7 @@ Textarea text</textarea
                         max="100"
                         class="topcoat-range form-range my-5"
                       />
+                      <label for="range-input">Range input</label>
                     </form>
                     <output for="range">0</output>
                     <script>
@@ -1268,56 +1276,61 @@ Textarea text</textarea
                           };
                       }
                     </script>
-
-                    <div class="my-2">
-                      <label for="date-input">Date input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="date-input"
                         type="date"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="date-input">Date input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="month-input">Month input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="month-input"
                         type="month"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="month-input">Month input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="week-input">Week input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="week-input"
                         type="week"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="week-input">Week input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="time-input">Time input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="time-input"
                         type="time"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
                     </div>
-                    <div class="my-2">
-                      <label for="datetime-input">Datetime input</label>
+                    <label for="time-input">Time input</label>
+                    <div class="my-2 form-floating">
                       <input
                         id="datetime-input"
                         type="datetime"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="datetime-input">Datetime input</label>
                     </div>
-                    <div class="my-2">
-                      <label for="datetime-local-input"
-                        >Datetime-local input</label
-                      >
+                    <div class="my-2 form-floating">
                       <input
                         id="datetime-local-input"
                         type="datetime-local"
                         class="topcoat-text-input form-control"
+                        placeholder="This won't display but is required for the floating form effect"
                       />
+                      <label for="datetime-local-input"
+                      >Datetime-local input</label
+                    >
                     </div>
                   </fieldset>
                   <input

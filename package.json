@@ -1,34 +1,50 @@
 {
-  "name": "assets",
+  "name": "eve-companion",
   "version": "1.0.0",
-  "description": "Eve Online related multi-media",
+  "description": "EVE Online Companion App for fleet, market, and personal tools",
   "main": "index.js",
   "scripts": {
-    "generate-docs": "jsdoc -c jsdoc.json",
-    "generate-readmes": "node GenerateReadmes.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "generate-docs": "jsdoc -c jsdoc.json",
+    "generate-readmes": "node GenerateReadmes.js",
+    "generate-esi": "swagger-typescript-api generate --path https://esi.evetech.net/latest/swagger.json --output ./src/api/esi --name index.ts --axios --modular --union-enums",
+    "prepare": "npm run generate-esi && npm run generate-docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Incomplete-Infinity/assets.git"
+    "url": "https://github.com/Incomplete-Infinity/eve-companion.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Incomplete-Infinity/assets/issues"
+    "url": "https://github.com/Incomplete-Infinity/eve-companion/issues"
   },
-  "homepage": "https://github.com/Incomplete-Infinity/assets#readme",
+  "homepage": "https://github.com/Incomplete-Infinity/eve-companion#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@svgdotjs/svg.js": "^3.2.4",
     "augmented-ui": "^2.0.0",
+    "axios": "^1.6.8",
     "bootstrap": "^5.3.5",
+    "chart.js": "^4.4.1",
+    "d3": "^7.8.5",
+    "dexie": "^4.0.4",
+    "electron-log": "^5.0.0",
+    "electron-store": "^9.0.0",
     "halfmoon": "^2.0.2",
+    "interactjs": "^1.10.17",
+    "notyf": "^3.10.0",
+    "oidc-client-ts": "^2.0.3",
+    "p-queue": "^7.3.1",
+    "simple-oauth2": "^4.3.0",
+    "three": "^0.159.0",
+    "tippy.js": "^6.3.7",
     "topcoat": "^0.7.5",
     "xml2js": "^0.6.2",
-    "electron-squirrel-startup": "^1.0.1"
+    "zustand": "^4.4.5"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.0",
@@ -43,8 +59,11 @@
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
     "css-loader": "^6.11.0",
     "electron": "35.1.4",
+    "esbuild": "^0.20.2",
+    "jsdoc": "^4.0.4",
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4",
-    "jsdoc": "^4.0.4"
+    "swagger-typescript-api": "^13.1.1",
+    "vitest": "^1.5.0"
   }
 }
