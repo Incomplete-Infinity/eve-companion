@@ -9,7 +9,7 @@
   --union-enums
 
 root/
-├── docs/               # Your TECH_STACK.md and planning docs
+├── docs/               # GENERATED Documentation
 ├── img/                # Images and assets
 ├── src/
 │   ├── api/
@@ -17,7 +17,7 @@ root/
 │   │       ├── apis/
 │   │       ├── models/
 │   │       └── index.ts
-│   └── main/           # Your Electron main process code
+│   └── main/           # Electron main process code
 │   └── renderer/       # Renderer UI and logic
 ├── style-guide/        # Design docs, style references
 ├── package.json
