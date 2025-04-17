@@ -279,13 +279,13 @@ eval("/** @typedef {\"info\" | \"warning\" | \"error\"} LogLevel */\n\n/** @type
 
 /***/ }),
 
-/***/ "./src/preload.js":
-/*!************************!*\
-  !*** ./src/preload.js ***!
-  \************************/
+/***/ "./src/js/Preload.js":
+/*!***************************!*\
+  !*** ./src/js/Preload.js ***!
+  \***************************/
 /***/ (() => {
 
-eval("// See the Electron documentation for details on how to use preload scripts:\n// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvcHJlbG9hZC5qcyIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZXZlLWNvbXBhbmlvbi8uL3NyYy9wcmVsb2FkLmpzPzZlNDAiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gU2VlIHRoZSBFbGVjdHJvbiBkb2N1bWVudGF0aW9uIGZvciBkZXRhaWxzIG9uIGhvdyB0byB1c2UgcHJlbG9hZCBzY3JpcHRzOlxuLy8gaHR0cHM6Ly93d3cuZWxlY3Ryb25qcy5vcmcvZG9jcy9sYXRlc3QvdHV0b3JpYWwvcHJvY2Vzcy1tb2RlbCNwcmVsb2FkLXNjcmlwdHNcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/preload.js\n");
+
 
 /***/ }),
 
@@ -379,7 +379,7 @@ module.exports = require("events");
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("d6a3197c76c32368bb5c")
+/******/ 		__webpack_require__.h = () => ("04ecce2fb3dc2577d923")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -840,10 +840,6 @@ module.exports = require("events");
 /******/ 	(() => {
 /******/ 		__webpack_require__.p = "/";
 /******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __webpack_require__ !== 'undefined') __webpack_require__.ab = "A:\\Users\\PhobiaCide\\Documents\\GitHub\\eve-companion\\.webpack\\renderer" + "/native_modules/";
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
@@ -1365,7 +1361,7 @@ module.exports = require("events");
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=3000&pathname=%2Fws&logging=none&overlay=true&reconnect=10&hot=true&live-reload=true");
 /******/ 	__webpack_require__("./node_modules/webpack/hot/dev-server.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/preload.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/Preload.js");
 /******/ 	
 /******/ })()
 ;
