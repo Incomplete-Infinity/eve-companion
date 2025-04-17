@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Viewer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Halfmoon/2.0.2/css/halfmoon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.modern.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/topcoat@0.7.5/dist/topcoat.min.css"
+    />
+    <style>
+      * {
+        --fill: black;
+      }
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      #viewer {
+        width: 80vw;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #viewer svg {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      #viewer path {
+        fill: var(--fill);
+        stroke: none;
+        stroke-width: 1;
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 10000;
+        animation: draw 10s ease-in-out forwards,
+          glow 1.5s ease-in-out infinite alternate;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark" data-bs-core="modern">
+    <main>
+      <article class="container">
+        <section class="container-fluid">
+          <form class="row">
+            <fieldset class="col-6">
+              <legend class="">Select an SVG file</legend>
+              <input
+                type="file"
+                class="form-control"
+                accept=".svg"
+                id="fileInput"
+              />
+            </fieldset>
+            <fieldset class="col-6">
+              <legend class="">Select a Color</legend>
+              <input
+                type="color"
+                class="form-control"
+                id="colorInput"
+              />
+            </fieldset>
+          </form>
+          <output>
+            <div id="viewer"></div>
+          </output>
+        </section>
+      </article>
+    </main>
+    <script>
+      const colorInput = document.getElementById("colorInput");
+      const fileInput = document.getElementById("fileInput");
+      const viewer = document.getElementById("viewer");
+
+      // Handle color change
+      colorInput.addEventListener("change", (e) => {
+        const color = e.target.value;
+        const paths = viewer.querySelectorAll("path");
+        paths.forEach((p) => p.setAttribute("style", `--fill: ${color};`));
+      });
+
+      // Handle file selection and SVG parsing
+      fileInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const text = await file.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "image/svg+xml");
+        const svg = doc.querySelector("svg");
+
+        // Remove old content
+        viewer.innerHTML = "";
+        if (svg) {
+          // Force styling on new paths and reset the fill color to the selected color
+          svg.querySelectorAll("path").forEach((p) => {
+            p.setAttribute("fill", colorInput.value);
+          });
+          viewer.appendChild(svg);
+        } else {
+          viewer.textContent = "Invalid SVG file.";
+        }
+      });
+    </script>
+  </body>
+</html>

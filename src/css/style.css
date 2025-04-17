@@ -2,3 +2,204 @@
 @import "../../node_modules/augmented-ui/augmented-ui.min.css";
 @import "../../node_modules/halfmoon/css/halfmoon.min.css";
 @import "../../node_modules"
+
+* {
+    --aug-border-all: 4px;
+    --aug-border-bg: red;
+  }
+  
+  header[data-augmented-ui] {
+  }
+  hgroup[data-augmented-ui] {
+  }
+  menu[data-augmented-ui],
+  ul[data-augmented-ui] {
+  }
+  li[data-augmented-ui] {
+   
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+  li:first-child {
+    margin-top: 0;
+    --aug-clip-tr1: initial;
+    --aug-border: initial;
+    --aug-tr1: 1.25rem;
+    --aug-border-all: 1px;
+    --aug-border-bg: rgba(0, 0, 90, 0.25);
+  }
+  li:not(:first-child) {
+    border: 1px solid rgba(0, 0, 90, 0.25);
+  }
+  button[data-augmented-ui] {
+    border: none;
+    --aug-border-all: 3px;
+    --aug-border-opacity: 0.9;
+    cursor: pointer;
+    position: absolute;
+  
+    right: 2.5rem;
+    height: 1.25rem;
+    width: 2rem;
+  }
+  button + button[data-augmented-ui] {
+    right: 0.5rem;
+  }
+  .dots {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1.5rem;
+    height: 1rem;
+    color: white;
+  }
+  .list-container {
+    position: relative;
+    width: 600px;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 90, 0.25));
+    margin-left: auto;
+    margin-right: auto;
+    --aug-r: 0.5rem;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: "courier new", monspace;
+  }
+  
+  /* Base styles */
+  body {
+    background: radial-gradient(at 50% 50%, transparent 0%, steelblue 150%),
+      linear-gradient(to right, royalblue, blue);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  .window {
+    min-width: 320px;
+    min-height: 320px;
+    margin: 20px;
+    position: relative;
+      background-color: #3e4b5b99; /* Caldari dark blue */
+    border-radius: 0px; /* Adjust for the corner radius */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    --aug-border-all: 4px;
+    --aug-border-left: 2px;
+    --aug-border-right: 2px;
+    --aug-r-inset1: -7px;
+  }
+  
+  .window-header {
+    display: block;
+    justify-content: space-between;
+    padding: 8px 2px;
+    color: var(--bs-body-color);
+    font-size: 18px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    --aug-border-bottom: 0px;
+    --aug-tl: 1.6rem;
+  }
+  
+  .window-header .window-title {
+    text-align: center;
+    flex-grow: 1;
+    padding: 0px;
+    --aug-border-all: 0px;
+  }
+  .window-title-text {
+    font-size: 17px;
+  }
+  .control-buttons {
+  }
+  
+  .control-buttons button {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .control-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .window-nav {
+  }
+  /* Menu */
+  .window-nav-menu {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    padding-left: 15px;
+    margin: 0;
+    font-size: 12px;
+    color: white;
+    --aug-border-bottom: 1px;
+    --aug-border-top: 0px;
+    --aug-border-left: 0px;
+    --aug-border-right: 13px;
+    width: 100%;
+    list-style: none;
+    --aug-br-inset1: -0.8rem;
+  }
+  
+  .window-nav-menu li {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .window-nav-menu li:hover {
+    color: #b0bec5; /* Metallic color on hover */
+    background: #66666666;
+  }
+  
+  /* Window Content */
+  .window-content-container {
+    padding: 7px;
+    overflow-y: auto; /* Allow scrolling if needed */
+    --aug-border-all: 3px;
+  }
+  .window-content {
+    background: transparent;
+    --aug-border-all: 4px;
+    --aug-border-left: 1px;
+    --aug-border-top: 1px;
+    --aug-border-opacity: 0.99;
+    --aug-tr: 1.5rem;
+    --aug-br: 1rem;
+    --aug-bl: 1.5rem;
+    --aug-br-inset1: 5rem;
+    --aug-tl-inset2: 0.5rem;
+    padding: 21px;
+  }
+  .window-content li {
+     --aug-tr: 0.5rem;
+    --aug-tl: 0.5rem;
+    --aug-br: 0.5rem;
+    --aug-bl: 0.5rem;
+    display: block;
+    background: #545e73;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0.5rem;
+    color: #adb8cb;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 90, 0.25);
+  }
+  /* Styling for close/minimize buttons */
+  button:focus {
+    outline: none;
+  }
+  

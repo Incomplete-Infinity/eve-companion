@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STL Model on Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stl-loader@1.0.0/STLLoader.min.js"></script>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const loader = new THREE.STLLoader();
+        const material = new THREE.MeshStandardMaterial({ color: 0x0055ff, flatShading: true });
+
+        // Load the STL file
+        loader.load('./ships/amarr/battlecruiser/damnation.stl', (geometry) => {
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            camera.position.z = 5;
+
+            // Set up the animation loop
+            const animate = function () {
+                requestAnimationFrame(animate);
+
+                // Rotate the model
+                mesh.rotation.x += 0.01;
+                mesh.rotation.y += 0.01;
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+        });
+
+        // Update canvas size on window resize
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>

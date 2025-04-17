@@ -4,6 +4,8 @@
  *
  * @requires Constellation
  */
+const ESI = require("eve_swagger_interface");
+const api = new ESI.UniverseApi();
 
 const Constellation = require('./Constellation');
 
@@ -19,32 +21,31 @@ export default class Region {
    * @param {string} [data.name=null] - Optional name of the region.
    * @param {number[]} [data.constellations=[]] - Array of constellation IDs.
    */
-  constructor({ region_id, name = null, constellations = [] }) {
+  constructor(region_id) {
     this.id = region_id;
+    const { name, description, constellations } = Region.requestData(this.id);
     this.name = name;
-    this.constellations = constellations.map(c => new Constellation({ constellation_id: c }));
+    this.description = description;
+    this.constellations = constellations.map(constellation => new Constellation({ constellation_id: constellation }));
   }
 
-  /**
-   * Add a new constellation to this region.
-   * @param {Object} data - The constellation data.
-   * @returns {Constellation} The newly added constellation instance.
-   */
-  addConstellation(data) {
-    const constellation = new Constellation({ ...data, region_id: this.id });
-    this.constellations.push(constellation);
-    return constellation;
+  static async requestData(region_id) {
+    const data = await api.Region({
+      region_id: region_id,
+      datasource: "tranquility"
+    });
+    return data;
   }
 
   /**
    * Serialize the region to a JSON-compatible object.
-   * @returns {Object} JSON representation of the region.
+ * @returns {Object} JSON representation of the region.
    */
   toJSON() {
     return {
       id: this.id,
       name: this.name,
-      constellations: this.constellations.map(c => c.toJSON?.() ?? c)
+      constellations: this.constellations.map(constellation => constellation.toJSON?.() ?? constellation)
     };
   }
 }

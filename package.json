@@ -2,11 +2,12 @@
   "name": "eve-companion",
   "version": "1.0.0",
   "description": "EVE Online Companion App for fleet, market, and personal tools",
-  "main": "index.js",
+  "main": "src/js/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
+    "publish": "electron-forge publish",
     "generate-docs": "jsdoc -c jsdoc.json",
     "generate-readmes": "node GenerateReadmes.js",
     "generate-esi": "swagger-typescript-api generate --path https://esi.evetech.net/latest/swagger.json --output ./src/api/esi --name index.ts --axios --modular --union-enums",
@@ -65,6 +66,7 @@
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4",
     "swagger-typescript-api": "^13.1.1",
+    "vite": "^6.2.6",
     "vitest": "^1.5.0"
   }
 }
