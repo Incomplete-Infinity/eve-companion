@@ -24,6 +24,85 @@ root/
 ├── esi.json            # (optional) local Swagger spec
 ```
 
+```mermaid
+mindmap
+  root((Companion App))
+    Main
+      APIRequests
+        ESI
+          RequestUniverseTypes
+          RequestCategories
+          RequestRegions
+          RequestSystems
+          RequestBlueprints
+          RequestMarketData
+        ZKillboard
+          RequestKillmails
+          FetchShipLosses
+          FetchCorporationStats
+        APIIntegrations
+          IntegrateWithCustomAPIs
+          HandleGeneralAPIRequests
+      ErrorHandling
+        ImplementGlobalErrorLog
+        HandleFailedRequests
+      DataManagement
+        ParseAPIResponses
+        OrganizeFetchedData
+        StoreDataInDB
+        UpdateData
+    Renderer
+      UIUX
+        MainWindow
+          RenderPrimaryDashboard
+          DisplayRealTimeUpdates
+        Sidebar
+          ProvideQuickNavigation
+        InteractiveDataDisplay
+          RenderDynamicGraphs
+          DisplayTables
+      DataHandling
+        IndexedDB
+          StoreTypes
+          StoreCategories
+          StoreRegions
+          StoreBlueprintData
+          StoreMarketData
+          StoreCorporationData
+        DataPersistence
+          ManageDataUpdates
+          EnsureDataConsistency
+      UserInteractions
+        HandleButtonClicks
+        HandleInputFields
+        UpdateUIBasedOnData
+    WebWorker
+      RequestQueueManagement
+        ManageAPIRequestQueue
+        OptimizeRequestIntervals
+      DataCollation
+        FormatRawData
+        MergeDataForUI
+      BackgroundTasks
+        PerformHeavyCalculations
+        FetchDataInParallel
+    Preload
+      Authentication
+        OAuth2Integration
+          AuthenticateWithESI
+          ManageTokensAndRefresh
+      OfflineFunctionality
+        AllowOfflineUsage
+        DisplayLastKnownData
+      DataBridge
+        FetchDataFromMain
+        PassDataToRenderer
+      Security
+        SecureDataExchangeBetweenProcesses
+        ValidateUserInput
+
+```
+
 ## Other Files
 1. [GenerateReadmes.js](./GenerateReadmes.js)
 2. [jsdoc.json](./jsdoc.json)
