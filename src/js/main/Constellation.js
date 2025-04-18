@@ -1,16 +1,35 @@
 // Constellation.js
-const ESI = require("eve_swagger_interface");
-const System = require("./System");
+const ESI = require("./../../api/esi/Universe.ts");
 
 export default class Constellation {
-  constructor(id = null) {
-    this.id = id;
-    this.api = new ESI.UniverseApi();
+  constructor(constellation_id = null) {
+    this.id = constellation_id;
+    const { name, position, systems } = ESI.getUniverseConstellationsConstellationId(constellation_id);
+    this.name = name;
+    const { x, y, z } = position;
+    this.position = { x, y, z };
 
-    if (id) return this.fetch();
-    return this.list();
+    this.systems = systems.map(
+      (s) => new System({ system_id: s })
+    );
   }
 
+   /**
+   * Serialize the region to a JSON-compatible object.
+   * @returns {Object} JSON representation of the region.
+   */
+   toJSON() {
+    return {
+      id: this.id,
+      name: this.name,
+      position: this.position,
+      systems: this.systems.map(
+        (s) => s.toJSON?.() ?? s
+      ),
+    };
+  }
+
+  /*
   async fetch() {
     const data = await this.api.getUniverseConstellationsConstellationId(this.constellationId, {
       datasource: "tranquility",
@@ -67,4 +86,5 @@ class Title {
       datasource: "tranquility",
     });
   }
+    */
 }

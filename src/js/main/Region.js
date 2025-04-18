@@ -4,10 +4,7 @@
  *
  * @requires Constellation
  */
-const ESI = require("eve_swagger_interface");
-const api = new ESI.UniverseApi();
-
-const Constellation = require('./Constellation');
+const ESI = require("./../../api/esi/Universe.ts");
 
 /**
  * @class Region
@@ -23,29 +20,26 @@ export default class Region {
    */
   constructor(region_id) {
     this.id = region_id;
-    const { name, description, constellations } = Region.requestData(this.id);
+    const { name, description, constellations } =
+      ESI.getUniverseRegion(region_id);
     this.name = name;
     this.description = description;
-    this.constellations = constellations.map(constellation => new Constellation({ constellation_id: constellation }));
-  }
-
-  static async requestData(region_id) {
-    const data = await api.Region({
-      region_id: region_id,
-      datasource: "tranquility"
-    });
-    return data;
+    this.constellations = constellations.map(
+      (constellation) => new Constellation({ constellation_id: constellation })
+    );
   }
 
   /**
    * Serialize the region to a JSON-compatible object.
- * @returns {Object} JSON representation of the region.
+   * @returns {Object} JSON representation of the region.
    */
   toJSON() {
     return {
       id: this.id,
       name: this.name,
-      constellations: this.constellations.map(constellation => constellation.toJSON?.() ?? constellation)
+      constellations: this.constellations.map(
+        (constellation) => constellation.toJSON?.() ?? constellation
+      ),
     };
   }
 }

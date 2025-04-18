@@ -1,4 +1,4 @@
-const Region = require('../systems/intel/locations/Region');
+const ESI = require("./../../api/esi/Universe.ts");
 
 /**
  * @class Galaxy
@@ -14,23 +14,9 @@ export default class Galaxy {
    * Create a new Galaxy instance.
    * @param {string} [name='New Eden'] - Name of the galaxy.
    */
-  constructor(name = 'New Eden') {
-    /** @type {string} */
-    this.name = name;
-
-    /** @type {Region[]} */
-    this.regions = [];
-  }
-
-  /**
-   * Add a region to the galaxy using raw data or a partial Region payload.
-   * @param {Object} data - Raw region data with at least `region_id`.
-   * @returns {Region} The instantiated Region object.
-   */
-  addRegion(data) {
-    const region = new Region(data);
-    this.regions.push(region);
-    return region;
+  constructor() {
+     /** @type {Region[]} */
+    this.regions = ESI.getUniverseRegions().map(r => new Region(r));
   }
 
   /**
