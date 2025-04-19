@@ -18,14 +18,14 @@ export default class Region {
    * @param {string} [data.name=null] - Optional name of the region.
    * @param {number[]} [data.constellations=[]] - Array of constellation IDs.
    */
-  constructor(region_id) {
-    this.id = region_id;
+  constructor(regionId) {
+    this.id = regionId;
     const { name, description, constellations } =
-      ESI.getUniverseRegion(region_id);
+      ESI.getUniverseRegion(regionId);
     this.name = name;
     this.description = description;
     this.constellations = constellations.map(
-      (constellation) => new Constellation({ constellation_id: constellation })
+      (c) => new Constellation(c)
     );
   }
 

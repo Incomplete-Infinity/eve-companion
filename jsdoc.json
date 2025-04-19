@@ -1,12 +1,10 @@
 {
   "source": {
-    "include": ["./src/"],
-        "includePattern": ".+\\.(js|ts)$",
+    "include": ["./src/", "./src/api/esi"],
+    "includePattern": ".+\\.(js|ts)$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
-  "plugins": [
-    "plugins/markdown"
-  ],
+  "plugins": ["plugins/markdown", "node_modules/better-docs/typescript"],
   "opts": {
     "destination": "docs",
     "recurse": true,

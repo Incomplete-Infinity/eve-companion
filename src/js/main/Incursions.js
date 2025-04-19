@@ -9,7 +9,7 @@ export default class Incursions {
     /** @type {ESI.IncursionsApi} */
     this.api = new ESI.IncursionsApi();
 
-    /** @type {object[]} List of active incursions */
+    /** @type {object[]} */
     this.active = [];
   }
 

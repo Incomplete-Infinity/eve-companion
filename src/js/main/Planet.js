@@ -1,6 +1,8 @@
 /**
  * @file Planet.js
- * @description Represents a planetary object within a solar system. Includes basic metadata and moon tracking.
+ * @summary Represents a planet and its features in the EVE Online universe.
+ * @description Represents a planetary object within a solar system. Includes basic metadata and moon tracking. constructs and populats a system object from the ESI API using the system's unique id.
+ * @version 1
  */
 
 /**

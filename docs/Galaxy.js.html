@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Galaxy.html">Galaxy</a></li><li><a href="Incursions.html">Incursions</a></li><li><a href="Location.html">Location</a></li><li><a href="Planet.html">Planet</a></li><li><a href="PlanetaryInteraction.html">PlanetaryInteraction</a></li><li><a href="Region.html">Region</a></li><li><a href="Routes.html">Routes</a></li><li><a href="Sovereignty.html">Sovereignty</a></li><li><a href="Structure.html">Structure</a></li><li><a href="System.html">System</a></li><li><a href="Universe.html">Universe</a></li><li><a href="module.exports.html">exports</a></li><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMoon">addMoon</a></li><li><a href="global.html#addPlanet">addPlanet</a></li><li><a href="global.html#addRegion">addRegion</a></li><li><a href="global.html#ensureAuth">ensureAuth</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#getActiveSystems">getActiveSystems</a></li><li><a href="global.html#getByConstellation">getByConstellation</a></li><li><a href="global.html#getByStagingSystem">getByStagingSystem</a></li><li><a href="global.html#getCharacterStats">getCharacterStats</a></li><li><a href="global.html#getCorporationStats">getCorporationStats</a></li><li><a href="global.html#getPlanetById">getPlanetById</a></li><li><a href="global.html#getRegionById">getRegionById</a></li><li><a href="global.html#getSecure">getSecure</a></li><li><a href="global.html#getShortest">getShortest</a></li><li><a href="global.html#getUnsafe">getUnsafe</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#loadCampaigns">loadCampaigns</a></li><li><a href="global.html#loadFactions">loadFactions</a></li><li><a href="global.html#loadLeaderboards">loadLeaderboards</a></li><li><a href="global.html#loadMap">loadMap</a></li><li><a href="global.html#loadPlanetDetail">loadPlanetDetail</a></li><li><a href="global.html#loadPlanetMeta">loadPlanetMeta</a></li><li><a href="global.html#loadPlanets">loadPlanets</a></li><li><a href="global.html#loadSchematic">loadSchematic</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#loadStructures">loadStructures</a></li><li><a href="global.html#loadSystems">loadSystems</a></li><li><a href="global.html#setDetails">setDetails</a></li><li><a href="global.html#toJSON">toJSON</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Galaxy.html">Galaxy</a></li><li><a href="Incursions.html">Incursions</a></li><li><a href="Location.html">Location</a></li><li><a href="Planet.html">Planet</a></li><li><a href="PlanetaryInteraction.html">PlanetaryInteraction</a></li><li><a href="Region.html">Region</a></li><li><a href="Routes.html">Routes</a></li><li><a href="Sovereignty.html">Sovereignty</a></li><li><a href="Structure.html">Structure</a></li><li><a href="System.html">System</a></li><li><a href="Universe.html">Universe</a></li><li><a href="module.exports.html">exports</a></li><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMoon">addMoon</a></li><li><a href="global.html#ensureAuth">ensureAuth</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#getActiveSystems">getActiveSystems</a></li><li><a href="global.html#getByConstellation">getByConstellation</a></li><li><a href="global.html#getByStagingSystem">getByStagingSystem</a></li><li><a href="global.html#getCharacterStats">getCharacterStats</a></li><li><a href="global.html#getCorporationStats">getCorporationStats</a></li><li><a href="global.html#getPlanetById">getPlanetById</a></li><li><a href="global.html#getRegionById">getRegionById</a></li><li><a href="global.html#getSecure">getSecure</a></li><li><a href="global.html#getShortest">getShortest</a></li><li><a href="global.html#getUnsafe">getUnsafe</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#loadCampaigns">loadCampaigns</a></li><li><a href="global.html#loadFactions">loadFactions</a></li><li><a href="global.html#loadLeaderboards">loadLeaderboards</a></li><li><a href="global.html#loadMap">loadMap</a></li><li><a href="global.html#loadPlanetDetail">loadPlanetDetail</a></li><li><a href="global.html#loadPlanetMeta">loadPlanetMeta</a></li><li><a href="global.html#loadPlanets">loadPlanets</a></li><li><a href="global.html#loadSchematic">loadSchematic</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#loadStructures">loadStructures</a></li><li><a href="global.html#loadSystems">loadSystems</a></li><li><a href="global.html#setDetails">setDetails</a></li><li><a href="global.html#toJSON">toJSON</a></li></ul></div>
                 
             </nav>
         </div>
@@ -89,7 +89,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Region = require('../systems/intel/locations/Region');
+            <pre class="prettyprint source linenums"><code>const ESI = require("./../../api/esi/Universe.ts");
 
 /**
  * @class Galaxy
@@ -105,23 +105,9 @@ export default class Galaxy {
    * Create a new Galaxy instance.
    * @param {string} [name='New Eden'] - Name of the galaxy.
    */
-  constructor(name = 'New Eden') {
-    /** @type {string} */
-    this.name = name;
-
-    /** @type {Region[]} */
-    this.regions = [];
-  }
-
-  /**
-   * Add a region to the galaxy using raw data or a partial Region payload.
-   * @param {Object} data - Raw region data with at least `region_id`.
-   * @returns {Region} The instantiated Region object.
-   */
-  addRegion(data) {
-    const region = new Region(data);
-    this.regions.push(region);
-    return region;
+  constructor() {
+     /** @type {Region[]} */
+    this.regions = ESI.getUniverseRegions().map(r => new Region(r));
   }
 
   /**

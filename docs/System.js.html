@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Galaxy.html">Galaxy</a></li><li><a href="Incursions.html">Incursions</a></li><li><a href="Location.html">Location</a></li><li><a href="Planet.html">Planet</a></li><li><a href="PlanetaryInteraction.html">PlanetaryInteraction</a></li><li><a href="Region.html">Region</a></li><li><a href="Routes.html">Routes</a></li><li><a href="Sovereignty.html">Sovereignty</a></li><li><a href="Structure.html">Structure</a></li><li><a href="System.html">System</a></li><li><a href="Universe.html">Universe</a></li><li><a href="module.exports.html">exports</a></li><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMoon">addMoon</a></li><li><a href="global.html#addPlanet">addPlanet</a></li><li><a href="global.html#addRegion">addRegion</a></li><li><a href="global.html#ensureAuth">ensureAuth</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#getActiveSystems">getActiveSystems</a></li><li><a href="global.html#getByConstellation">getByConstellation</a></li><li><a href="global.html#getByStagingSystem">getByStagingSystem</a></li><li><a href="global.html#getCharacterStats">getCharacterStats</a></li><li><a href="global.html#getCorporationStats">getCorporationStats</a></li><li><a href="global.html#getPlanetById">getPlanetById</a></li><li><a href="global.html#getRegionById">getRegionById</a></li><li><a href="global.html#getSecure">getSecure</a></li><li><a href="global.html#getShortest">getShortest</a></li><li><a href="global.html#getUnsafe">getUnsafe</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#loadCampaigns">loadCampaigns</a></li><li><a href="global.html#loadFactions">loadFactions</a></li><li><a href="global.html#loadLeaderboards">loadLeaderboards</a></li><li><a href="global.html#loadMap">loadMap</a></li><li><a href="global.html#loadPlanetDetail">loadPlanetDetail</a></li><li><a href="global.html#loadPlanetMeta">loadPlanetMeta</a></li><li><a href="global.html#loadPlanets">loadPlanets</a></li><li><a href="global.html#loadSchematic">loadSchematic</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#loadStructures">loadStructures</a></li><li><a href="global.html#loadSystems">loadSystems</a></li><li><a href="global.html#setDetails">setDetails</a></li><li><a href="global.html#toJSON">toJSON</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Galaxy.html">Galaxy</a></li><li><a href="Incursions.html">Incursions</a></li><li><a href="Location.html">Location</a></li><li><a href="Planet.html">Planet</a></li><li><a href="PlanetaryInteraction.html">PlanetaryInteraction</a></li><li><a href="Region.html">Region</a></li><li><a href="Routes.html">Routes</a></li><li><a href="Sovereignty.html">Sovereignty</a></li><li><a href="Structure.html">Structure</a></li><li><a href="System.html">System</a></li><li><a href="Universe.html">Universe</a></li><li><a href="module.exports.html">exports</a></li><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMoon">addMoon</a></li><li><a href="global.html#ensureAuth">ensureAuth</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#getActiveSystems">getActiveSystems</a></li><li><a href="global.html#getByConstellation">getByConstellation</a></li><li><a href="global.html#getByStagingSystem">getByStagingSystem</a></li><li><a href="global.html#getCharacterStats">getCharacterStats</a></li><li><a href="global.html#getCorporationStats">getCorporationStats</a></li><li><a href="global.html#getPlanetById">getPlanetById</a></li><li><a href="global.html#getRegionById">getRegionById</a></li><li><a href="global.html#getSecure">getSecure</a></li><li><a href="global.html#getShortest">getShortest</a></li><li><a href="global.html#getUnsafe">getUnsafe</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#loadCampaigns">loadCampaigns</a></li><li><a href="global.html#loadFactions">loadFactions</a></li><li><a href="global.html#loadLeaderboards">loadLeaderboards</a></li><li><a href="global.html#loadMap">loadMap</a></li><li><a href="global.html#loadPlanetDetail">loadPlanetDetail</a></li><li><a href="global.html#loadPlanetMeta">loadPlanetMeta</a></li><li><a href="global.html#loadPlanets">loadPlanets</a></li><li><a href="global.html#loadSchematic">loadSchematic</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#loadStructures">loadStructures</a></li><li><a href="global.html#loadSystems">loadSystems</a></li><li><a href="global.html#setDetails">setDetails</a></li><li><a href="global.html#toJSON">toJSON</a></li></ul></div>
                 
             </nav>
         </div>
@@ -91,13 +91,23 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * @file System.js
- * @description Represents a solar system and its planets in the EVE Online universe.
+ * @summary Represents a solar system and its planets in the EVE Online universe.
+ * @description constructs and populats a system object from the ESI API using the system's unique id.
+ * @version 1
  * 
- * @requires ./celestials/Planet
+ * @requires ../../api/esi/Universe.ts
+ * @requires Planet
+ * @requires Stargate
+ * @requires Station
+ * @requires Position
+ * @requires Star
  */
-
-const Planet = require('./celestials/Planet');
-
+const ESI = require("./../../api/esi/Universe.ts");
+const Planet = require("./Planet");
+const Stargate = require("./Stargate");
+const Station = require("./Station");
+const Position = require("./Position");
+const Star = require("./Star");
 /**
  * @class System
  * @classdesc A solar system in EVE, holding planets and metadata like region and constellation.
@@ -106,41 +116,50 @@ export default class System {
   /**
    * @constructor
    * @param {object} data - System data from the ESI API.
-   * @param {number} data.system_id - The system's unique ID.
-   * @param {string} data.name - The name of the system.
+   * @param {number} system_id - The system's unique ID.
+
    * @param {number} data.constellation_id - The ID of the constellation containing this system.
    * @param {number} data.region_id - The ID of the region containing this system.
    * @param {number} data.security_status - Security rating from -1.0 (null) to 1.0 (high-sec).
    */
-  constructor({ system_id, name, constellation_id, region_id, security_status }) {
+  constructor(systemId) {
     /** @type {number} */
-    this.id = system_id;
+    this.id = systemId;
+    const {
+      name,
+      security_status,
+      security_class,
+      star_id,
+      stargates,
+      stations,
+      planets,
+      position,
+    } = ESI.getUniverseSystem(systemId);
 
-    /** @type {string} */
+    /** @type {string} System#name - The name of the system. */
     this.name = name;
-
-    /** @type {number} */
-    this.constellationId = constellation_id;
-
-    /** @type {number} */
-    this.regionId = region_id;
-
-    /** @type {number} */
+    /** @type {number} security_status - Security rating from -1.0 (null) to 1.0 (high-sec). */
     this.securityStatus = security_status;
-
-    /** @type {Planet[]} */
-    this.planets = [];
-  }
-
-  /**
-   * Add a planet to this system.
-   * @param {object} planetData - Raw ESI planet data.
-   * @returns {Planet} - The created Planet instance.
-   */
-  addPlanet(planetData) {
-    const planet = new Planet({ ...planetData, system_id: this.id, region_id: this.regionId });
-    this.planets.push(planet);
-    return planet;
+    /** @type {number} securityClass - Security class from -1.0 (null) to 1.0 (high-sec). */
+    this.securityClass = security_class;
+    /** @type {number} star_id - The ID of the star in this system. */
+    this.star = new this.star(star_id);
+    /** @type {Stargate[]} stargates - An array of stargate ids in this system. */
+    this.stargates = stargates.map((id) => new Stargate(id));
+    /** @type {Station[]} stations - an array of station ids in this system */
+    this.stations = stations.map((id) => new Station(id));
+    /** 
+     * @type {Planet[]} 
+     * @name System#planets
+     * @summary an array of planet ids in this system 
+     */
+    this.planets = planets.map((p) => new Planet(p));
+    /** 
+     * @type {Position[]} 
+     * @name System#position
+     * @summary
+     */
+    this.position = new Position(position);
   }
 
   /**
@@ -149,7 +168,7 @@ export default class System {
    * @returns {Planet|undefined} - The planet instance or undefined if not found.
    */
   getPlanetById(planetId) {
-    return this.planets.find(p => p.id === planetId);
+    return this.planets.find((p) => p.id === planetId);
   }
 
   /**
@@ -163,7 +182,7 @@ export default class System {
       constellationId: this.constellationId,
       regionId: this.regionId,
       securityStatus: this.securityStatus,
-      planets: this.planets.map(p => p.toJSON())
+      planets: this.planets.map((p) => p.toJSON()),
     };
   }
 }
