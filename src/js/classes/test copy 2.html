@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVE Universe Browser with Bundled ESI Client</title>
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Halfmoon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css"
+      rel="stylesheet"
+      integrity="sha256-RjeFzczeuZHCyS+Gvz+kleETzBF/o84ZRHukze/yv6o="
+      crossorigin="anonymous"
+    />
+    <!-- Halfmoon core themes -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
+      rel="stylesheet"
+      integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-dark.min.css"
+    />
+  </head>
+  <body data-bs-theme="dark" data-bs-core="modern">
+    <main class="text-body"></main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module">
+      import { Api } from "../../../public/esi-client.js";
+
+      const apiClient = new Api({
+        baseURL: "https://esi.evetech.net/latest",
+        baseApiParams: { datasource: "tranquility" },
+      });
+      const universeApi = apiClient.universe;
+
+      class Moon {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseMoonsMoonId(this.id)
+          );
+          this.name = data.name;
+          this.position = data.position;
+        }
+      }
+      class Belt {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseAsteroidBeltsAsteroidBeltId(this.id)
+          );
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+        }
+      }
+      class Stargate {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStargatesStargateId(this.id)
+          );
+          this.typeId = data.type_id;
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, x };
+          this.destination = data.destination;
+        }
+      }
+      class Station {
+        constructor(id) {
+          this.id = id;
+
+          this.maxDockableShipVolume = null;
+          this.name = "";
+          this.officeRentalCost = null;
+          this.owner = null;
+          this.position = { x: 0, y: 0, z: 0 };
+          this.raceId = null;
+          this.reprocessingEfficiency = null;
+          this.reprocessingStationsTake = null;
+          this.services = null;
+          this.typeId = null;
+
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStationsStationId(this.id)
+          );
+          this.name = data.name;
+          this.maxDockableShipVolume = data.max_dockable_ship_volume;
+          this.oficeRentalCost = data.office_rental_cost;
+          this.owner = data.owner;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+          this.raceId = data.race_id;
+          this.reprocessingEfficiency = data.reprocessing_efficiency;
+          this.reprocessingStationsTake = data.reprocessing_stations_take;
+          this.services = data.services;
+          this.typeId = data.type_id;
+        }
+      }
+      class Star {
+        constructor(id) {
+          this.id = id;
+          this.age = null;
+          this.luminosity = null;
+          this.name = "";
+          this.radius = null;
+          this.spectralClass = null;
+          this.temperature = null;
+          this.typeId = null;
+
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStarsStarId(this.id)
+          );
+          this.age = data.age;
+          this.luminosity = data.luminosity;
+          this.name = data.name;
+          this.radius = data.radius;
+          this.spectraClass = data.spectral_class;
+          this.temperature = data.temperature;
+          this.typeId = data.type_id;
+        }
+      }
+      class Planet {
+        constructor(data) {
+          this.id = data.planet_id;
+          this.name = "";
+          this.moonData = data.moons || [];
+          this.moons = [];
+          this.beltData = data.asteroid_belts || [];
+          this.belts = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniversePlanetsPlanetId(this.id)
+          );
+          this.name = data.name || "Planet";
+          this.moons = this.moonData.map((mid) => new Moon(mid));
+          this.belts = this.beltData.map((bid) => new Belt(bid));
+          this.ready = Promise.all([
+            ...this.moons.map((m) => m.ready),
+            ...this.belts.map((b) => b.ready),
+          ]);
+        }
+      }
+      class System {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.position = { x: 0, y: 0, z: 0 };
+          this.stations = [];
+          this.stargates = [];
+          this.planets = [];
+          this.star = null;
+          this.securityStatus = null;
+          this.securityClass = null;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseSystemsSystemId(this.id)
+          );
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+          this.securityClass = data.security_class;
+          this.securityStatus = data.security_status;
+          this.stargates = (data.stargates || []).map(
+            (gid) => new Stargate(gid)
+          );
+          this.stations = (data.stations || []).map((sid) => new Station(sid));
+          this.planets = (data.planets || []).map((p) => new Planet(p));
+          this.star = data.star_id ? new Star(data.star_id) : null;
+          await Promise.all([
+            ...this.stations.map((s) => s.ready),
+            ...this.planets.map((p) => p.ready),
+            ...(this.star ? [this.star.ready] : []),
+          ]);
+        }
+      }
+      class Constellation {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.position = { x: 0, y: 0, z: 0 };
+          this.systems = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseConstellationsConstellationId(this.id)
+          );
+          this.name = data.name;
+          this.position = data.position;
+          this.systems = data.systems.map((sid) => new System(sid));
+          await Promise.all(this.systems.map((s) => s.ready));
+        }
+      }
+      class Region {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.description = "";
+          this.constellations = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseRegionsRegionId(this.id)
+          );
+          this.name = data.name;
+          this.description = data.description;
+          this.constellations = data.constellations.map(
+            (cid) => new Constellation(cid)
+          );
+          await Promise.all(this.constellations.map((c) => c.ready));
+        }
+      }
+      export class Eden {
+        constructor() {
+          this.regions = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await universeApi.getUniverseRegions();
+          const regionIds = Array.isArray(data) ? data : [];
+          const outputEl = document.getElementById("output");
+          const progressEl = document.getElementById("progress");
+          progressEl.max = regionIds.length;
+
+          for (let i = 0; i < regionIds.length; i++) {
+            if (abortRequested) break;
+
+            const region = new Region(regionIds[i]);
+            this.regions.push(region);
+            await region.ready;
+
+            this._renderRegion(region, outputEl);
+            progressEl.value = i + 1;
+          }
+        }
+      }
+      //document.addEventListener("DOMContentLoaded", () => galaxyInstance = new Eden());
+    </script>
+    <!-- Rendering logic and app entry point -->
+<script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js';
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.159.0/examples/jsm/controls/OrbitControls.js';
+  
+    import { Eden } from '#eden-script';
+  
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000010);
+  
+    const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 1, 100000);
+    camera.position.set(0, 0, 3000);
+  
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    document.body.appendChild(renderer.domElement);
+  
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+  
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
+  
+    const drawRegion = region => {
+      region.constellations.forEach(constel => {
+        const sphere = new THREE.Mesh(
+          new THREE.SphereGeometry(10),
+          new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 0.3 })
+        );
+        const { x, y, z } = constel.position;
+        sphere.position.set(x, y, z);
+        scene.add(sphere);
+      });
+    };
+  
+    const start = async () => {
+      const eden = new Eden();
+      await eden.ready;
+      eden.regions.forEach(drawRegion);
+    };
+  
+    animate();
+    start();
+  </script>
+  </body>
+</html>

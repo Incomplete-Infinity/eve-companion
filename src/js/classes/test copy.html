@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVE Universe Browser with Bundled ESI Client</title>
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Halfmoon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css"
+      rel="stylesheet"
+      integrity="sha256-RjeFzczeuZHCyS+Gvz+kleETzBF/o84ZRHukze/yv6o="
+      crossorigin="anonymous"
+    />
+    <!-- Halfmoon core themes -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
+      rel="stylesheet"
+      integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-dark.min.css"
+    />
+    <style>
+      details details {
+        padding-left: 0.5rem;
+      }
+      details details details {
+        padding-left: 1rem;
+      }
+      details details details details {
+        padding-left: 1.5rem;
+      }
+      details details details details details {
+        padding-left: 2rem;
+      }
+      details details details details details details {
+        padding-left: 2.5rem;
+      }
+      details details details details details details details {
+        padding-left: 3rem;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark" data-bs-core="modern">
+    <main class="text-body">
+      <h1>EVE Universe Browser Example</h1>
+
+      <div class="d-flex gap-2 my-2">
+        <button id="start-btn" class="btn btn-primary">Start</button>
+        <button id="abort-btn" class="btn btn-danger" disabled>Abort</button>
+      </div>
+      <label for="progress">Progress:</label>
+      <progress
+        id="progress"
+        value="0"
+        max="100"
+        style="width: 100%"
+      ></progress>
+
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>
+              <label
+                >Concurrent Requests:
+                <meter
+                  id="concurrency"
+                  min="0"
+                  max="10"
+                  value="0"
+                  class="rounded-0"
+                ></meter>
+              </label>
+            </td>
+            <th><strong>Requests:</strong></th>
+            <td><span id="req-count">0</span></td>
+            <th><strong>Data Size:</strong></th>
+            <td><span id="byte-count">0</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="output"></div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module">
+      import { Api } from "../../../public/esi-client.js";
+
+      let galaxyInstance = null;
+      let abortRequested = false;
+
+      const apiClient = new Api({
+        baseURL: "https://esi.evetech.net/latest",
+        baseApiParams: { datasource: "tranquility" },
+      });
+      const universeApi = apiClient.universe;
+
+      const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      let currentConcurrent = 0;
+      const maxConcurrent = 1000;
+      const updateConcurrencyMeter = () => {
+        const meter = document.getElementById("concurrency");
+        if (meter) meter.value = currentConcurrent;
+      };
+
+      const updateStatsDisplay = () => {
+        document.getElementById("req-count").textContent = totalRequests.toLocaleString();
+        document.getElementById("byte-count").textContent = (() => {
+          switch (true) {
+            case totalBytes < 1000:
+              return `${totalBytes} bytes`;
+            case totalBytes < 1000000:
+              return `${(totalBytes / 1000).toFixed(2)} KB`;
+            case totalBytes < 1000000000:
+              return `${(totalBytes / 1000000).toFixed(2)} MB`;
+            default:
+              return `${(totalBytes / 1000000000).toFixed(2)} GB`;
+          }
+        })();
+      };
+
+      setInterval(updateConcurrencyMeter, 250);
+
+      let totalRequests = 0;
+      let totalBytes = 0;
+
+      const globalThrottle = async (fn) => {
+        while (currentConcurrent >= maxConcurrent) await delay(25);
+        currentConcurrent++;
+
+        try {
+          const res = await fn();
+
+          // Estimate bytes from JSON string length
+          const payload = JSON.stringify(res.data);
+          totalRequests++;
+          totalBytes += new TextEncoder().encode(payload).length;
+
+          updateStatsDisplay();
+          return res;
+        } finally {
+          currentConcurrent--;
+        }
+      };
+
+      class Moon {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseMoonsMoonId(this.id)
+          );
+          this.name = data.name;
+          this.position = data.position;
+        }
+      }
+
+      class Belt {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseAsteroidBeltsAsteroidBeltId(this.id)
+          );
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+        }
+      }
+      class Stargate {
+        constructor(id) {
+          this.id = id;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStargatesStargateId(this.id)
+          );
+          this.typeId = data.type_id;
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, x };
+          this.destination = data.destination;
+        }
+      }
+      class Station {
+        constructor(id) {
+          this.id = id;
+
+          this.maxDockableShipVolume = null;
+          this.name = "";
+          this.officeRentalCost = null;
+          this.owner = null;
+          this.position = { x: 0, y: 0, z: 0 };
+          this.raceId = null;
+          this.reprocessingEfficiency = null;
+          this.reprocessingStationsTake = null;
+          this.services = null;
+          this.typeId = null;
+
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStationsStationId(this.id)
+          );
+          this.name = data.name;
+          this.maxDockableShipVolume = data.max_dockable_ship_volume;
+          this.oficeRentalCost = data.office_rental_cost;
+          this.owner = data.owner;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+          this.raceId = data.race_id;
+          this.reprocessingEfficiency = data.reprocessing_efficiency;
+          this.reprocessingStationsTake = data.reprocessing_stations_take;
+          this.services = data.services;
+          this.typeId = data.type_id;
+        }
+      }
+
+      class Star {
+        constructor(id) {
+          this.id = id;
+          this.age = null;
+          this.luminosity = null;
+          this.name = "";
+          this.radius = null;
+          this.spectralClass = null;
+          this.temperature = null;
+          this.typeId = null;
+
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseStarsStarId(this.id)
+          );
+          this.age = data.age;
+          this.luminosity = data.luminosity;
+          this.name = data.name;
+          this.radius = data.radius;
+          this.spectraClass = data.spectral_class;
+          this.temperature = data.temperature;
+          this.typeId = data.type_id;
+        }
+      }
+
+      class Planet {
+        constructor(data) {
+          this.id = data.planet_id;
+          this.name = "";
+          this.moonData = data.moons || [];
+          this.moons = [];
+          this.beltData = data.asteroid_belts || [];
+          this.belts = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniversePlanetsPlanetId(this.id)
+          );
+          this.name = data.name || "Planet";
+          this.moons = this.moonData.map((mid) => new Moon(mid));
+          this.belts = this.beltData.map((bid) => new Belt(bid));
+          this.ready = Promise.all([
+            ...this.moons.map((m) => m.ready),
+            ...this.belts.map((b) => b.ready),
+          ]);
+        }
+      }
+
+      class System {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.position = { x: 0, y: 0, z: 0 };
+          this.stations = [];
+          this.stargates = [];
+          this.planets = [];
+          this.star = null;
+          this.securityStatus = null;
+          this.securityClass = null;
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseSystemsSystemId(this.id)
+          );
+          this.name = data.name;
+          const { x, y, z } = data.position;
+          this.position = { x, y, z };
+          this.securityClass = data.security_class;
+          this.securityStatus = data.security_status;
+          this.stargates = (data.stargates || []).map(
+            (gid) => new Stargate(gid)
+          );
+          this.stations = (data.stations || []).map((sid) => new Station(sid));
+          this.planets = (data.planets || []).map((p) => new Planet(p));
+          this.star = data.star_id ? new Star(data.star_id) : null;
+          await Promise.all([
+            ...this.stations.map((s) => s.ready),
+            ...this.planets.map((p) => p.ready),
+            ...(this.star ? [this.star.ready] : []),
+          ]);
+        }
+      }
+
+      class Constellation {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.position = { x: 0, y: 0, z: 0 };
+          this.systems = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseConstellationsConstellationId(this.id)
+          );
+          this.name = data.name;
+          this.position = data.position;
+          this.systems = data.systems.map((sid) => new System(sid));
+          await Promise.all(this.systems.map((s) => s.ready));
+        }
+      }
+
+      class Region {
+        constructor(id) {
+          this.id = id;
+          this.name = "";
+          this.description = "";
+          this.constellations = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await globalThrottle(() =>
+            universeApi.getUniverseRegionsRegionId(this.id)
+          );
+          this.name = data.name;
+          this.description = data.description;
+          this.constellations = data.constellations.map(
+            (cid) => new Constellation(cid)
+          );
+          await Promise.all(this.constellations.map((c) => c.ready));
+        }
+      }
+
+      class Galaxy {
+        constructor() {
+          this.regions = [];
+          this.ready = this._load();
+        }
+        async _load() {
+          const { data } = await universeApi.getUniverseRegions();
+          const regionIds = Array.isArray(data) ? data : [];
+          const outputEl = document.getElementById("output");
+          const progressEl = document.getElementById("progress");
+          progressEl.max = regionIds.length;
+
+          for (let i = 0; i < regionIds.length; i++) {
+            if (abortRequested) break;
+
+            const region = new Region(regionIds[i]);
+            this.regions.push(region);
+            await region.ready;
+
+            this._renderRegion(region, outputEl);
+            progressEl.value = i + 1;
+          }
+        }
+
+        async _renderRegion(region, container) {
+          const regionEl = document.createElement("details");
+          const regionSum = document.createElement("summary");
+          regionSum.textContent = `Region ${region.id}: ${region.name}`;
+          regionEl.appendChild(regionSum);
+
+          region.constellations.forEach((constel) => {
+            const consEl = document.createElement("details");
+            const consSum = document.createElement("summary");
+            consSum.textContent = `Constellation ${constel.id}: ${constel.name}`;
+            consEl.appendChild(consSum);
+
+            constel.systems.forEach((sys) => {
+              const sysEl = document.createElement("details");
+              const sysSum = document.createElement("summary");
+              sysSum.textContent = `System ${sys.id}: ${sys.name}`;
+
+              // System Info Table
+              const sysTable = document.createElement("table");
+              sysTable.classList.add(
+                "table",
+                "table-striped",
+                "table-hover",
+                "mb-2"
+              );
+              const tbody = document.createElement("tbody");
+              sysTable.appendChild(tbody);
+
+              const addSysRow = (label, value) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<th>${label}</th><td>${value ?? "N/A"}</td>`;
+                tbody.appendChild(row);
+              };
+
+              addSysRow("Name", sys.name);
+              addSysRow("Security Status", sys.securityStatus);
+              addSysRow("Security Class", sys.securityClass);
+              addSysRow("X", sys.position.x);
+              addSysRow("Y", sys.position.y);
+              addSysRow("Z", sys.position.z);
+
+              sysEl.appendChild(sysTable);
+
+              sysEl.appendChild(sysSum);
+
+              // Star
+              if (sys.star) {
+                const starEl = document.createElement("details");
+                const starSum = document.createElement("summary");
+                starSum.textContent = `Star ${sys.star.id}: ${sys.star.name}`;
+                starEl.appendChild(starSum);
+
+                const starTable = document.createElement("table");
+                starTable.classList.add("table", "table-striped", "table-hover");
+                const starTBody = document.createElement("tbody");
+                const addRow = (label, value) => {
+                  const row = document.createElement("tr");
+                  row.innerHTML = `<th scope="row">${label}</th><td>${
+                    value ?? "N/A"
+                  }</td>`;
+                  starTBody.appendChild(row);
+                };
+                starTable.appendChild(starTBody);
+
+                addRow("Age", sys.star.age);
+                addRow("Radius", sys.star.radius);
+                addRow("Luminosity", sys.star.luminosity);
+                addRow("Spectral Class", sys.star.spectraClass);
+                addRow("Temperature", sys.star.temperature);
+                addRow("Type ID", sys.star.typeId);
+
+                starEl.appendChild(starTable);
+                sysEl.appendChild(starEl);
+              }
+
+              // Stations
+              if (sys.stations.length) {
+                const stationsEl = document.createElement("details");
+                const stationsSum = document.createElement("summary");
+                stationsSum.textContent = `Stations (${sys.stations.length})`;
+                stationsEl.appendChild(stationsSum);
+
+                sys.stations.forEach((st) => {
+                  const stationEl = document.createElement("details");
+                  const stationSum = document.createElement("summary");
+                  stationSum.textContent = `Station ${st.id}: ${st.name}`;
+                  stationEl.appendChild(stationSum);
+
+                  const table = document.createElement("table");
+                  table.classList.add("table", "table-striped", "table-hover");
+                  const tbody = document.createElement("tbody");
+                  const addRow = (label, value) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `<th>${label}</th><td>${
+                      value ?? "N/A"
+                    }</td>`;
+                    tbody.appendChild(row);
+                  };
+                  table.appendChild(tbody);
+
+                  addRow("Owner", st.owner);
+                  addRow("Max Dockable Ship Volume", st.maxDockableShipVolume);
+                  addRow("Office Rental Cost", st.officeRentalCost);
+                  addRow("Race ID", st.raceId);
+                  addRow("Reprocessing Efficiency", st.reprocessingEfficiency);
+                  addRow(
+                    "Reprocessing Stations Take",
+                    st.reprocessingStationsTake
+                  );
+                  addRow("Type ID", st.typeId);
+
+                  if (Array.isArray(st.services)) {
+                    addRow("Services", st.services.join(", "));
+                  }
+
+                  stationEl.appendChild(table);
+                  stationsEl.appendChild(stationEl);
+                });
+
+                sysEl.appendChild(stationsEl);
+              }
+
+              // Stargates
+              if (sys.stargates.length) {
+                const stargatesEl = document.createElement("details");
+                const stargatesSum = document.createElement("summary");
+                stargatesSum.textContent = `Stargates (${sys.stargates.length})`;
+                stargatesEl.appendChild(stargatesSum);
+
+                sys.stargates.forEach((gt) => {
+                  const gateEl = document.createElement("div");
+                  gateEl.textContent = `Stargate ${gt.id}: ${gt.name}`;
+                  stargatesEl.appendChild(gateEl);
+                });
+
+                sysEl.appendChild(stargatesEl);
+              }
+
+              // Planets
+              if (sys.planets.length) {
+                const planetsEl = document.createElement("details");
+                const planetsSum = document.createElement("summary");
+                planetsSum.textContent = `Planets (${sys.planets.length})`;
+                planetsEl.appendChild(planetsSum);
+
+                sys.planets.forEach((p) => {
+                  const planetEl = document.createElement("div");
+                  planetEl.textContent = `Planet ${p.id}: ${p.name}`;
+                  planetsEl.appendChild(planetEl);
+
+                  // Moons
+                  if (p.moons.length) {
+                    const moonsEl = document.createElement("details");
+                    const moonsSum = document.createElement("summary");
+                    moonsSum.textContent = `Moons (${p.moons.length})`;
+                    moonsEl.appendChild(moonsSum);
+
+                    p.moons.forEach((m) => {
+                      const moonEl = document.createElement("div");
+                      moonEl.textContent = `Moon ${m.id}: ${m.name}`;
+                      moonsEl.appendChild(moonEl);
+                    });
+
+                    planetEl.appendChild(moonsEl);
+                  }
+
+                  // Belts
+                  if (p.belts.length) {
+                    const beltsEl = document.createElement("details");
+                    const beltsSum = document.createElement("summary");
+                    beltsSum.textContent = `Belts (${p.belts.length})`;
+                    beltsEl.appendChild(beltsSum);
+
+                    p.belts.forEach((b) => {
+                      const beltEl = document.createElement("div");
+                      beltEl.textContent = `Belt ${b.id}: ${b.name}`;
+                      beltsEl.appendChild(beltEl);
+                    });
+
+                    planetEl.appendChild(beltsEl);
+                  }
+
+                  planetsEl.appendChild(planetEl);
+                });
+
+                sysEl.appendChild(planetsEl);
+              }
+              consEl.appendChild(sysEl);
+            });
+            regionEl.appendChild(consEl);
+          });
+          container.appendChild(regionEl);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("start-btn").addEventListener("click", () => {
+          document.getElementById("start-btn").disabled = true;
+          document.getElementById("abort-btn").disabled = false;
+          abortRequested = false;
+          galaxyInstance = new Galaxy();
+        });
+
+        document.getElementById("abort-btn").addEventListener("click", () => {
+          abortRequested = true;
+          document.getElementById("abort-btn").disabled = true;
+        });
+      });
+    </script>
+  </body>
+</html>

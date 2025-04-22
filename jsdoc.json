@@ -1,7 +1,7 @@
 {
   "source": {
-    "include": ["./src/", "./src/api/esi"],
-    "includePattern": ".+\\.(js|ts)$",
+    "include": ["./src/js/", "./public/esi-client.js"],
+    "includePattern": ".+\\.js$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "plugins": ["plugins/markdown", "node_modules/better-docs/typescript"],

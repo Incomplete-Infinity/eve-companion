@@ -1,69 +1,795 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <title>EVE Companion</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/augmented-ui@2.0.0/dist/augmented-ui.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dexie@4.0.4/dist/dexie.min.js">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/electron-log@5.0.0/dist/electron-log.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/electron-store@9.0.0/dist/electron-store.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/dist/halfmoon.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/interactjs@1.10.17/dist/interact.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3.10.0/dist/notyf.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oidc-client-ts@2.0.3/dist/oidc-client-ts.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p-queue@7.3.1/dist/p-queue.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-oauth2@4.3.0/dist/simple-oauth2.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/three@0.159.0/dist/three.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/topcoat@0.7.5/dist/topcoat.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xml2js@0.6.2/dist/xml2js.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zustand@4.4.5/dist/zustand.min.css">
-    </head>
-    <body data-bs-theme="dark" data-bs-coree="modern">
-        <main>
-          <div class="window" data-augmented-ui="l-clip-y r-rect-y tl-clip br-clip tr-clip bl-clip border">
-            <header class="window-header" data-augmented-ui="tl-2-clip-x tr-clip border">
-      
-              <hgroup class="window-title" data-augmented-ui="tr-clip br-clip border">
-                <div class="text-end control-buttons">
-                  <button class="px-3 ps-5" data-augmented-ui="tl-clip inlay" style="--aug-tl: 2.5rem;">_</button>
-                  <button class="px-2" data-augmented-ui="tr-clip br-clip inlay" style="--aug-tr: 0.5rem; --aug-br: 0.5rem;">X</button>
-                </div>
-                <h3 class="window-title-text">Caldari</h3>
-              </hgroup>
-              <nav class="window-nav">
-                <menu class="window-nav-menu" data-augmented-ui="br-2-clip-x border">
-                  <li class="px-2">File</li>
-                  <li class="px-2">Edit</li>
-                  <li class="px-2">View</li>
-                  <li class="px-2">Help</li>
-                </menu>
-              </nav>
-            </header>
-            <div class="window-content-container" data-augmented-ui="tr-clip tl-clip bl-clip br-clip border">
-              <div class="window-content" data-augmented-ui="bl-clip tl-clip tr-clip br-clip border">
-                <ul class="list-group">
-                  <li class="list-group-item" data-augmented-ui="tr-clip bl-clip">
-                    <a href="#">augmented-ui</a>
-                  </li>
-                  <li class="list-group-item" data-augmented-ui="tr-clip bl-clip"><a href="#/">Home Page</a></li>
-                  <li class="list-group-item" data-augmented-ui="tr-clip bl-clip"><a href="#">Technical Documentation</a></li>
-                  <li class="list-group-item" data-augmented-ui="tr-clip bl-clip"><a href="#">Twitter</a></li>
-                </ul>
+  <head>
+    <title>EVE Companion</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/augmented-ui@2.0.0/dist/augmented-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/dist/halfmoon.min.css"
+    />
+    <!-- Halfmoon modern core theme -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.modern.css"
+      rel="stylesheet"
+      integrity="sha256-DD6elX+jPmbFYPsGvzodUv2+9FHkxHlVtQi0/RJVULs="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css"
+      integrity="sha512-3axCmtM0Aq1Zin8EQ/BgsaYCdR9jY488aH7JYG4zTUeEHWGqOjm86hjL4cx6nIWGLMJ/UU4m+MOcQ2D/f2QdfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat-icons/0.1.0/font/icomatic.css"
+      integrity="sha512-+zr77T2rcGS6HJ2r140XCRDxXvVv/RjtJER++Z4246BRRdu5k+0bup/eftPgOUzN7oexWDKjxgCXQPOybj+09A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @font-face {
+font-family: 'Icomatic';
+src: url('icomatic.eot');
+src: url('icomatic.eot?#iefix') format("embedded-opentype"),
+     url('icomatic.woff') format("woff"),
+     url('icomatic.ttf') format("truetype"),
+     url('icomatic.svg#icomatic') format('svg');
+}
+.icomatic {
+    font-family: 'Icomatic','sans-serif';
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "liga", "dlig";
+    -ms-font-feature-settings: "liga", "dlig";
+    -moz-font-feature-settings: "liga", "dlig";
+    -o-font-feature-settings: "liga", "dlig";
+    font-feature-settings: "liga", "dlig";
+    -webkit-font-smoothing: antialiased;
+}
+.icomatic-alt {
+    margin: -1px;
+    border:0;
+    padding: 0;
+    width: 1px; height: 1px;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+}
+    </style>
+  </head>
+  <body data-bs-theme="dark" data-bs-core="modern" class="bg-body fragma">
+    <main class="container d-flex justify-content-center">
+      <article
+        class="window text-info bg-info-subtle border-0"
+        data-augmented-ui="l-clip-y r-clip-y tl-clip br-clip tr-clip bl-clip border"
+      >
+        <section class="pb-5">
+          <header
+            class="window-header user-select-none"
+            data-augmented-ui="tl-2-clip-x tr-clip border"
+          >
+            <hgroup
+              class="window-title"
+              data-augmented-ui="tr-clip br-clip none"
+            >
+              <div class="text-end control-buttons">
+                <button
+                  class="btn btn-outline-info px-3 ps-5 topcoat-icon-button rounded-end-0"
+                  data-augmented-ui="tl-clip border"
+                  style="--aug-tl: 2.5rem"
+                >
+                  <span class="icomatic">minus</span>
+                </button>
+                <button
+                  class="pe-4 btn btn-outline-info topcoat-icon-button rounded-start-0"
+                  data-augmented-ui="tr-clip br-clip border"
+                  style="--aug-tr: 0.1rem; --aug-br: 0.1rem"
+                >
+                  <span class="icomatic">cancel</span>
+                </button>
               </div>
+              <h3 class="window-title-text">Caldari</h3>
+            </hgroup>
+            <nav class="window-nav">
+              <menu
+                class="window-nav-menu"
+                data-augmented-ui="br-2-clip-x border"
+              >
+                <li class="px-2">
+                  <div class="dropdown" data-augmented-ui="tl-clip none">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      File
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Edit
+                    </a>
+                    <menu class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </menu>
+                  </div>
+                </li>
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      View
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </menu>
+            </nav>
+          </header>
+          <div
+            class="window-content-container"
+            data-augmented-ui="tr-clip tl-clip bl-clip br-none border"
+          >
+            <div
+              class="window-content"
+              data-augmented-ui="bl-clip tl-clip tr-clip br-clip border"
+            >
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-clip bl-clip border"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-clip bl-clip border"
+                >
+                  <a href="#/">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-clip bl-clip border"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-clip bl-clip border"
+                >
+                  <a href="#">Item</a>
+                </li>
+              </ul>
             </div>
-            <footer>
-              <div class="text-end">
-                <button class=" btn" data-augmented-ui="tl-clip tr-clip inlay"></button>
-                <button class="btn" data-augmented-ui="bl-clip br-clip inlay"></button>
-              </div>
-              <a class="dots" href="#">&middot;&middot;&middot;</a>
-            </footer>
           </div>
-        </main>
-      </body>
+          <footer class="btn-toolbar">
+            <div class="text-end">
+              <button
+                class="btn btn-outline-info"
+                data-augmented-ui="tl-clip tr-clip inlay"
+              ></button>
+              <button
+                class="btn btn-outline-info"
+                data-augmented-ui="bl-clip br-clip inlay"
+              ></button>
+            </div>
+            <a class="dots" href="#">&middot;&middot;&middot;</a>
+          </footer>
+        </section>
+      </article>
+      <article
+        class="window text-success"
+        data-augmented-ui="l-round-y r-rect-y tl-round br-round tr-round bl-round border"
+      >
+        <section class="bg-success bg-gradient bg-opacity-10">
+          <header
+            class="window-header user-select-none"
+            data-augmented-ui="tl-2-round-x tr-round border"
+          >
+            <hgroup
+              class="window-title"
+              data-augmented-ui="tr-round br-round border"
+            >
+              <div class="text-end control-buttons">
+                <button
+                  class="px-3 ps-5"
+                  data-augmented-ui="tl-round inlay"
+                  style="--aug-tl: 2.5rem"
+                >
+                  _
+                </button>
+                <button
+                  class="px-2"
+                  data-augmented-ui="tr-round br-round inlay"
+                  style="--aug-tr: 0.5rem; --aug-br: 0.5rem"
+                >
+                  X
+                </button>
+              </div>
+              <h3 class="window-title-text">Gallente</h3>
+            </hgroup>
+            <nav class="window-nav">
+              <menu
+                class="window-nav-menu"
+                data-augmented-ui="br-2-round-x border"
+              >
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      File
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="px-2">Edit</li>
+                <li class="px-2">View</li>
+                <li class="px-2">Help</li>
+              </menu>
+            </nav>
+          </header>
+          <div
+            class="window-content-container mb-2"
+            data-augmented-ui="tr-round tl-round bl-round br-round border"
+          >
+            <div
+              class="window-content"
+              data-augmented-ui="bl-round tl-round tr-round br-round border"
+            >
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#/">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <footer class="btn-toolbar">
+          <div class="text-end">
+            <button
+              class="btn"
+              data-augmented-ui="tl-round tr-round inlay"
+            ></button>
+            <button
+              class="btn"
+              data-augmented-ui="bl-round br-round inlay"
+            ></button>
+          </div>
+          <a class="dots" href="#">&middot;&middot;&middot;</a>
+        </footer>
+      </article>
+      <article
+        class="window text-warning"
+        data-augmented-ui="l-round-y r-rect-y tl-round br-round tr-round bl-round border"
+      >
+        <section class="bg-warning bg-gradient bg-opacity-10">
+          <header
+            class="window-header user-select-none"
+            data-augmented-ui="tl-2-round-x tr-round border"
+          >
+            <hgroup
+              class="window-title"
+              data-augmented-ui="tr-round br-round border"
+            >
+              <div class="text-end control-buttons">
+                <button
+                  class="px-3 ps-5"
+                  data-augmented-ui="tl-round inlay"
+                  style="--aug-tl: 2.5rem"
+                >
+                  _
+                </button>
+                <button
+                  class="px-2"
+                  data-augmented-ui="tr-round br-round inlay"
+                  style="--aug-tr: 0.5rem; --aug-br: 0.5rem"
+                >
+                  X
+                </button>
+              </div>
+              <h3 class="window-title-text">Amarr</h3>
+            </hgroup>
+            <nav class="window-nav">
+              <menu
+                class="window-nav-menu"
+                data-augmented-ui="br-2-round-x border"
+              >
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      File
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="px-2">Edit</li>
+                <li class="px-2">View</li>
+                <li class="px-2">Help</li>
+              </menu>
+            </nav>
+          </header>
+          <div
+            class="window-content-container mb-2"
+            data-augmented-ui="tr-round tl-round bl-round br-round border"
+          >
+            <div
+              class="window-content"
+              data-augmented-ui="bl-round tl-round tr-round br-round border"
+            >
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#/">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+                <li
+                  class="list-group-item"
+                  data-augmented-ui="tr-round bl-round"
+                >
+                  <a href="#">Item</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <footer class="btn-toolbar">
+            <div class="text-end">
+              <button
+                class="btn btn-outline-warning"
+                data-augmented-ui="tl-round tr-round inlay"
+              ></button>
+              <button
+                class="btn btn-outline-warning"
+                data-augmented-ui="bl-round br-round inlay"
+              ></button>
+            </div>
+            <a class="dots" href="#">&middot;&middot;&middot;</a>
+          </footer>
+        </section>
+      </article>
+      <article
+        class="window text-danger"
+        data-augmented-ui="l-clip-y r-rect-y tl-clip br-clip tr-clip bl-clip border"
+      >
+        <section class="bg-danger bg-opacity-10 bg-gradient">
+          <header
+            class="window-header user-select-none"
+            data-augmented-ui="tl-2-clip-x tr-clip border"
+          >
+            <hgroup
+              class="window-title"
+              data-augmented-ui="tr-clip br-clip border"
+            >
+              <div class="text-end control-buttons">
+                <button
+                  class="px-3 ps-5"
+                  data-augmented-ui="tl-clip inlay"
+                  style="--aug-tl: 2.5rem"
+                >
+                  _
+                </button>
+                <button
+                  class="px-2"
+                  data-augmented-ui="tr-clip br-clip inlay"
+                  style="--aug-tr: 0.5rem; --aug-br: 0.5rem"
+                >
+                  X
+                </button>
+              </div>
+              <h3 class="window-title-text">Minmatar</h3>
+            </hgroup>
+            <nav class="window-nav">
+              <menu
+                class="window-nav-menu"
+                data-augmented-ui="br-2-clip-x border"
+              >
+                <li class="px-2">
+                  <div class="dropdown">
+                    <a
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      File
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item active"
+                          aria-current="true"
+                          ><u>N</u>ew</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>O</u>pen</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a href="#" class="dropdown-item"><u>S</u>ave</a>
+                      </li>
+                      <li><a href="#" class="dropdown-item">Save As</a></li>
+                      <li>
+                        <a class="dropdown-item disabled">Dropdown link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="px-2">Edit</li>
+                <li class="px-2">View</li>
+                <li class="px-2">Help</li>
+              </menu>
+            </nav>
+          </header>
+          <div
+            class="window-content-container mb-2"
+            data-augmented-ui="tr-clip tl-clip bl-clip br-clip border"
+          >
+            <div
+              class="window-content"
+              data-augmented-ui="bl-clip tl-clip tr-clip br-clip border"
+            >
+              <ul class="list-group">
+                <li class="list-group-item" data-augmented-ui="tr-clip bl-clip">
+                  <a href="#">Item</a>
+                </li>
+                <li class="list-group-item" data-augmented-ui="tr-clip bl-clip">
+                  <a href="#/">Item</a>
+                </li>
+                <li class="list-group-item" data-augmented-ui="tr-clip bl-clip">
+                  <a href="#">Item</a>
+                </li>
+                <li class="list-group-item" data-augmented-ui="tr-clip bl-clip">
+                  <a href="#">Item</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <footer class="btn-toolbar">
+            <div class="text-end">
+              <button
+                class="btn"
+                data-augmented-ui="tl-clip tr-clip inlay"
+              ></button>
+              <button
+                class="btn"
+                data-augmented-ui="bl-clip br-clip inlay"
+              ></button>
+            </div>
+            <a class="dots" href="#">&middot;&middot;&middot;</a>
+          </footer>
+        </section>
+      </article>
+    </main>
+    <!-- Option 1: Bootstrap JS bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var IcomaticUtils = (function () {
+        return {
+          fallbacks: [
+            { from: "roundedrectangleoutline", to: "\ue045" },
+            { from: "rectangleoutline", to: "\ue041" },
+            { from: "roundedrectangle", to: "\ue046" },
+            { from: "circleoutline", to: "\ue015" },
+            { from: "imageoutline", to: "\ue02b" },
+            { from: "videocamera", to: "\ue053" },
+            { from: "arrowright", to: "\ue003" },
+            { from: "attachment", to: "\ue005" },
+            { from: "githubtext", to: "\ue026" },
+            { from: "googleplus", to: "\ue028" },
+            { from: "arrowdown", to: "\ue001" },
+            { from: "arrowleft", to: "\ue002" },
+            { from: "backlight", to: "\ue008" },
+            { from: "checkmark", to: "\ue014" },
+            { from: "instagram", to: "\ue02d" },
+            { from: "nextlight", to: "\ue034" },
+            { from: "pinterest", to: "\ue03b" },
+            { from: "rectangle", to: "\ue042" },
+            { from: "wordpress", to: "\ue058" },
+            { from: "audiooff", to: "\ue006" },
+            { from: "bookmark", to: "\ue00b" },
+            { from: "calendar", to: "\ue00e" },
+            { from: "collapse", to: "\ue018" },
+            { from: "computer", to: "\ue01a" },
+            { from: "download", to: "\ue01c" },
+            { from: "facebook", to: "\ue021" },
+            { from: "favorite", to: "\ue022" },
+            { from: "feedback", to: "\ue023" },
+            { from: "linkedin", to: "\ue02f" },
+            { from: "listview", to: "\ue030" },
+            { from: "location", to: "\ue031" },
+            { from: "question", to: "\ue040" },
+            { from: "settings", to: "\ue04a" },
+            { from: "tileview", to: "\ue04e" },
+            { from: "arrowup", to: "\ue004" },
+            { from: "behance", to: "\ue00a" },
+            { from: "comment", to: "\ue019" },
+            { from: "dribble", to: "\ue01d" },
+            { from: "preview", to: "\ue03e" },
+            { from: "refresh", to: "\ue043" },
+            { from: "retweet", to: "\ue044" },
+            { from: "twitter", to: "\ue050" },
+            { from: "camera", to: "\ue010" },
+            { from: "cancel", to: "\ue011" },
+            { from: "circle", to: "\ue016" },
+            { from: "delete", to: "\ue01b" },
+            { from: "expand", to: "\ue020" },
+            { from: "flickr", to: "\ue024" },
+            { from: "folder", to: "\ue025" },
+            { from: "github", to: "\ue027" },
+            { from: "pencil", to: "\ue038" },
+            { from: "picasa", to: "\ue03a" },
+            { from: "plugin", to: "\ue03c" },
+            { from: "search", to: "\ue049" },
+            { from: "tablet", to: "\ue04c" },
+            { from: "tumblr", to: "\ue04f" },
+            { from: "unlock", to: "\ue051" },
+            { from: "alert", to: "\ue000" },
+            { from: "audio", to: "\ue007" },
+            { from: "brush", to: "\ue00c" },
+            { from: "build", to: "\ue00d" },
+            { from: "cloud", to: "\ue017" },
+            { from: "email", to: "\ue01e" },
+            { from: "error", to: "\ue01f" },
+            { from: "group", to: "\ue029" },
+            { from: "image", to: "\ue02c" },
+            { from: "minus", to: "\ue033" },
+            { from: "phone", to: "\ue039" },
+            { from: "print", to: "\ue03f" },
+            { from: "share", to: "\ue04b" },
+            { from: "vimeo", to: "\ue055" },
+            { from: "back", to: "\ue009" },
+            { from: "call", to: "\ue00f" },
+            { from: "cart", to: "\ue012" },
+            { from: "chat", to: "\ue013" },
+            { from: "home", to: "\ue02a" },
+            { from: "like", to: "\ue02e" },
+            { from: "lock", to: "\ue032" },
+            { from: "next", to: "\ue035" },
+            { from: "page", to: "\ue036" },
+            { from: "path", to: "\ue037" },
+            { from: "plus", to: "\ue03d" },
+            { from: "save", to: "\ue048" },
+            { from: "text", to: "\ue04d" },
+            { from: "user", to: "\ue052" },
+            { from: "view", to: "\ue054" },
+            { from: "wifi", to: "\ue057" },
+            { from: "rss", to: "\ue047" },
+            { from: "w3c", to: "\ue056" },
+          ],
+          substitute: function (el) {
+            var curr = el.firstChild;
+            var next, alt;
+            var content;
+            while (curr) {
+              next = curr.nextSibling;
+              if (curr.nodeType === Node.TEXT_NODE) {
+                content = curr.nodeValue;
+                for (var i = 0; i < IcomaticUtils.fallbacks.length; i++) {
+                  content = content.replace(
+                    IcomaticUtils.fallbacks[i].from,
+                    function (match) {
+                      alt = document.createElement("span");
+                      alt.setAttribute("class", "icomatic-alt");
+                      alt.innerHTML = match;
+                      el.insertBefore(alt, curr);
+                      return IcomaticUtils.fallbacks[i].to;
+                    }
+                  );
+                }
+                alt = document.createTextNode(content);
+                el.replaceChild(alt, curr);
+              }
+              curr = next;
+            }
+          },
+          run: function (force) {
+            force = typeof force !== "undefined" ? force : false;
+            var s = getComputedStyle(document.body);
+            if (
+              "WebkitFontFeatureSettings" in s ||
+              "MozFontFeatureSettings" in s ||
+              "MsFontFeatureSettings" in s ||
+              "OFontFeatureSettings" in s ||
+              "fontFeatureSettings" in s
+            )
+              if (!force) return;
+            var els = document.querySelectorAll(".icomatic");
+            for (var i = 0; i < els.length; i++)
+              IcomaticUtils.substitute(els[i]);
+          },
+        }; // end of object
+      })(); // end of fn
+    </script>
+  </body>
 </html>

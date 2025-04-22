@@ -11,6 +11,7 @@
     "generate-docs": "jsdoc -c jsdoc.json",
     "generate-readmes": "node GenerateReadmes.js",
     "generate-esi": "swagger-typescript-api generate --path https://esi.evetech.net/latest/swagger.json --output ./src/api/esi --name index.ts --axios --modular --union-enums",
+    "generate-api": "swagger-typescript-api generate --path https://esi.evetech.net/latest/swagger.json --output src/api/esi --name index.ts --axios --union-enums && esbuild src/api/esi/index.ts --bundle --platform=browser --format=esm --outfile=public/esi-client.js",
     "prepare": "npm run generate-esi && npm run generate-docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -69,7 +70,7 @@
     "style-loader": "^3.3.4",
     "swagger-typescript-api": "^13.1.1",
     "typescript": "^5.8.3",
-    "vite": "^6.2.6",
+    "vite": "^6.3.2",
     "vitest": "^1.5.0"
   }
 }

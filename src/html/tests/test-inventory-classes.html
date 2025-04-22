@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Type Browser</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css"
+    />
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Halfmoon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css"
+      rel="stylesheet"
+      integrity="sha256-RjeFzczeuZHCyS+Gvz+kleETzBF/o84ZRHukze/yv6o="
+      crossorigin="anonymous"
+    />
+    <!-- Halfmoon core themes -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
+      rel="stylesheet"
+      integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4="
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        font-family: sans-serif;
+      }
+
+      .info-box {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1px solid #444;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark" data-bs-core="modern">
+    <main class="text-body container">
+      <h1>Eve Online Inventory Browser</h1>
+      <article class="container-fluid">
+        <form class="row">
+          <section class="col-4">
+            <div class="form-floating">
+              <select class="form-select" id="categorySelect">
+                <option>Loading...</option>
+              </select>
+              <label>Category</label>
+            </div>
+          </section>
+          <section class="col-4">
+            <div class="form-floating">
+              <select class="form-select" id="groupSelect" disabled>
+                <option value="null">Select a category first</option>
+              </select>
+              <label>Group</label>
+            </div>
+            <div
+              class="d-none spinner-border ml-2"
+              role="status"
+              id="groupSpinner"
+            ></div>
+          </section>
+          <section class="col-4">
+            <div class="form-floating">
+              <select class="form-select" id="typeSelect" disabled>
+                <option value="null">Select a group first</option>
+              </select>
+              <label>Type</label>
+            </div>
+            <div
+              class="spinner-border ml-2"
+              role="status"
+              id="typeSpinner"
+              hidden
+            ></div>
+          </section>
+        </form>
+      </article>
+      <output class="info-box" id="typeInfo"
+        >Type info will appear here...</output
+      >
+    </main>
+    <script type="module">
+      import Inventory from "../../js/classes/Inventory.js";
+      import Image from "../../js/classes/Image.js";
+
+      const categorySelect = document.getElementById("categorySelect");
+      const groupSelect = document.getElementById("groupSelect");
+      const typeSelect = document.getElementById("typeSelect");
+      const typeInfo = document.getElementById("typeInfo");
+
+      const groupsMap = new Map(); // category_id → groups[]
+      const typesMap = new Map(); // group_id → types[]
+      let inventory;
+
+      const populateCategories = async () => {
+        inventory = new Inventory();
+        await inventory.load(1, { skipUnpublished: true }); // Loads categories + group IDs
+
+        categorySelect.innerHTML =
+          "<option disabled selected>Select a category</option>";
+        for (const category of inventory.categories) {
+          const opt = document.createElement("option");
+          opt.value = category.id;
+          opt.textContent = category.name;
+          categorySelect.appendChild(opt);
+        }
+      };
+
+      categorySelect.addEventListener("change", async () => {
+        const category = inventory.categories.find(
+          (c) => c.id === +categorySelect.value
+        );
+        await category.load(1, { skipUnpublished: true }); // Loads groups + type IDs only
+
+        groupSelect.innerHTML =
+          "<option disabled selected>Select a group</option>";
+        groupSelect.disabled = false;
+        typeSelect.innerHTML = "<option>Select a group first</option>";
+        typesMap.clear();
+
+        category.groups.forEach((group) => {
+          const opt = document.createElement("option");
+          opt.value = group.id;
+          opt.textContent = group.name;
+          groupSelect.appendChild(opt);
+          typesMap.set(group.id, group.types); // likely not yet fully loaded
+        });
+      });
+
+      // On group change:
+      groupSelect.addEventListener("change", async () => {
+        const groupId = +groupSelect.value;
+        const categoryId = +categorySelect.value;
+
+        const group = inventory.categories
+          .find((c) => c.id === categoryId)
+          ?.groups.find((g) => g.id === groupId);
+
+        if (!group.types.length) {
+          await group.load(1); // Lazy load only if not yet
+        }
+
+        typeSelect.innerHTML =
+          "<option disabled selected>Select a type</option>";
+        typeSelect.disabled = false;
+        group.types.forEach((type) => {
+          const opt = document.createElement("option");
+          opt.value = type.id;
+          opt.textContent = type.name;
+          typeSelect.appendChild(opt);
+        });
+      });
+
+      typeSelect.addEventListener("change", async () => {
+        const typeId = parseInt(typeSelect.value);
+        // ✅ New
+        const type = inventory.categories
+          .find((c) => c.id === parseInt(categorySelect.value))
+          ?.groups.find((g) => g.id === parseInt(groupSelect.value))
+          ?.types.find((t) => t.id === parseInt(typeSelect.value));
+
+        // Optional: refresh just in case
+        await type?.load();
+
+        const resolver = await Image.create(typeId);
+        const variants = resolver.variants;
+
+        console.log(variants);
+
+        typeInfo.innerHTML = `
+        <div class="card">
+          <header class="card-header">
+            <hgroup class="d-flex">
+              <img src="${variants.icon}" height="32" width="32" />
+              <h2>${type.name}</h2>
+            </hgroup>
+          </header>
+          <div class="card-body">
+            <p class="card-text"><strong>Description:</strong> ${type.description || "N/A"}</p>
+            <p class="card-text"><strong>Group ID:</strong> ${type.group_id}</p>
+            <p class="card-text"><strong>Market Group:</strong> ${type.market_group_id}</p>
+            <p class="card-text"><strong>Volume:</strong> ${type.volume}</p>
+            <p class="card-text"><strong>Packaged Volume:</strong> ${type.packaged_volume}</p>
+            <p class="card-text"><strong>Published:</strong> ${type.published}</p>
+            <p class="card-text"><strong>Dogma Attributes</strong> ${JSON.stringify(type.dogmaAttributes)}</p>
+            <p class="card-text"><strong>Dogma Effects</strong> ${JSON.stringify(type.dogmaEffects)}</p>
+          </div>
+        </div>
+      `;
+      });
+
+      populateCategories();
+    </script>
+  </body>
+</html>
