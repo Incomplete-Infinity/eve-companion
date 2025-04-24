@@ -1,15 +1,14 @@
-import { Api } from "../../../public/esi-client.js";
+import Universe from "./Universe.js";
 import DogmaAttribute from "./DogmaAttribute.js";
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const dogmaApi = apiClient.dogma;
+const dogmaApi = new Universe().esiClient().dogma;
 
 export default class DogmaEffect {
   constructor(id) {
-    this.id = id;
+    this.id = typeof id === "object" && id?.id ? id.id : id;
+    if (typeof this.id !== 'number' && typeof this.id !== 'string') {
+      throw new TypeError(`DogmaEffect constructor received invalid ID: ${JSON.stringify(id)}`);
+    }
     this.name = null;
     this.description = null;
     this.display_name = null;
@@ -34,43 +33,52 @@ export default class DogmaEffect {
     this.icon_id = null;
     this.modifiers = [];
 
+    this.loaded = false;
+
     this.ready = this.load();
   }
 
   async load() {
+    if (this.loaded) return;
+
     const { data } = await dogmaApi.getDogmaEffectsEffectId(this.id);
-console.log(data);
+  
+    // Assign primitives
     Object.assign(this, {
       name: data.name,
       description: data.description,
-      displayName: data.display_name,
+      display_name: data.display_name,
       published: data.published,
-      effectCategory: data.effect_category,
-      isAssistance: data.is_assistance,
-      isOffensive: data.is_offensive,
-      isWarpSafe: data.is_warp_safe,
-      disallowAutoRepeat: data.disallow_auto_repeat,
-      rangeChance: data.range_chance,
-      electronicChance: data.electronic_chance,
-
-      durationAttribute: new DogmaAttribute(data.duration_attribute_id),
-      dischargeAttribute: new DogmaAttribute(data.discharge_attribute_id),
-      rangeAttribute: new DogmaAttribute(data.range_attribute_id),
-      falloffAttribute: new DogmaAttribute(data.falloff_attribute_id),
-      trackingSpeedAttribute: new DogmaAttribute(data.tracking_speed_attribute_id),
-
-      preExpression: data.pre_expression,
-      postExpression: data.post_expression,
-      iconId: data.icon_id,
+      effect_category: data.effect_category,
+      is_assistance: data.is_assistance,
+      is_offensive: data.is_offensive,
+      is_warp_safe: data.is_warp_safe,
+      disallow_auto_repeat: data.disallow_auto_repeat,
+      range_chance: data.range_chance,
+      electronic_chance: data.electronic_chance,
+      pre_expression: data.pre_expression,
+      post_expression: data.post_expression,
+      icon_id: data.icon_id,
     });
-
-    this.modifiers = (data.modifiers || []).map(mod => ({
+  
+    // Load DogmaAttribute instances and await
+    this.duration_attribute = (typeof this.duration_attribute != "undefined") && await new DogmaAttribute(data.duration_attribute_id).load();
+    this.discharge_attribute = (typeof this.discharge_attribute != "undefined") && await new DogmaAttribute(data.discharge_attribute_id).load();
+    this.range_attribute = (typeof this.range_attribute != "undefined") && await new DogmaAttribute(data.range_attribute_id).load();
+    this.falloff_attribute = (typeof this.falloff_attribute != "undefined") && await new DogmaAttribute(data.falloff_attribute_id).load();
+    this.tracking_speed_attribute = (typeof this.tracking_speed_attribute != "undefined") && await new DogmaAttribute(data.tracking_speed_attribute_id).load();
+  
+    // Load modifiers, if present
+    this.modifiers = await Promise.all((data.modifiers || []).map(async mod => ({
       domain: mod.domain,
-      effect: new DogmaAttribute(mod.effect_id),
+      effect: (typeof mod.effect_id != "undefined") && await new DogmaAttribute(mod.effect_id).load(),
       func: mod.func,
-      modifiedAttribute: new DogmaAttribute(mod.modified_attribute_id),
-      modifyingAttribute: new DogmaAttribute(mod.modifying_attribute_id),
+      modifiedAttribute: (typeof mod.modified_attribute_id != "undefined") && await new DogmaAttribute(mod.modified_attribute_id).load(),
+      modifyingAttribute: (typeof mod.modifying_attribute_id != "undefined") && await new DogmaAttribute(mod.modifying_attribute_id).load(),
       operator: mod.operator,
-    }));
+    })));
+
+    this.loaded = true;
   }
+  
 }

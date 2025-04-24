@@ -1,18 +1,14 @@
-import { Api } from "../../../public/esi-client.js";
+import Universe from "./Universe.js";
+const { universe } = Universe.esiClient;
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
 export default class Belt {
   constructor(id) {
-    this.id = id;
+    this.id = typeof id === "object" && id?.id ? id.id : id;
   }
   async load(recursions) {
     if (recursions <= 0) return;
     const { data } = await globalThrottle(() =>
-      universeApi.getUniverseAsteroidBeltsAsteroidBeltId(this.id)
+      universe.getUniverseAsteroidBeltsAsteroidBeltId(this.id)
     );
     this.name = data.name;
     const { x, y, z } = data.position;

@@ -1,22 +1,24 @@
+import ESIClient from './ESIClient.js';
 import InventoryType from './InventoryType.js';
-import { Api } from '../public/esi-client.js';
 
-const universeApi = new Api({
-  baseURL: 'https://esi.evetech.net/latest',
-  baseApiParams: { datasource: 'tranquility' }
-}).universe;
+const universeApi = new ESIClient().universe;
 
 export default class MarketGroup {
+
   constructor(id) {
-    this.id = id;
+    this.id = typeof id === "object" && id?.id ? id.id : id;
     this.name = '';
     this.description = '';
     this.parent_group_id = null;
     this.types = [];
     this.children = [];
+
+    this.loaded = false;
   }
 
-  async load(recursions = 0, options = {}) {
+  async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
+
     const { data } = await universeApi.getMarketsGroupsMarketGroupId(this.id);
     this.name = data.name;
     this.description = data.description;
@@ -26,9 +28,7 @@ export default class MarketGroup {
 
     if (data.types) {
       for (const typeId of data.types) {
-        const type = new InventoryType(typeId);
-        await type.load();
-        if (options.skipUnpublished && !type.published) continue;
+        const type = await new InventoryType(typeId).load();
         this.types.push(type);
       }
     }
@@ -40,5 +40,7 @@ export default class MarketGroup {
         this.children.push(childGroup);
       }
     }
+
+    this.loaded = true;
   }
 }

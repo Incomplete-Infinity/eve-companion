@@ -1,25 +1,27 @@
-import { Api } from "../../../public/esi-client.js";
+import ESIClient from "./ESIClient.js";
 import Constellation from "./Constellation.js";
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+
+const universeApi = ESIClient().universe;
 export default class Region {
+  static constellation = Constellation;
   constructor(id) {
     this.id = id;
     this.name = "";
     this.description = "";
     this.constellations = [];
+
+    this.loaded = false;
+    this.ready = this.load();
   }
-  async load(recursions) {
+  async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
     const { data } = await universeApi.getUniverseRegionsRegionId(this.id);
     this.name = data.name;
     this.description = data.description;
-    this.constellations = data.constellations.map(
-      (cid) => new Constellation(cid)
+    this.constellations = await Promise.all(
+      data.constellations.map((cid) => new Region.constellation(cid))
     );
-    if (recursions <= 0) return;
-    await Promise.all(this.constellations.map((c) => c.load(recursions - 1)));
+
+    this.loaded = true;
   }
 }

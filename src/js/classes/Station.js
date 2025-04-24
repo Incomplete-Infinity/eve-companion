@@ -1,10 +1,6 @@
-import { Api } from "../../../public/esi-client.js";
+import Universe from "./Universe.js";
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+const { universe } = Universe.esiClient;
 export default class Station {
   constructor(id) {
     this.id = id;
@@ -18,11 +14,14 @@ export default class Station {
     this.reprocessingStationsTake = null;
     this.services = null;
     this.typeId = null;
+
+    this.loaded = false;
+    this.ready = this.load();
   }
-  async load(recursions) {
-    if (recursions <= 0) return;
+  async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
     const { data } = await globalThrottle(() =>
-      universeApi.getUniverseStationsStationId(this.id)
+      universe.getUniverseStationsStationId(this.id)
     );
     this.name = data.name;
     this.maxDockableShipVolume = data.max_dockable_ship_volume;
@@ -35,5 +34,7 @@ export default class Station {
     this.reprocessingStationsTake = data.reprocessing_stations_take;
     this.services = data.services;
     this.typeId = data.type_id;
+
+    this.loaded = true;
   }
 }

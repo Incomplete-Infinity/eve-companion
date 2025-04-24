@@ -1,25 +1,28 @@
-import InventoryType from './InventoryType.js';
-import { Api } from '../../../public/esi-client.js';
-
-const universeApi = new Api({
-  baseURL: 'https://esi.evetech.net/latest',
-  baseApiParams: { datasource: 'tranquility' }
-}).universe;
+import Universe from "./Universe.js";
+const { universe } = Universe.esiClient;
+const { inventory } = Universe;
 
 export default class InventoryGroup {
   constructor(id) {
+
     console.log(`starting constructor for InventoryGroup(${id}).`);
-    this.id = id;
+    if (InventoryGroup.cache.has(id)) return InventoryGroup.cache.get(id);
+
+    this.id = typeof id === "object" && id?.id ? id.id : id;
     this.name = '';
     this.category_id = null;
     this.types = [];
+
+    this.loaded = false;
+   InventoryGroup.cache.set(id, this);
   }
 
   async load(recursions = 1, options = { skipUnpublished: true }) {
-    const { data } = await universeApi.getUniverseGroupsGroupId(this.id);
+    if (this.loaded) return;
+
+    const { data } = await universe.getUniverseGroupsGroupId(this.id);
     this.name = data.name;
     this.published = data.published;
-    console.log(this.published);
     if ((!data.types) || (recursions <= 0) || (options.skipUnpublished && !this.published)) return null;
     this.category_id = data.category_id;
     const typeInstances = data.types.map(id => new InventoryType(id));
@@ -39,5 +42,7 @@ export default class InventoryGroup {
     if (this.types.length === 0) {
       console.warn("Types were empty for group", this);
     }
+
+    this.loaded = true;
   }
 }

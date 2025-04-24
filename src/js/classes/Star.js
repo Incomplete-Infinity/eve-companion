@@ -1,11 +1,8 @@
-import { Api } from "../../../public/esi-client.js";
-
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+import Universe from "./Universe.js";
+const { universe } = Universe.esiClient;
 export default class Star {
+  static cache = new Map();
+
   constructor(id) {
     this.id = id;
     this.age = null;
@@ -15,9 +12,13 @@ export default class Star {
     this.spectralClass = null;
     this.temperature = null;
     this.typeId = null;
+
+    this.loaded = false;
   }
-  async load(recursions) {
-    if (recursions <= 0) return;
+
+  async load() {
+    if (this.loaded) return;
+
     const { data } = await universeApi.getUniverseStarsStarId(this.id);
     this.age = data.age;
     this.luminosity = data.luminosity;
@@ -26,5 +27,7 @@ export default class Star {
     this.spectraClass = data.spectral_class;
     this.temperature = data.temperature;
     this.typeId = data.type_id;
+
+    this.loaded = true;
   }
 }

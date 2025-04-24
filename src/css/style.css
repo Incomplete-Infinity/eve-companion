@@ -1,7 +1,13 @@
 @import url("./media-queries.css");
 @import url("../../node_modules/augmented-ui/augmented-ui.min.css");
 @import url("../../node_modules/halfmoon/css/halfmoon.min.css");
+/*<!-- CSS Reset -->*/
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
+/*<!-- Halfmoon CSS -->
+@import url("https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css");
+/*<!-- Halfmoon core themes -->*/
+@import url("https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css");
 @font-face {
   font-family: "Fragma";
   src: url("./../css/font/fragma-medium.ttf") format("truetype");

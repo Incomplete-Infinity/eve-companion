@@ -1,13 +1,10 @@
-import { Api } from "../../../public/esi-client.js";
+import ESIClient from "./ESIClient.js";
 import Moon from "./Moon.js";
 import Belt from "./Belt.js";
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+const universeApi = new ESIClient().universe;
 export default class Planet {
+  static cache = new Map();
   constructor(data) {
     this.id = data.planet_id;
     this.name = "";
@@ -16,17 +13,24 @@ export default class Planet {
     this.moons = [];
     this.beltData = data.asteroid_belts || [];
     this.belts = [];
+
+    this.loaded = false;
+    this.ready = this.load();
   }
-  async load(recursions) {
+  async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
+
     const { data } = await universeApi.getUniversePlanetsPlanetId(this.id);
     this.name = data.name || "Planet";
     this.typeId = data.type_id;
     this.moons = this.moonData.map((mid) => new Moon(mid));
     this.belts = this.beltData.map((bid) => new Belt(bid));
-    if (recursions <= 0) return;
+
     await Promise.all([
       ...this.moons.map((m) => m.load(recursions - 1)),
       ...this.belts.map((b) => b.load(recursions - 1)),
     ]);
+
+    this.loaded = true;
   }
 }

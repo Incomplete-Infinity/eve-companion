@@ -8,7 +8,7 @@ const universeApi = apiClient.universe;
 
 export default class Image {
   constructor(id) {
-    this.id = id;
+    this.id = typeof id === "object" && id?.id ? id.id : id;
     this.variants = {};
   }
   static async create(id, query = "") {

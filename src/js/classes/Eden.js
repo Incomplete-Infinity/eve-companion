@@ -1,15 +1,16 @@
-import { Api } from "../../../public/esi-client.js";
+import ESIClient from "./ESIClient.js";
 import Region from "./Region.js";
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+const universeApi = new ESIClient().universe;
 export default class Eden {
+
   constructor() {
     this.regions = [];
+
+    this.loaded = false;
   }
   async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
+    
     const { data } = await universeApi.getUniverseRegions();
     const regionIds = Array.isArray(data) ? data : [];
 
@@ -19,5 +20,7 @@ export default class Eden {
       if (recursions <= 0) return;
       await region.load(recursions - 1);
     }
+
+    this.loaded = true;
   }
 }

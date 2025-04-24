@@ -1,14 +1,14 @@
-import { Api } from "../../../public/esi-client.js";
+import Universe from "./ESIClient.js";
 import Station from "./Station.js";
 import Star from "./Star.js";
 import Stargate from "./Stargate.js";
 import Planet from "./Planet.js";
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+import Universe from "./Universe.js";
+
+
+
+const universeApi = new ESIClient().universe;
 export default class System {
   constructor(id) {
     this.id = id;
@@ -20,8 +20,10 @@ export default class System {
     this.star = null;
     this.securityStatus = null;
     this.securityClass = null;
+    this.loaded = false;
   }
-  async load(recursions) {
+  async load(recursions = 1) {
+    if (this.loaded) return;
     const { data } = await universeApi.getUniverseSystemsSystemId(this.id);
     this.name = data.name;
     const { x, y, z } = data.position;
@@ -31,12 +33,15 @@ export default class System {
     this.stargates = (data.stargates || []).map((gid) => new Stargate(gid));
     this.stations = (data.stations || []).map((sid) => new Station(sid));
     this.planets = (data.planets || []).map((p) => new Planet(p));
-    this.star = data.star_id ? new Star(data.star_id) : null;
+    this.star = data.star_id && new Star(data.star_id);
+    await this.star.load(recursions - 1);
+    
     if (recursions <= 0) return;
     await Promise.all([
       ...this.stations.map((s) => s.load(recursions - 1)),
       ...this.planets.map((p) => p.load(recursions - 1)),
       ...(this.star ? [this.star.load(recursions - 1)] : []),
     ]);
+    this.loaded = true;
   }
 }

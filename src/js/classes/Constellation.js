@@ -1,14 +1,10 @@
-import { Api } from "../../../public/esi-client.js";
+import ESIClient from "./ESIClient.js";
 import System from "./System.js";
 
-const apiClient = new Api({
-  baseURL: "https://esi.evetech.net/latest",
-  baseApiParams: { datasource: "tranquility" },
-});
-const universeApi = apiClient.universe;
+const universeApi = ESIClient().universe;
 export default class Constellation {
   constructor(id) {
-    this.id = id;
+    this.id = typeof id === "object" && id?.id ? id.id : id;
     this.name = "";
     this.position = { x: 0, y: 0, z: 0 };
     this.systems = [];

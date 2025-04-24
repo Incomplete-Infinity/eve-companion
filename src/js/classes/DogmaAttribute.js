@@ -1,25 +1,25 @@
-import { Api } from '../../../public/esi-client.js';
+import Universe from "./Universe.js";
 
-const dogmaApi = new Api({
-  baseURL: 'https://esi.evetech.net/latest',
-  baseApiParams: { datasource: 'tranquility' }
-}).dogma;
+const { dogma } = Universe.esiClient;
 
 export default class DogmaAttribute {
   constructor(id) {
-    console.log(`starting constructor for DogmaAttribute(${id}).`);
-    this.id = id;
-    this.defaultValue = null
+    this.id = typeof id === "object" && id?.id ? id.id : id;
+    this.defaultValue = null;
     this.description = null;
     this.displayName = '';
     this.highIsGood = false;
     this.name = '';
     this.published = false;
     this.stackable = false;
-  this.unitId = null;
-}
+    this.unitId = null;
 
-  async load(options = { skipUnpublished: true }) {
+    this.loaded = false;
+    this.ready = this.load();
+  }
+
+  async load(recursions = 1) {
+    if (this.loaded || recursions <= 0) return;
     const { data } = await dogmaApi.getDogmaAttributesAttributeId(this.id);
     this.name = data.name;
     this.published = data.published;
@@ -30,5 +30,7 @@ export default class DogmaAttribute {
     this.highIsGood = data.high_is_good;
     this.stackable = data.stackable;
     this.unitId = data.unit_id;
+
+    this.loaded = true;
   }
 }
