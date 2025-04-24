@@ -49,7 +49,7 @@ mindmap
         InventoryCategory
           InventoryGroup
             InventoryType
-    Eden(Map)
+    Eden
       Region
         Constellation
           System
