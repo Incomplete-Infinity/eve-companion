@@ -3,7 +3,7 @@ import Inventory from "./Inventory.js";
 import Eden from "./Eden.js";
 import Image from "./Image.js";
 
-export default class Universe {
+class Universe {
   static esiClient = new ESIClient();
   static image = Image;
   static inventory = new Inventory();
@@ -30,3 +30,5 @@ export default class Universe {
 
   // Add more passthroughs or helpers as needed
 }
+
+export default new Universe();
