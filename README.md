@@ -49,16 +49,16 @@ mindmap
         InventoryCategory
           InventoryGroup
             InventoryType
-    Eden
-      Region
-        Constellation
-          System
-            Star
-            Stargate
-            Station
-            Planet
-              Moon
-              Belt
+      Eden
+        Region
+          Constellation
+            System
+              Star
+              Stargate
+              Station
+              Planet
+                Moon
+                Belt
 
 ```
 
