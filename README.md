@@ -11,14 +11,28 @@
 root/
 ├── docs/               # GENERATED Documentation
 ├── img/                # Images and assets
+│   ├── concept-art/
+│   ├── icons/
+│   ├── renders/
+│   ├── stl/
+│   ├── svg/
+│   ├── types/
+│   └── README.md
+├── public/
+│   └── esi-client.js
 ├── src/
+│   ├── js/
+│   │   ├── classes/
+│   │   │   ├── *!* All App class exports
+│   │   │   └── README.md
+│   │   └── README.md
 │   ├── api/
 │   │   └── esi/        # GENERATED Swagger API client
 │   │       ├── apis/
 │   │       ├── models/
 │   │       └── index.ts
-│   └── main/           # Electron main process code
-│   └── renderer/       # Renderer UI and logic
+│   ├── main/           # Electron main process work area
+│   └── renderer/       # Electron Renderer work area
 ├── style-guide/        # Design docs, style references
 ├── package.json
 ├── esi.json            # (optional) local Swagger spec
@@ -101,6 +115,29 @@ mindmap
         SecureDataExchangeBetweenProcesses
         ValidateUserInput
 
+```
+
+### Object Model
+
+```txt
+Universe
+├── Inventory
+│   ├── Dogma
+│   │   ├── DogmaAttribute
+│   │   └── DogmaEffect
+│   └── InventoryCategory
+│       └── InventoryGroup
+│           └── InventoryType
+└── NewEden (map)
+    └── Region
+        └── Constellation
+            └── System
+                ├── Star
+                ├── Stargate
+                ├── Station
+                └── Planet
+                    ├── Moon
+                    └── Belt
 ```
 
 ## Other Files

@@ -1,31 +1,33 @@
-import ESIClient from './ESIClient.js';
-import InventoryGroup from './InventoryGroup.js';
+import ESIClient from "./ESIClient.js"; 
+import InventoryCategory from "./InventoryCategory.js";
+import Universe from "./Universe.js";
 
 const universeApi = new ESIClient().universe;
 
-export default class InventoryCategory {
-  static cache = new Map();
-  constructor(id) {
-    console.log(`starting constructor for InventoryCategory(${id}).`);
-    if (InventoryCategory.cache.has(id)) return InventoryCategory.cache.get(id);
-
-    this.id = typeof id === "object" && id?.id ? id.id : id;
-    this.name = '';
-    this.groups = [];
+export default class Inventory {
+  constructor() {
+    this.categories = [];
     this.loaded = false;
-    InventoryCategory.cache.set(id, this);
+    this.ready = this.load();
   }
 
-  async load(recursions = 1, options = { skipUnpublished: true }) {
-    if (this.loaded) return;
-    const { data } = await universeApi.getUniverseCategoriesCategoryId(this.id);
-    this.name = data.name;
-    this.published = data.published;
-    if ((!data.groups) || (recursions <= 0) || (options.skipUnpublished && !this.published)) return null;
-  
-    const groupInstances = data.groups.map(id => new InventoryGroup(id));
-    this.groups = await Promise.all(groupInstances.map(g => g.load(recursions - 1, options)));
+  async load(recursions = 1, options = {}) {
+    if (this.loaded || recursions <= 0) return;
+
+    const { data } = await universeApi.getUniverseCategories();
+    this.categories = data.map(id => {
+      const existing = Universe.get(InventoryCategory, id);
+      return existing || new InventoryCategory(id);
+    });
+
+    await Promise.all(
+      this.categories.map(c => c.load(recursions - 1, options))
+    );
+
     this.loaded = true;
-    
+  }
+
+  getCategory(id) {
+    return Universe.get(InventoryCategory, id);
   }
 }

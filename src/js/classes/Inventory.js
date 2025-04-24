@@ -1,5 +1,6 @@
 import ESIClient from "./ESIClient.js"; 
 import InventoryCategory from "./InventoryCategory.js";
+import Dogma from "./Dogma.js"
 const universeApi = new ESIClient().universe;
 export default class Inventory {
   static cache = new Map();
@@ -9,7 +10,7 @@ export default class Inventory {
     this.categories = [];
     this.loaded = false;
     Inventory.cache.set(id, this);
-    this.load();
+    this.ready = this.load();
 
   }
   async load(recursions = 1, options = {}) {
