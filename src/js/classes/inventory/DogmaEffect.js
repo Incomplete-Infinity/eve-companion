@@ -1,7 +1,7 @@
-import Universe from "./Universe.js";
+import ESIClient from "../utility/ESIClient.js";
 import DogmaAttribute from "./DogmaAttribute.js";
 
-const dogmaApi = new Universe().esiClient().dogma;
+const dogmaApi = new ESIClient().dogmaApi;
 
 export default class DogmaEffect {
   constructor(id) {

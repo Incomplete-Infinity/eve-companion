@@ -275,10 +275,10 @@
     </script>
     <!-- Rendering logic and app entry point -->
 <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js';
+    import * as THREE from 'three';
     import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.159.0/examples/jsm/controls/OrbitControls.js';
   
-    import { Eden } from '#eden-script';
+    import Eden from '../../js/classes/Eden.js';
   
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000010);

@@ -1,4 +1,4 @@
-import { Api } from '../../../public/esi-client.js';
+import { Api } from '../../../../public/esi-client.js';
 
 export default class ESIClient {
   static queue = [];

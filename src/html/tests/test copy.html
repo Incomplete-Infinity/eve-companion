@@ -72,7 +72,7 @@
           <tr>
             <td>
               <label
-                >Concurrent Requests:
+                >Concurrent Requests:<span id="concurrency-readout"></span>
                 <meter
                   id="concurrency"
                   min="0"
@@ -116,6 +116,8 @@
       const maxConcurrent = 1000;
       const updateConcurrencyMeter = () => {
         const meter = document.getElementById("concurrency");
+        const concurrencyDisplay = document.getElementById("concurrency-readout");
+        concurrencyDisplay.innerHTML = currentConcurrent;
         if (meter) meter.value = currentConcurrent;
       };
 

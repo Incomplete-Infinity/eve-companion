@@ -1,4 +1,4 @@
-import ESIClient from "./ESIClient.js";
+import ESIClient from "../ESIClient.js";
 import Region from "./Region.js";
 const universeApi = new ESIClient().universe;
 export default class Eden {

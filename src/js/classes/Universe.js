@@ -1,22 +1,24 @@
-import ESIClient from "./ESIClient.js";
-import Inventory from "./Inventory.js";
+import { ESIClient, Image } from "./utility/Utility.js";
+import Inventory from "./inventory/Item.js";
 import Eden from "./Eden.js";
-import Image from "./Image.js";
 
 class Universe {
-  static esiClient = new ESIClient();
-  static image = Image;
-  static inventory = new Inventory();
-  static map = new Eden();
+  static esiClient = null;
+  static image = null;
+  static inventory = null;
+  static map = null;
   constructor() {
     this.loaded = false;
-    this.ready = this.loadAll();
+    this.ready = this.load();
   }
-  async loadAll(recursions = 1) {
+  async load(recursions = 1) {
     if (this.loaded || recursions <= 0) return;
-
-    await this.inventory.load();
-    await this.map.load();
+    Universe.esiClient = await new ESIClient();
+    Universe.image = await Image;
+    Universe.inventory = await new Inventory();
+    Universe.map = await new Eden();
+    await Universe.inventory.load();
+    await Universe.map.load();
 
     this.loaded = true;
   }
@@ -30,5 +32,5 @@ class Universe {
 
   // Add more passthroughs or helpers as needed
 }
-
-export default new Universe();
+export { Inventory, Eden, }
+export new Universe();

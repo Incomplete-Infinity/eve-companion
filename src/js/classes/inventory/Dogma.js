@@ -1,5 +1,5 @@
-import DogmaAttribute from "./DogmaAttribute";
-import DogmaEffect from "./DogmaEffect";
+import DogmaAttribute from "./DogmaAttribute.js";
+import DogmaEffect from "./DogmaEffect.js";
 
 export default class Dogma {
     static dogmaAttribute = DogmaAttribute;

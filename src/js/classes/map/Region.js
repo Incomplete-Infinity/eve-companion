@@ -1,7 +1,7 @@
-import ESIClient from "./ESIClient.js";
+import ESIClient from "../utility/ESIClient.js";
 import Constellation from "./Constellation.js";
 
-const universeApi = ESIClient().universe;
+const universeApi = new ESIClient().universe;
 export default class Region {
   static constellation = Constellation;
   constructor(id) {

@@ -1,4 +1,4 @@
-import Universe from "./Universe.js";
+import Universe from "../Universe.js";
 const { universe } = Universe.esiClient;
 const { inventory } = Universe;
 

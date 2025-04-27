@@ -1,6 +1,6 @@
-import Universe from "./Universe.js";
+import ESIClient from "../utility/ESIClient.js";
 
-const { universe } = Universe.esiClient;
+const universeApi = new ESIClient().universeApi;
 export default class Station {
   constructor(id) {
     this.id = id;

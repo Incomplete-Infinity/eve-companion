@@ -1,5 +1,5 @@
-import Universe from "./Universe.js";
-const { universe } = Universe.esiClient;
+import ESIClient from "../utility/ESIClient.js";
+const universeApi = new ESIClient().universeApi;
 
 export default class Stargate {
   constructor(id) {

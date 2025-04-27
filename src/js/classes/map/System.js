@@ -1,10 +1,10 @@
-import Universe from "./ESIClient.js";
+import ESIClient from "../utility/ESIClient.js";
 import Station from "./Station.js";
 import Star from "./Star.js";
 import Stargate from "./Stargate.js";
 import Planet from "./Planet.js";
 
-import Universe from "./Universe.js";
+import Universe from "../Universe.js";
 
 
 

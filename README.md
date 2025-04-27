@@ -41,7 +41,35 @@ root/
 ```mermaid
 mindmap
   root((Companion App))
+    UI
+      
+      Communication
+        Notification
+        ZKillFeed
+        Mailbox
+          Mail
     Universe
+      Contract
+      Market
+        Order
+          BuyOrder
+          SellOrder
+      Wallet
+        JournalEntry
+        WalletTransaction
+      CorporationWallet extends Wallet
+        CorporationJournalEntry extends JournalEntry
+        CorporationWalletTransaction extends WalletTransaction
+      Alliance
+      Corporation
+        Faction extends Corporation
+      Character
+        SkillSheet
+          Skill
+        Contact extends Character
+          CorporationContact extends Contact
+          AllianceContact extends Contact
+      Station
       Inventory
         Dogma
           DogmaEffect

@@ -1,7 +1,7 @@
-import ESIClient from "./ESIClient.js";
+import ESIClient from "../utility/ESIClient.js";
 import System from "./System.js";
 
-const universeApi = ESIClient().universe;
+const universeApi = new ESIClient().universeApi;
 export default class Constellation {
   constructor(id) {
     this.id = typeof id === "object" && id?.id ? id.id : id;

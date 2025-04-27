@@ -12,7 +12,7 @@
 
 const ESI = require('eve_swagger_interface');
 const Structure = require('./Structure');
-const Alliance = require('./Alliance');
+const Alliance = require('../character/Alliance');
 const Corporation = require('./Corporation');
 const System = require('../locations/System');
 const Constellation = require('./Constellation');
