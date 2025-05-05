@@ -1,0 +1,30 @@
+[submodule "turret-damage-calculator"]
+	path = turret-damage-calculator
+	url = https://github.com/Incomplete-Infinity/turret-damage-calculator
+[submodule "eve-ui-new"]
+	path = eve-ui-new
+	url = https://github.com/Incomplete-Infinity/eve-ui-new
+[submodule "Calendar-App"]
+	path = Calendar-App
+	url = https://github.com/Incomplete-Infinity/Calendar-App
+[submodule "eve-image-helper"]
+	path = eve-image-helper
+	url = https://github.com/Incomplete-Infinity/eve-image-helper
+[submodule "combatLogParser"]
+	path = combatLogParser
+	url = https://github.com/Incomplete-Infinity/combatLogParser
+[submodule "reprocessing-calculator"]
+	path = reprocessing-calculator
+	url = https://github.com/Incomplete-Infinity/reprocessing-calculator
+[submodule "eve-map"]
+	path = eve-map
+	url = https://github.com/Incomplete-Infinity/eve-map
+[submodule "server-status-widget"]
+	path = server-status-widget
+	url = https://github.com/Incomplete-Infinity/server-status-widget
+[submodule "eve-flysafe-browser"]
+	path = eve-flysafe-browser
+	url = https://github.com/Incomplete-Infinity/eve-flysafe-browser
+[submodule "ship-fitting"]
+	path = ship-fitting
+	url = https://github.com/Incomplete-Infinity/ship-fitting
